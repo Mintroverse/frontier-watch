@@ -13,6 +13,9 @@
   t("data layer exposed", !!FW, FW ? "ok" : "window.__FW missing");
   if (!FW) return R;
 
+  // Rev C: run the full harness in analyst view (everything visible)
+  if (FW.setView) { FW.setView("analyst"); await sleep(60); }
+
   // HANDOFF §3 target: 12-16 signals per edition (generalized from hardcoded 15)
   t("signal count in 12-16 target range", FW.SIGNALS.length >= 12 && FW.SIGNALS.length <= 16, FW.SIGNALS.length);
   t("rendered cards == signal count", $$("#feed details.sig").length === FW.SIGNALS.length,
@@ -176,6 +179,32 @@
   FW.setTheme("stack"); await sleep(60);
   t("gloss survives re-render (terms in filtered feed)", $$("#feed .term").length > 0, $$("#feed .term").length);
   FW.setTheme("all"); await sleep(60);
+
+  // ---------- Rev C: view segmentation + palette contracts ----------
+  if (FW.setView && FW.setPal) {
+    const hid = el => !el || getComputedStyle(el).display === "none";
+    FW.setView("exec"); await sleep(60);
+    t("exec view set on root", document.documentElement.dataset.view === "exec");
+    t("exec hides mimic board section", hid($("#mimic")));
+    t("exec hides method box", hid($(".method")));
+    t("exec hides 4th KPI (mimic count)", hid($("#kpis .kpi.an-only")));
+    $("#expandAll").click(); await sleep(60);
+    t("exec hides per-card mimic + stack-detail cells", hid($("#feed .mimic-cell")) && hid($("#feed .tech-cell")));
+    document.dispatchEvent(new KeyboardEvent("keydown", {key:"Escape", bubbles:true})); await sleep(40);
+    FW.setView("analyst"); await sleep(60);
+    t("analyst restores mimic board + method box", !hid($("#mimic")) && !hid($(".method")));
+    t("view choice persisted", (()=>{ try { return localStorage.getItem("fw-view") === "analyst"; } catch(e){ return true; } })());
+
+    const bg0 = getComputedStyle(document.body).backgroundColor + getComputedStyle(document.body).backgroundImage;
+    FW.setPal("graphite"); await sleep(60);
+    const bg1 = getComputedStyle(document.body).backgroundColor + getComputedStyle(document.body).backgroundImage;
+    t("palette toggle restyles page", bg0 !== bg1);
+    t("palette toggle recolors charts", (Object.values(Chart.instances||{})[0]||{options:{plugins:{tooltip:{}}}}).options.plugins.tooltip.backgroundColor === getComputedStyle(document.documentElement).getPropertyValue("--ink").trim());
+    FW.setPal("gold"); await sleep(40);
+    t("floating control bar present", !!$("#fab") && getComputedStyle($("#fab")).position === "fixed");
+  } else {
+    t("view/palette API exposed", false, "FW.setView / FW.setPal missing");
+  }
 
   return R;
 })()

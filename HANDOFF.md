@@ -36,6 +36,7 @@ Each weekly run adds `frontier-watch-eNN.html` and rewrites `pattern-state.json`
 
 **Step 2 — Build.** Clone the previous edition's HTML; replace only:
 - The data-layer `<script>` block (THEMES/TIERS/TERMS/SIGNALS/PATTERNS/MIMICS/TIMELINE). TERMS: keep existing entries, append new ones as new jargon appears.
+- **Rev C template layers (Jul 3 — do not strip):** dual reading views (`data-view`: `exec` default / `analyst`) and dual palettes (`data-pal`: `graphite` default / `gold`), switched via the floating glass control bar. All hands-on content (mimic board + per-card mimic cells, Stack-detail cells, Method box, mimic KPI) carries class `an-only` and is hidden in the executive view — give any NEW hands-on element the same class. Chart colors read CSS variables live via `V()`; never hardcode hex in chart configs.
 - Masthead (edition #, week, compile date, headline thesis), hero takeaways (3, each pointing at a signal), verdict box, Method box (keep the labeling conventions text; refresh discrepancy notes).
 - Target 12–16 signals; keep pattern IDs P1–P6 stable (retire/add only with a note in Method).
 
@@ -73,7 +74,7 @@ T1 analyst / peer-reviewed (Gartner, arXiv, MIT, Deloitte/MHI) · T2 primary ven
 
 ## 6. Verification harness note
 
-`assertions.js` recomputes almost everything from `window.__FW`, but **two checks are hardcoded to Edition 01**: `15 signals in data` and `6 patterns rendered`. Update those two numbers per edition (or generalize them to read from `__FW`) before running. Everything else (KPIs, chip counts, filter/search/sort/Esc contracts, glossary/tooltip contracts, Stack-detail counts, one-liner lint, source dedupe) adapts automatically.
+`assertions.js` is fully generalized (Jul 3): the signal-count check asserts the §3 target range 12–16 and pattern count reads from `window.__FW` — **no per-edition edits needed**. It also asserts the Rev C view/palette contracts (exec hides `an-only` content; palette toggle restyles page and charts). Everything else (KPIs, chip counts, filter/search/sort/Esc contracts, glossary/tooltip contracts, Stack-detail counts, one-liner lint, source dedupe) adapts automatically.
 
 ## 7. Carried-over items for Edition 02 (also in pattern-state.json)
 

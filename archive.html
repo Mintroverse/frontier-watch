@@ -4,46 +4,76 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Frontier Watch · Edition Archive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<script>
+(function(){var d=document.documentElement,p=null;
+try{p=new URLSearchParams(location.search).get("pal")||localStorage.getItem("fw-pal");}catch(e){}
+d.dataset.pal=(p==="graphite"||p==="gold")?p:"graphite";})();
+</script>
 <style>
 :root{
-  --bg:#f7f8fa; --surface:#ffffff; --ink:#0f172a; --ink-2:#334155; --ink-3:#64748b; --ink-4:#94a3b8;
-  --line:#e2e8f0; --accent:#1d4ed8;
-  --radius:10px;
-  --shadow:0 1px 2px rgba(15,23,42,.05), 0 1px 3px rgba(15,23,42,.06);
+  --radius:14px;
   --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
   --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
 }
+html[data-pal="gold"]{
+  --bg:#f6f3ec; --surface:#fffdf9; --ink:#1d1a14; --ink-2:#464033; --ink-3:#7d745f; --ink-4:#a89d84;
+  --line:#e9e2d2; --line-2:#d8cdb4; --accent:#8a6c2c; --accent-2:#c0a35e;
+  --glass:rgba(255,253,247,.72); --glass-line:rgba(29,26,20,.12);
+  --shadow:0 1px 2px rgba(60,50,20,.04), 0 10px 30px -14px rgba(60,50,20,.13);
+}
+html[data-pal="graphite"]{
+  --bg:#f1f2f5; --surface:#fcfdfe; --ink:#15181d; --ink-2:#3a4047; --ink-3:#68707c; --ink-4:#99a1ad;
+  --line:#e2e5ea; --line-2:#c9ced8; --accent:#454f63; --accent-2:#8a94a8;
+  --glass:rgba(252,253,254,.72); --glass-line:rgba(21,24,29,.12);
+  --shadow:0 1px 2px rgba(20,25,35,.04), 0 10px 30px -14px rgba(20,25,35,.13);
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.55}
-.wrap{max-width:760px;margin:0 auto;padding:28px 20px 60px}
-.mast{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:6px;gap:12px;flex-wrap:wrap}
-.mast .brand{font-family:var(--mono);font-size:12px;letter-spacing:.14em;font-weight:600}
-.mast .brand span{color:var(--ink-3)}
+body{color:var(--ink);font-family:var(--font);line-height:1.6}
+html[data-pal="gold"] body{background:radial-gradient(900px 420px at 88% -8%, rgba(192,163,94,.11), transparent 62%), #f6f3ec}
+html[data-pal="graphite"] body{background:radial-gradient(900px 420px at 88% -8%, rgba(138,148,168,.12), transparent 62%), #f1f2f5}
+.wrap{max-width:760px;margin:0 auto;padding:34px 22px 80px}
+.mast{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:8px;gap:12px;flex-wrap:wrap}
+.mast .brand{font-size:11.5px;letter-spacing:.22em;font-weight:600;text-transform:uppercase;color:var(--ink-3)}
+.mast .brand span{color:var(--accent-2)}
 .mast a{font-size:13px;color:var(--accent);text-decoration:none;font-weight:600}
 .mast a:hover{text-decoration:underline}
-h1{font-size:24px;margin:22px 0 6px;letter-spacing:-.01em}
-.sub{color:var(--ink-3);font-size:14px;margin-bottom:26px}
-.ed{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;margin-bottom:12px;text-decoration:none;color:inherit;transition:border-color .12s}
-.ed:hover{border-color:var(--accent)}
-.ed .top{display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap}
+h1{font-family:var(--display);font-weight:600;font-size:30px;margin:26px 0 8px;letter-spacing:-.01em}
+.sub{color:var(--ink-3);font-size:14px;margin-bottom:28px;max-width:600px}
+.ed{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px 20px;margin-bottom:14px;text-decoration:none;color:inherit;transition:transform .15s,border-color .15s}
+.ed:hover{border-color:var(--accent-2);transform:translateY(-2px)}
+.ed .top{display:flex;align-items:center;gap:10px;margin-bottom:7px;flex-wrap:wrap}
 .ed .num{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--accent)}
 .ed .meta{font-family:var(--mono);font-size:11px;color:var(--ink-4)}
-.badge{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;background:var(--accent);color:#fff;border-radius:99px;padding:2px 9px}
-.ed .thesis{font-size:15px;font-weight:600;color:var(--ink-2)}
+.badge{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;background:var(--ink);color:var(--surface);border-radius:99px;padding:2.5px 10px}
+.ed .thesis{font-size:15px;font-weight:600;color:var(--ink-2);line-height:1.5}
 .empty{color:var(--ink-4);font-size:14px;padding:24px 0}
-footer{margin-top:36px;font-size:12px;color:var(--ink-4);border-top:1px solid var(--line);padding-top:12px}
+footer{margin-top:40px;font-size:12px;color:var(--ink-4);border-top:1px solid var(--line);padding-top:14px}
+.fab{position:fixed;right:18px;bottom:18px;z-index:70;display:flex;gap:8px;align-items:center;padding:8px 10px;border-radius:99px;
+  background:var(--glass);backdrop-filter:blur(18px) saturate(1.6);-webkit-backdrop-filter:blur(18px) saturate(1.6);
+  border:1px solid var(--glass-line);box-shadow:0 16px 44px -14px rgba(0,0,0,.28)}
+.pal-sw{width:19px;height:19px;border-radius:50%;border:1px solid var(--glass-line);cursor:pointer;padding:0}
+.pal-sw.gold{background:linear-gradient(135deg,#f6f3ec 50%,#c0a35e 50%)}
+.pal-sw.graphite{background:linear-gradient(135deg,#f1f2f5 50%,#69758e 50%)}
+.pal-sw.on{outline:2px solid var(--accent);outline-offset:2px}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="mast">
-    <div class="brand">FRONTIER WATCH <span>· AI × SUPPLY CHAIN</span></div>
+    <div class="brand">FRONTIER WATCH <span>·</span> AI × SUPPLY CHAIN</div>
     <a href="index.html">Read the latest edition →</a>
   </div>
   <h1>Edition archive</h1>
   <p class="sub">One briefing per week. The site address always opens the latest edition; every past edition stays available here.</p>
   <div id="list"></div>
   <footer>Weekly briefing on AI in supply chain, mapped to our own tool stack. Editorial product — sources and method are listed inside each edition.</footer>
+</div>
+<div class="fab" role="group" aria-label="Style">
+  <button type="button" class="pal-sw gold" data-p="gold" title="Ivory &amp; champagne"></button>
+  <button type="button" class="pal-sw graphite" data-p="graphite" title="Stone &amp; silver"></button>
 </div>
 <script>
 /* One entry per line. The weekly automated run appends the new edition ABOVE the marker line. */
@@ -66,6 +96,14 @@ if (!eds.length) {
       <div class="thesis">${e.thesis}</div>
     </a>`).join("");
 }
+function setPal(p){
+  if(p!=="gold"&&p!=="graphite") return;
+  document.documentElement.dataset.pal = p;
+  try{ localStorage.setItem("fw-pal", p); }catch(e){}
+  document.querySelectorAll(".pal-sw").forEach(b=>b.classList.toggle("on", b.dataset.p===p));
+}
+document.querySelectorAll(".pal-sw").forEach(b=>b.addEventListener("click", ()=>setPal(b.dataset.p)));
+setPal(document.documentElement.dataset.pal);
 window.__ARCHIVE = { EDITIONS };
 </script>
 </body>
