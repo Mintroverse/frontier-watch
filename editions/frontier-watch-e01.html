@@ -119,7 +119,7 @@ body.scrolled .seg button.on{background:var(--ink);color:var(--surface)}
 /* Weekly pulse strip — the since-last-edition delta */
 #pulse{position:relative;z-index:1;margin-top:34px;border-top:1px solid var(--hero-line);background:rgba(255,255,255,.025)}
 .pulse-in{display:flex;align-items:center;gap:16px;overflow-x:auto;padding:13px 0;-webkit-overflow-scrolling:touch}
-.pulse-lab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--accent-3);font-weight:600;white-space:nowrap}
+.pulse-lab{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--accent-3);font-weight:600;white-space:nowrap}
 .pulse-item{font-family:var(--mono);font-size:11px;color:var(--hero-muted);white-space:nowrap;padding-left:16px;border-left:1px solid var(--hero-line)}
 .pulse-item b{color:var(--hero-ink);font-weight:600}
 .pulse-item.next{margin-left:auto;color:var(--accent-3)}
@@ -127,12 +127,12 @@ body.scrolled .seg button.on{background:var(--ink);color:var(--surface)}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 
 /* ============ Sections — numbered editorial ============ */
-section{padding:64px 0 8px;counter-increment:sec}
+section{padding:72px 0 8px;counter-increment:sec}
 .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px;border-top:1px solid var(--line-2);padding-top:22px}
-.sec-kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-4);font-weight:500}
-.sec-kicker::before{content:counter(sec,decimal-leading-zero);color:var(--accent-2);font-weight:600;margin-right:12px}
+.sec-kicker{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-4);font-weight:500}
+.sec-kicker::before{content:counter(sec,decimal-leading-zero);color:var(--accent);font-weight:600;margin-right:12px}
 .sec-title{font-family:var(--display);font-weight:500;font-size:27px;letter-spacing:-.012em;margin-top:6px}
-.sec-sub{font-size:13.5px;color:var(--ink-3);max-width:720px;margin:10px 0 22px}
+.sec-sub{font-size:13.5px;line-height:1.7;color:var(--ink-3);max-width:62ch;margin:10px 0 24px}
 .foot-note{font-family:var(--mono);font-size:10.5px;letter-spacing:.02em;color:var(--ink-4);margin-top:14px}
 
 /* ============ Hero grid + takeaways (de-boxed) ============ */
@@ -145,14 +145,14 @@ section{padding:64px 0 8px;counter-increment:sec}
 .brief-lab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;padding-bottom:6px}
 .p-move{font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.1em;color:var(--accent-3);border:1px solid var(--accent-soft);background:var(--accent-soft);border-radius:99px;padding:2px 8px;white-space:nowrap}
 .takeaways .take{background:transparent;border:none;box-shadow:none;border-radius:0;border-top:1px solid var(--line-2);padding:15px 2px 15px 0;transition:border-color .2s}
-.takeaways .take:hover{border-top-color:var(--accent-2)}
+.takeaways .take:hover{border-top-color:var(--accent)}
 .take h3{font-size:14.5px;line-height:1.45;margin-bottom:5px;font-weight:600}
 .take p{font-size:13px;color:var(--ink-3)}
 .take .tag{display:inline-block;font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:2.5px 9px;border-radius:99px;margin-bottom:8px}
 
 /* KPI strip — de-boxed dossier numerals */
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin:34px 0 8px}
-.kpis .kpi{background:transparent;border:none;box-shadow:none;border-radius:0;border-left:2px solid var(--accent-2);padding:4px 0 4px 16px}
+.kpis .kpi{background:transparent;border:none;box-shadow:none;border-radius:0;border-left:2px solid var(--accent);padding:4px 0 4px 16px}
 .kpi .v{font-family:var(--mono);font-size:30px;font-weight:500;letter-spacing:-.02em}
 .kpi .l{font-size:11px;letter-spacing:.02em;color:var(--ink-3);margin-top:4px;max-width:200px}
 
@@ -164,7 +164,7 @@ section{padding:64px 0 8px;counter-increment:sec}
 .p-strength{display:flex;align-items:center;gap:7px;flex-shrink:0;margin-top:2px}
 .dots{display:flex;gap:3px}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--line-2)}
-.dot.on{background:var(--accent-2)}
+.dot.on{background:var(--accent-3)}
 .p-strength .n{font-family:var(--mono);font-size:10px;letter-spacing:.03em;color:var(--ink-3);white-space:nowrap}
 .pattern .verdict{font-size:13px;color:var(--ink-2)}
 .pattern .evid{font-size:12px;color:var(--ink-3);border-top:1px dashed var(--line);padding-top:9px}
@@ -200,7 +200,7 @@ details.sig summary:hover{background:color-mix(in srgb, var(--ink) 2.5%, var(--s
 .sig-main h3{font-size:15px;line-height:1.42;font-weight:600}
 .sig-one{font-size:13px;color:var(--ink-3);margin-top:4px}
 .sig-badges{display:flex;flex-wrap:wrap;gap:5px 14px;margin-top:10px;align-items:center}
-.badge{font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;padding:0;border:none;border-radius:0;color:var(--ink-4);background:transparent}
+.badge{font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;padding:0;border:none;border-radius:0;color:var(--ink-4);background:transparent;display:inline-flex;align-items:center;white-space:nowrap;line-height:1.4}
 .badge.theme{background:transparent!important;border:none;font-weight:600}
 .badge.multi{background:var(--ink);color:var(--surface);padding:2.5px 9px;border-radius:99px}
 .badge.week{background:var(--accent-soft);color:var(--accent);padding:2.5px 9px;border-radius:99px}
@@ -209,12 +209,12 @@ a.badge{color:var(--accent)}
 .score{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:9.5px;letter-spacing:.08em;color:var(--ink-4)}
 .meter{display:flex;gap:2px}
 .meter i{width:9px;height:4px;border-radius:2px;background:var(--line-2)}
-.meter i.on{background:var(--accent-2)}
+.meter i.on{background:var(--accent-3)}
 .caret{color:var(--ink-4);font-size:10px;margin-top:4px;transition:transform .15s}
 details[open] .caret{transform:rotate(90deg)}
 .sig-body{padding:4px 20px 18px 70px;display:grid;grid-template-columns:1fr 1fr;gap:16px;border-top:1px dashed var(--line)}
 .sig-body h4{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-4);margin:14px 0 5px;font-weight:600}
-.sig-body p{font-size:13px;color:var(--ink-2)}
+.sig-body p{font-size:13.5px;line-height:1.65;color:var(--ink-2);max-width:62ch}
 .mimic-cell{background:color-mix(in srgb, var(--accent) 4%, var(--surface));border:1px solid var(--line);border-radius:10px;padding:2px 15px 13px;grid-column:1/-1}
 .src-list{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
 .src{font-size:11.5px;padding:3.5px 11px;border:1px solid var(--line-2);border-radius:99px;background:var(--surface);display:inline-flex;align-items:center;gap:6px;color:var(--ink-2)}
@@ -237,7 +237,7 @@ details[open] .caret{transform:rotate(90deg)}
 .maps{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
 
 /* ============ Verdict — focal card ============ */
-.verdict-box{padding:26px 30px;border-left:2px solid var(--accent-2)}
+.verdict-box{padding:26px 30px;border-left:2px solid var(--accent)}
 .verdict-box h3{font-family:var(--display);font-weight:500;font-size:21px;line-height:1.35;margin-bottom:10px}
 .verdict-box p{font-size:13.5px;color:var(--ink-2);margin-bottom:8px}
 .verdict-box .lab{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
@@ -318,10 +318,12 @@ footer a{color:var(--accent-2)!important}
   .chart-box{height:320px}
   .ctl-right{margin-left:0;width:100%}
   .search{flex:1;min-width:0}
-  #topnav{gap:12px;padding:0 14px;height:50px}
-  .nav-brand{font-size:10.5px;letter-spacing:.14em}
-  .seg button{padding:6px 10px;font-size:10.5px}
+  #topnav{gap:10px;height:calc(48px + env(safe-area-inset-top,0px));padding:env(safe-area-inset-top,0px) 14px 0 14px}
+  .nav-brand{font-size:10px;letter-spacing:.12em}
+  .seg button{padding:8px 11px;font-size:10.5px;min-height:34px}
+  .masthead{padding-top:calc(92px + env(safe-area-inset-top,0px))}
   .masthead::after{display:none}
+  #coach{top:calc(58px + env(safe-area-inset-top,0px));right:10px;left:10px;max-width:none}
 }
 </style>
 </head>
@@ -410,7 +412,7 @@ footer a{color:var(--accent-2)!important}
         <h2 class="sec-title">What happened, domain by domain</h2>
       </div>
     </div>
-    <p class="sec-sub">Each card: what happened → why it matters here<span class="an-only"> → what we could mimic</span>. Expand for detail and sources. <span class="badge multi" style="vertical-align:1px">multi-source</span> marks independent corroboration; scores on the right are the same editorial impact / adoptability used in the chart above. Dotted-underlined terms carry a plain-language definition — hover or tap.</p>
+    <p class="sec-sub">Each card: what happened → why it matters here<span class="an-only"> → what we could mimic</span>. Expand for detail and sources. Cards marked <b>multi-source</b> are corroborated by two or more unaffiliated organizations; the impact and adoptability scores repeat the editorial scales from the chart above. Dotted-underlined terms carry a plain-language definition — hover or tap.</p>
     <div class="card theme-bar-box"><canvas id="themeBar" role="img" aria-label="Bar chart of signal count per domain"></canvas></div>
     <div class="controls" id="chipRow"></div>
     <div class="controls" style="margin-top:0">

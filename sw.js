@@ -1,5 +1,5 @@
 /* Frontier Watch service worker — network-first, cache fallback (offline re-read). */
-const CACHE = "fw-v1";
+const CACHE = "fw-v2";
 self.addEventListener("install", e => self.skipWaiting());
 self.addEventListener("activate", e => e.waitUntil(self.clients.claim()));
 self.addEventListener("fetch", e => {

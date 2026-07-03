@@ -225,6 +225,13 @@
     t("theme-color meta present", !!document.querySelector('meta[name="theme-color"]'));
     t("RSS alternate linked", !!document.querySelector('link[rel="alternate"][type="application/rss+xml"]'));
     t("sticky glass nav present with view controls", !!$("#topnav") && getComputedStyle($("#topnav")).position === "fixed" && $$('#topnav [data-seg="view"] button').length === 2);
+
+    // Editorial + platform governance (added after Rev E misses — keep permanently)
+    t("no UI pill inside running prose (sec-sub)", !document.querySelector(".sec-sub .badge"));
+    t("badges never wrap mid-word", $$(".sig-badges .badge").every(b => getComputedStyle(b).whiteSpace === "nowrap"));
+    t("viewport-fit=cover set (notch clearance)", /viewport-fit=cover/.test((document.querySelector('meta[name="viewport"]')||{content:""}).content));
+    t("nav + masthead use safe-area insets", (()=>{ const css = [...document.querySelectorAll("style")].map(x=>x.textContent).join(""); return (css.match(/safe-area-inset-top/g)||[]).length >= 3; })());
+    t("single data accent: meters use brand green", (()=>{ const m=$(".meter i.on"); return m && getComputedStyle(m).backgroundColor === "rgb(63, 163, 124)"; })());
   } else {
     t("view API exposed", false, "FW.setView missing");
   }
