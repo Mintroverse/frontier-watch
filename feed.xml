@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Frontier Watch — AI × Supply Chain</title>
+  <link>https://mintroverse.github.io/frontier-watch/</link>
+  <description>Weekly intelligence briefing: AI developments across planning, procurement, manufacturing, commercial and the data/agent stack.</description>
+  <language>en</language>
+  <atom:link href="https://mintroverse.github.io/frontier-watch/feed.xml" rel="self" type="application/rss+xml"/>
+  <!-- EDITIONS:APPEND-BELOW — newest item first; the weekly run inserts the new edition directly below this marker -->
+  <item>
+    <title>Edition 01 (Week 27, 2026) — The execution layer arrived</title>
+    <link>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e01.html</link>
+    <guid>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e01.html</guid>
+    <pubDate>Thu, 02 Jul 2026 06:00:00 +0000</pubDate>
+    <description>Platforms across planning, manufacturing, CRM and logistics shipped agents that act — and the pricing model just flipped to outcomes. 15 signals, 6 patterns, first edition baseline.</description>
+  </item>
+</channel>
+</rss>

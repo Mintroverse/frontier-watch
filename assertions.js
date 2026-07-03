@@ -180,32 +180,53 @@
   t("gloss survives re-render (terms in filtered feed)", $$("#feed .term").length > 0, $$("#feed .term").length);
   FW.setTheme("all"); await sleep(60);
 
-  // ---------- Rev C: view segmentation + palette contracts ----------
-  if (FW.setView && FW.setPal) {
+  // ---------- Rev E: dual-register views, view-bound palettes, pulse, PWA ----------
+  if (FW.setView) {
     const hid = el => !el || getComputedStyle(el).display === "none";
-    FW.setView("exec"); await sleep(60);
+
+    // exec register completeness + lint
+    const noX = FW.SIGNALS.filter(x => !(x.xone && x.xwhy)).map(x=>x.id);
+    t("all signals carry exec register (xone+xwhy)", noX.length===0, noX.join(",")||"ok");
+    const longX = FW.SIGNALS.filter(x => x.xone && x.xone.split(/\s+/).length > 32).map(x=>x.id);
+    t("exec one-liners <= 32 words", longX.length===0, longX.join(",")||"ok");
+
+    // view switch = content register + palette cue
+    FW.setView("exec"); await sleep(80);
     t("exec view set on root", document.documentElement.dataset.view === "exec");
+    const accExec = getComputedStyle(document.documentElement).getPropertyValue("--accent").trim();
+    const bgExec = getComputedStyle(document.body).backgroundColor;
     t("exec hides mimic board section", hid($("#mimic")));
     t("exec hides method box", hid($(".method")));
     t("exec hides 4th KPI (mimic count)", hid($("#kpis .kpi.an-only")));
+    const c1 = $("#feed details.sig .sig-one");
+    t("exec shows exec one-liner, hides analyst one",
+      c1 && !hid(c1.querySelector(".x-only")) && hid(c1.querySelector(".an-only")));
     $("#expandAll").click(); await sleep(60);
     t("exec hides per-card mimic + stack-detail cells", hid($("#feed .mimic-cell")) && hid($("#feed .tech-cell")));
+    t("exec shows 'what it means for us' body block", (()=>{ const b=$("#feed .sig-body .x-only"); return b && !hid(b); })());
     document.dispatchEvent(new KeyboardEvent("keydown", {key:"Escape", bubbles:true})); await sleep(40);
-    FW.setView("analyst"); await sleep(60);
+
+    FW.setView("analyst"); await sleep(80);
+    const accAn = getComputedStyle(document.documentElement).getPropertyValue("--accent").trim();
+    const bgAn = getComputedStyle(document.body).backgroundColor;
     t("analyst restores mimic board + method box", !hid($("#mimic")) && !hid($(".method")));
+    t("analyst shows analyst one-liner, hides exec one", (()=>{ const c=$("#feed details.sig .sig-one"); return c && hid(c.querySelector(".x-only")) && !hid(c.querySelector(".an-only")); })());
+    t("palette is bound to view (warm exec vs cool analyst)", accExec !== accAn || bgExec !== bgAn, accExec+" vs "+accAn);
+    t("green brand accent in both views", accExec === "#1e6b4e" && accAn === "#26735a", accExec + " | " + accAn);
     t("view choice persisted", (()=>{ try { return localStorage.getItem("fw-view") === "analyst"; } catch(e){ return true; } })());
 
-    const pal0 = document.documentElement.dataset.pal;
-    const palAlt = pal0 === "gold" ? "graphite" : "gold";
-    const bg0 = getComputedStyle(document.body).backgroundColor + getComputedStyle(document.documentElement).getPropertyValue("--ink");
-    FW.setPal(palAlt); await sleep(60);
-    const bg1 = getComputedStyle(document.body).backgroundColor + getComputedStyle(document.documentElement).getPropertyValue("--ink");
-    t("palette toggle restyles page", bg0 !== bg1, pal0 + " -> " + palAlt);
-    t("palette toggle recolors charts", (Object.values(Chart.instances||{})[0]||{options:{plugins:{tooltip:{}}}}).options.plugins.tooltip.backgroundColor === getComputedStyle(document.documentElement).getPropertyValue("--ink").trim());
-    FW.setPal(pal0); await sleep(40);
+    // pulse strip
+    t("weekly pulse strip rendered", (()=>{ const el=$("#pulse .pulse-in"); return el && el.children.length >= 3 && /NEXT EDITION/i.test(el.textContent); })());
+    t("pattern move chips rendered", $$("#patternGrid .p-move").length === FW.PATTERNS.length, $$("#patternGrid .p-move").length);
+
+    // PWA / platform layer
+    t("manifest linked", !!document.querySelector('link[rel="manifest"]'));
+    t("apple-touch-icon linked", !!document.querySelector('link[rel="apple-touch-icon"]'));
+    t("theme-color meta present", !!document.querySelector('meta[name="theme-color"]'));
+    t("RSS alternate linked", !!document.querySelector('link[rel="alternate"][type="application/rss+xml"]'));
     t("sticky glass nav present with view controls", !!$("#topnav") && getComputedStyle($("#topnav")).position === "fixed" && $$('#topnav [data-seg="view"] button').length === 2);
   } else {
-    t("view/palette API exposed", false, "FW.setView / FW.setPal missing");
+    t("view API exposed", false, "FW.setView missing");
   }
 
   return R;

@@ -2,16 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#12150f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Frontier Watch">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="../icons/icon-32.png">
+<link rel="apple-touch-icon" href="../icons/icon-180.png">
+<link rel="alternate" type="application/rss+xml" title="Frontier Watch" href="../feed.xml">
 <title>Frontier Watch · AI × Supply Chain · Edition 01</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script>
-(function(){var d=document.documentElement,q=new URLSearchParams(location.search),v=null,p=null;
-try{v=q.get("view")||localStorage.getItem("fw-view");p=q.get("pal")||localStorage.getItem("fw-pal");}catch(e){}
-d.dataset.view=(v==="analyst"||v==="exec")?v:"exec";
-d.dataset.pal=(p==="graphite"||p==="gold")?p:"graphite";})();
+(function(){var d=document.documentElement,q=new URLSearchParams(location.search),v=null;
+try{v=q.get("view")||localStorage.getItem("fw-view");}catch(e){}
+d.dataset.view=(v==="analyst"||v==="exec")?v:"exec";})();
 </script>
 <style>
 /* ============ Rev D — luxury editorial × modern tech ============ */
@@ -24,27 +32,29 @@ d.dataset.pal=(p==="graphite"||p==="gold")?p:"graphite";})();
   --t-plan:#2563eb; --t-supply:#0f766e; --t-mfg:#c2410c; --t-crm:#c026d3; --t-stack:#7c3aed;
   --ok:#15803d; --ok-bg:#f0fdf4; --warn:#b45309; --warn-bg:#fffbeb;
 }
-html[data-pal="gold"]{
-  --bg:#f7f4ee; --surface:#fffdf9; --ink:#1d1a14; --ink-2:#463f31; --ink-3:#7d745f; --ink-4:#a89d84;
-  --line:#eae3d4; --line-2:#d9cfb9; --grid:#efe9db;
-  --accent:#8a6c2c; --accent-2:#c0a35e; --accent-soft:#f3ecdb;
-  --hero-bg:#161209; --hero-ink:#f6f0e3; --hero-muted:rgba(246,240,227,.60); --hero-line:rgba(246,240,227,.14);
-  --hero-glow:rgba(192,163,94,.17);
-  --glass:rgba(255,253,249,.68); --glass-line:rgba(29,26,20,.12);
-  --shadow:0 1px 2px rgba(60,50,20,.04), 0 12px 34px -16px rgba(60,50,20,.14);
+/* Executive = warm ivory + emerald + champagne. The palette IS the view cue. */
+html[data-view="exec"]{
+  --bg:#f7f4ec; --surface:#fffdf7; --ink:#1c1912; --ink-2:#46402f; --ink-3:#7d745c; --ink-4:#a89d82;
+  --line:#eae3d2; --line-2:#d9cfb6; --grid:#efe9d9;
+  --accent:#1e6b4e; --accent-2:#c0a35e; --accent-3:#3fa37c; --accent-soft:#e8f0e8;
+  --hero-bg:#12150f; --hero-ink:#f5f1e4; --hero-muted:rgba(245,241,228,.60); --hero-line:rgba(245,241,228,.14);
+  --hero-glow:rgba(63,163,124,.16); --hero-glow2:rgba(192,163,94,.10);
+  --glass:rgba(255,253,247,.68); --glass-line:rgba(28,25,18,.12);
+  --shadow:0 1px 2px rgba(55,50,25,.04), 0 12px 34px -16px rgba(55,50,25,.14);
 }
-html[data-pal="graphite"]{
-  --bg:#f2f3f6; --surface:#fcfdfe; --ink:#14171c; --ink-2:#394048; --ink-3:#68707c; --ink-4:#99a1ad;
-  --line:#e3e6eb; --line-2:#cbd1da; --grid:#e9ebef;
-  --accent:#44506a; --accent-2:#8c97ad; --accent-soft:#e9ecf2;
-  --hero-bg:#0e1116; --hero-ink:#eef1f6; --hero-muted:rgba(238,241,246,.58); --hero-line:rgba(238,241,246,.13);
-  --hero-glow:rgba(122,142,182,.17);
-  --glass:rgba(252,253,254,.68); --glass-line:rgba(20,23,28,.12);
-  --shadow:0 1px 2px rgba(20,25,35,.04), 0 12px 34px -16px rgba(20,25,35,.14);
+/* Analyst = cool stone + jade + sage-silver. */
+html[data-view="analyst"]{
+  --bg:#f0f3f1; --surface:#fbfdfc; --ink:#131816; --ink-2:#38423d; --ink-3:#66736c; --ink-4:#97a49d;
+  --line:#e0e6e2; --line-2:#c7d2cb; --grid:#e6ece8;
+  --accent:#26735a; --accent-2:#8fa89b; --accent-3:#3fa37c; --accent-soft:#e5efe9;
+  --hero-bg:#0d1210; --hero-ink:#edf2ee; --hero-muted:rgba(237,242,238,.58); --hero-line:rgba(237,242,238,.13);
+  --hero-glow:rgba(63,163,124,.15); --hero-glow2:rgba(143,168,155,.10);
+  --glass:rgba(251,253,252,.68); --glass-line:rgba(19,24,22,.12);
+  --shadow:0 1px 2px rgba(18,28,23,.04), 0 12px 34px -16px rgba(18,28,23,.14);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--font);color:var(--ink);line-height:1.62;font-size:15px;background:var(--bg);counter-reset:sec}
+body{font-family:var(--font);color:var(--ink);line-height:1.62;font-size:15px;background:var(--bg);counter-reset:sec;-webkit-text-size-adjust:100%}
 .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
@@ -52,10 +62,11 @@ a:hover{text-decoration:underline}
 
 /* ============ View segmentation ============ */
 html[data-view="exec"] .an-only{display:none!important}
+html[data-view="analyst"] .x-only{display:none!important}
 html[data-view="exec"] .kpis{grid-template-columns:repeat(3,1fr)}
 
 /* ============ Sticky glass nav ============ */
-#topnav{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;gap:26px;height:54px;padding:0 24px;
+#topnav{position:fixed;top:0;left:0;right:0;z-index:90;display:flex;align-items:center;gap:26px;height:calc(54px + env(safe-area-inset-top,0px));padding:env(safe-area-inset-top,0px) max(24px, env(safe-area-inset-right,0px)) 0 max(24px, env(safe-area-inset-left,0px));
   background:linear-gradient(rgba(8,10,14,.42),rgba(8,10,14,.16));backdrop-filter:blur(12px) saturate(1.4);-webkit-backdrop-filter:blur(12px) saturate(1.4);
   border-bottom:1px solid transparent;transition:background .25s,border-color .25s}
 body.scrolled #topnav{background:var(--glass);border-bottom:1px solid var(--glass-line)}
@@ -71,25 +82,28 @@ body.scrolled .nav-links a:hover{color:var(--ink)}
 .nav-ctl{margin-left:auto;display:flex;gap:12px;align-items:center}
 .seg{display:flex;border-radius:99px;border:1px solid rgba(255,255,255,.28);overflow:hidden}
 body.scrolled .seg{border-color:var(--glass-line)}
-.seg button{font-family:var(--font);font-size:11px;font-weight:600;letter-spacing:.04em;padding:6px 13px;border:none;background:transparent;color:rgba(255,255,255,.72);cursor:pointer;transition:background .15s,color .15s}
+.seg button{font-family:var(--font);font-size:11px;font-weight:600;letter-spacing:.04em;padding:10px 15px;min-height:38px;border:none;background:transparent;color:rgba(255,255,255,.72);cursor:pointer;transition:background .15s,color .15s}
 body.scrolled .seg button{color:var(--ink-3)}
 .seg button.on{background:rgba(255,255,255,.92);color:#14171c}
 body.scrolled .seg button.on{background:var(--ink);color:var(--surface)}
-.pal-row{display:flex;gap:8px;align-items:center}
-.pal-sw{width:18px;height:18px;border-radius:50%;border:1px solid rgba(255,255,255,.4);cursor:pointer;padding:0}
-body.scrolled .pal-sw{border-color:var(--glass-line)}
-.pal-sw.gold{background:linear-gradient(135deg,#f6f3ec 50%,#c0a35e 50%)}
-.pal-sw.graphite{background:linear-gradient(135deg,#f1f2f5 50%,#69758e 50%)}
-.pal-sw.on{outline:2px solid var(--accent-2);outline-offset:2px}
+/* Coach mark (first visit) */
+#coach{position:fixed;top:calc(60px + env(safe-area-inset-top,0px));right:16px;z-index:95;max-width:270px;
+  background:var(--glass);backdrop-filter:blur(16px) saturate(1.6);-webkit-backdrop-filter:blur(16px) saturate(1.6);
+  border:1px solid var(--glass-line);border-radius:12px;box-shadow:0 14px 36px -10px rgba(0,0,0,.25);
+  padding:12px 14px;font-size:12px;line-height:1.5;color:var(--ink-2);display:none}
+#coach.show{display:block;animation:fadeUp .5s .8s cubic-bezier(.2,.6,.2,1) both}
+#coach b{color:var(--ink)}
+#coach button{position:absolute;top:6px;right:8px;border:none;background:none;color:var(--ink-4);font-size:14px;cursor:pointer;padding:4px}
 
 /* ============ Masthead — dark dossier hero ============ */
-.masthead{position:relative;overflow:hidden;background:var(--hero-bg);color:var(--hero-ink);padding:118px 0 58px}
+.masthead{position:relative;overflow:hidden;background:var(--hero-bg);color:var(--hero-ink);padding:calc(118px + env(safe-area-inset-top,0px)) 0 0}
 .masthead::before{content:"";position:absolute;inset:0;pointer-events:none;
   background:
     radial-gradient(900px 460px at 82% -10%, var(--hero-glow), transparent 62%),
+    radial-gradient(700px 380px at 8% 110%, var(--hero-glow2), transparent 60%),
     linear-gradient(var(--hero-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--hero-line) 1px, transparent 1px);
-  background-size:auto,52px 52px,52px 52px;opacity:.55}
+  background-size:auto,auto,52px 52px,52px 52px;opacity:.55}
 .masthead::after{content:attr(data-ed);position:absolute;right:8px;bottom:-40px;z-index:0;pointer-events:none;
   font-family:var(--display);font-weight:500;font-size:clamp(150px,20vw,300px);line-height:1;
   color:transparent;-webkit-text-stroke:1px var(--hero-line)}
@@ -102,6 +116,13 @@ body.scrolled .pal-sw{border-color:var(--glass-line)}
 .masthead h1{font-family:var(--display);font-weight:500;font-size:clamp(28px,4vw,44px);line-height:1.18;letter-spacing:-.014em;margin-top:30px;max-width:940px;animation:fadeUp .8s .1s cubic-bezier(.2,.6,.2,1) both}
 .masthead h1 em{color:var(--accent-2);font-style:italic}
 .mh-scope{margin-top:18px;font-size:13.5px;line-height:1.7;color:var(--hero-muted);max-width:760px;animation:fadeUp .8s .25s cubic-bezier(.2,.6,.2,1) both}
+/* Weekly pulse strip — the since-last-edition delta */
+#pulse{position:relative;z-index:1;margin-top:34px;border-top:1px solid var(--hero-line);background:rgba(255,255,255,.025)}
+.pulse-in{display:flex;align-items:center;gap:16px;overflow-x:auto;padding:13px 0;-webkit-overflow-scrolling:touch}
+.pulse-lab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:var(--accent-3);font-weight:600;white-space:nowrap}
+.pulse-item{font-family:var(--mono);font-size:11px;color:var(--hero-muted);white-space:nowrap;padding-left:16px;border-left:1px solid var(--hero-line)}
+.pulse-item b{color:var(--hero-ink);font-weight:600}
+.pulse-item.next{margin-left:auto;color:var(--accent-3)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 
@@ -121,6 +142,8 @@ section{padding:64px 0 8px;counter-increment:sec}
 .chart-box{position:relative;height:430px;padding:16px 16px 8px}
 .chart-cap{font-size:11.5px;color:var(--ink-4);padding:0 18px 14px}
 .takeaways{display:flex;flex-direction:column;gap:0}
+.brief-lab{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;padding-bottom:6px}
+.p-move{font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.1em;color:var(--accent-3);border:1px solid var(--accent-soft);background:var(--accent-soft);border-radius:99px;padding:2px 8px;white-space:nowrap}
 .takeaways .take{background:transparent;border:none;box-shadow:none;border-radius:0;border-top:1px solid var(--line-2);padding:15px 2px 15px 0;transition:border-color .2s}
 .takeaways .take:hover{border-top-color:var(--accent-2)}
 .take h3{font-size:14.5px;line-height:1.45;margin-bottom:5px;font-weight:600}
@@ -254,7 +277,7 @@ details[open] .caret{transform:rotate(90deg)}
 .method b{color:var(--ink-2)}
 
 /* ============ Footer — dark bookend ============ */
-footer{background:var(--hero-bg);color:var(--hero-muted);margin-top:76px;padding:30px 0 40px;font-size:12px;border-top:none}
+footer{background:var(--hero-bg);color:var(--hero-muted);margin-top:76px;padding:30px 0 calc(40px + env(safe-area-inset-bottom,0px));font-size:12px;border-top:none}
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 footer a{color:var(--accent-2)!important}
 
@@ -271,6 +294,8 @@ footer a{color:var(--accent-2)!important}
 /* ============ Responsive ============ */
 @media (max-width:900px){
   .hero-grid{grid-template-columns:1fr}
+  .hero-grid .card:first-child{order:2}
+  .hero-grid .takeaways{order:1}
   .chart-box{height:360px}
   .kpis{grid-template-columns:repeat(2,1fr)}
   html[data-view="exec"] .kpis{grid-template-columns:repeat(2,1fr)}
@@ -317,12 +342,12 @@ footer a{color:var(--accent-2)!important}
       <button type="button" data-v="exec" title="Executive brief — what happened and why it matters, implementation detail hidden">Executive</button>
       <button type="button" data-v="analyst" title="Analyst view — full detail including stack actions and method">Analyst</button>
     </div>
-    <div class="pal-row" data-seg="pal">
-      <button type="button" class="pal-sw gold" data-p="gold" title="Ivory &amp; champagne"></button>
-      <button type="button" class="pal-sw graphite" data-p="graphite" title="Stone &amp; silver"></button>
-    </div>
   </div>
 </nav>
+<div id="coach" role="status">
+  <button type="button" id="coachX" aria-label="Dismiss">&times;</button>
+  <b>Two ways to read.</b> <span style="color:var(--accent)">Executive</span> is the 5-minute business brief; <span>Analyst</span> adds the how-to detail. Switch any time in the top bar — the warmer look means you're in the brief.
+</div>
 
 <!-- ================= MASTHEAD ================= -->
 <header class="masthead" data-ed="01" id="top">
@@ -332,12 +357,13 @@ footer a{color:var(--accent-2)!important}
       <div class="mh-meta">
         <span>Edition <span class="num">01</span></span>
         <span>Week <span class="num">27</span>, 2026 · compiled Jul 2</span>
-        <span>~<span class="num">15</span> min read</span>
+        <span class="x-only">~<span class="num">5</span> min brief</span><span class="an-only">~<span class="num">15</span> min read</span>
       </div>
     </div>
     <h1>The execution layer arrived: platforms across planning, manufacturing, CRM and logistics shipped agents that <em>act</em> — and the pricing model just flipped to outcomes.</h1>
     <p class="mh-scope">Weekly scan of AI developments touching demand planning, supply &amp; procurement, manufacturing, commercial/CRM, and the data + agent stack. Emphasis on signals with high impact potential, transferable logic, or a stack we can mimic (Microsoft Fabric · Power BI · Acumatica · Power Query/DAX). Sources are diversified and tiered; cross-source corroboration is flagged.</p>
   </div>
+  <div id="pulse"><div class="wrap pulse-in"></div></div>
 </header>
 
 <!-- ================= HERO: SIGNAL LANDSCAPE ================= -->
@@ -355,7 +381,7 @@ footer a{color:var(--accent-2)!important}
         <div class="chart-box"><canvas id="scatterChart" role="img" aria-label="Scatter chart of signals by impact and adoptability"></canvas></div>
         <div class="chart-cap">Impact and adoptability are editorial scores (1–5) assigned in this briefing — judgment, not source data. Color = domain. Point labels are signal codes (S01–S15).</div>
       </div>
-      <div class="takeaways" id="takeaways"></div>
+      <div><div class="brief-lab x-only">If you read nothing else this week</div><div class="brief-lab an-only">Three takeaways</div><div class="takeaways" id="takeaways"></div></div>
     </div>
     <div class="kpis" id="kpis"></div>
   </div>
@@ -493,7 +519,7 @@ footer a{color:var(--accent-2)!important}
           <ul id="srcList"></ul>
         </div>
         <div class="card method an-only">
-          <b>Method.</b> Compiled Jul 2, 2026 from web research across analyst releases, primary vendor announcements, trade press and practitioner/academic sources. <b>Impact</b> (1–5) = editorial estimate of consequence for a mid-market supply chain organization if the signal holds. <b>Adoptability</b> (1–5) = editorial estimate of how directly a Fabric + Power BI + Acumatica stack can adopt or mimic it today. <b>Multi-source</b> = the substance is independently reported or evidenced by ≥2 unaffiliated organizations. Vendor-reported performance figures (e.g., resolution rates, speed-ups) are labeled as claims and not independently verified. One known coverage note: vendor materials differ on whether Acumatica's conversational assistant is GA or early-access in 2026 R1 — treated here as early-access per the vendor's own press release. <b>Rev B (Jul 2):</b> copy tightened for a business reader; deep technical specifics moved into each card's 'Stack detail' line; dotted-underlined terms show a plain-language definition on hover or tap. <b>Rev D (Jul 3):</b> two reading views — an <b>executive brief</b> (default) with implementation detail hidden, and the full <b>analyst view</b> — plus an editorial visual system (two light palettes, dark masthead) with the view and palette switches in the top bar.
+          <b>Method.</b> Compiled Jul 2, 2026 from web research across analyst releases, primary vendor announcements, trade press and practitioner/academic sources. <b>Impact</b> (1–5) = editorial estimate of consequence for a mid-market supply chain organization if the signal holds. <b>Adoptability</b> (1–5) = editorial estimate of how directly a Fabric + Power BI + Acumatica stack can adopt or mimic it today. <b>Multi-source</b> = the substance is independently reported or evidenced by ≥2 unaffiliated organizations. Vendor-reported performance figures (e.g., resolution rates, speed-ups) are labeled as claims and not independently verified. One known coverage note: vendor materials differ on whether Acumatica's conversational assistant is GA or early-access in 2026 R1 — treated here as early-access per the vendor's own press release. <b>Rev B (Jul 2):</b> copy tightened for a business reader; deep technical specifics moved into each card's 'Stack detail' line; dotted-underlined terms show a plain-language definition on hover or tap. <b>Rev E (Jul 3):</b> two reading registers written separately from the same sources — an <b>executive brief</b> (default; consequence and decision framing, warm palette) and the full <b>analyst view</b> (mechanics and how-to, cool palette). The color temperature is the cue for which register you are reading. Green accents mark the brand; the weekly pulse strip at the top tracks what changed between editions.
         </div>
       </div>
     </div>
@@ -503,7 +529,7 @@ footer a{color:var(--accent-2)!important}
 <footer>
   <div class="wrap">
     <span>Frontier Watch · Edition 01 · internal intelligence briefing — not investment or vendor-selection advice.</span>
-    <span>Cadence: weekly · next edition ~Jul 9, 2026 · <a href="../archive.html" style="color:var(--accent);text-decoration:none;font-weight:600">All editions →</a></span>
+    <span>Cadence: weekly · next edition ~Jul 9, 2026 · <a href="../archive.html">All editions →</a> · <a href="../feed.xml">RSS</a><br><span style="opacity:.55">On iPhone: Share → Add to Home Screen for the app experience.</span></span>
   </div>
 </footer>
 
@@ -569,7 +595,8 @@ const TERMS = [
 ];
 
 const SIGNALS = [
-{ id:"S01", theme:"plan", date:"2026-06-30", win:"week", impact:4, adopt:3, multi:false,
+{ id:"S01", xone:"Gartner just named the themes that will fill vendor pitches for the next year: AI that acts on its own, AI inside machines, and formal governance of AI-made decisions.",
+  xwhy:"Expect every vendor conversation to use this vocabulary. The practical takeaway: any AI proposal we approve should state how autonomous it is and who audits its decisions.", theme:"plan", date:"2026-06-30", win:"week", impact:4, adopt:3, multi:false,
   title:"Gartner's 2026 supply chain tech trends: AI that acts, AI in machines — and, notably, decision governance",
   one:"Gartner's 2026 list: AI that acts on its own, AI in machines — and, new this year, formal governance of AI-made decisions as a trend in its own right.",
   what:"Published Jun 30: eight trends under three themes. Autonomy & agency — robots that switch between tasks, physical AI, agentic AI, and multi-agent systems working together. Specialization & intelligence — smarter simulation, and small language models tuned to a specific domain. Trust & governance — product provenance, and decision governance. Gartner's framing: supply chains are shifting toward intelligent, self-directed and accountable systems spanning digital and physical operations.",
@@ -583,7 +610,8 @@ const SIGNALS = [
     {n:"ISM news roundup (Gartner 2031 prediction)", u:"https://www.ismworld.org/supply-management-news-and-reports/news-publications/inside-supply-management-magazine/blog/2026/2026-03/supply-chain-news-roundup-ai-and-automation-will-change-disruption-management/", t:3}
   ]},
 
-{ id:"S02", theme:"plan", date:"2026-05-23", win:"june", impact:4, adopt:5, multi:true,
+{ id:"S02", xone:"High-quality AI demand forecasting is now effectively free to trial. The evidence says it wins on new products with thin history — not across the board.",
+  xwhy:"Finding out what it's worth costs almost nothing: a benchmark against our own numbers. Expect gains on new items and the long tail, not on established products.", theme:"plan", date:"2026-05-23", win:"june", impact:4, adopt:5, multi:true,
   title:"Pre-trained forecasters mature into baselines — and the research frontier moves to routing, not bigger models",
   one:"Pre-trained forecasting models are now free, decent baselines. New evidence says: don't deploy one everywhere — route each SKU to whichever method its history actually suits.",
   what:"The pre-trained forecaster field settled into a stable toolkit this spring — Amazon, Google, Salesforce and Nixtla all ship mature versions, some available one query away inside BigQuery. A May study then tested the obvious question: should one of these run everything? No — a router that assigns each series to the best-suited method class (pre-trained vs. machine learning vs. classical statistics) beat any single model on both accuracy and running cost. Practitioner benchmarks agree on the pattern: on stable, well-behaved SKUs, a properly engineered classical model still matches them; the pre-trained models earn their keep on cold-start items and related-series structure.",
@@ -600,7 +628,8 @@ const SIGNALS = [
     {n:"2026 TSFM toolkit overview", u:"https://machinelearningmastery.com/the-2026-time-series-toolkit-5-foundation-models-for-autonomous-forecasting/", t:4}
   ]},
 
-{ id:"S03", theme:"plan", date:"2026-04-28", win:"ctx", impact:3, adopt:2, multi:false,
+{ id:"S03", xone:"Amazon now sells the planning system it runs its own retail network on — packaged as AI teammates that learn every time a planner overrides them.",
+  xwhy:"Tech giants entering planning software means pricing pressure on the incumbents — good news for buyers. The idea worth keeping: planner overrides are valuable knowledge we should be capturing.", theme:"plan", date:"2026-04-28", win:"ctx", impact:3, adopt:2, multi:false,
   title:"AWS ships Amazon Connect Decisions: planning tools recast as AI 'teammates' on Amazon's own models",
   one:"AWS rebuilt its planning toolkit as AI 'teammates' running on the models Amazon uses for its own retail network — and it learns from every planner override.",
   what:"Launched Apr 28 as the evolution of AWS Supply Chain: specialized agents run calculations, surface variances and adapt to how a company already operates, instead of forcing process change. When a planner overrides a recommendation, the system learns the override and propagates it — institutionalizing decisions instead of losing them. The interface pairs chat with visuals generated on demand rather than fixed dashboards.",
@@ -613,7 +642,8 @@ const SIGNALS = [
     {n:"Supply Chain Dive (Apr 28)", u:"https://www.supplychaindive.com/news/amazon-web-services-unveils-agentic-ai-supply-chain-tool/818564/", t:3}
   ]},
 
-{ id:"S13", theme:"plan", date:"2026-06-09", win:"june", impact:4, adopt:3, multi:true,
+{ id:"S13", xone:"Blue Yonder's AI now makes routine supply chain changes itself, with planners supervising exceptions. It also concedes big-name AI models cost too much to run at volume.",
+  xwhy:"The planner role is shifting from doing to supervising — a workforce-planning signal. And if vendors themselves say AI running costs bite at scale, cost per decision belongs in every AI business case.", theme:"plan", date:"2026-06-09", win:"june", impact:4, adopt:3, multi:true,
   title:"Blue Yonder ICON 2026: agents become the execution layer — plus a bet on small in-house models to control AI cost",
   one:"Blue Yonder's agents now execute changes across warehouse, transport and planning — people supervise exceptions. It is also training small in-house models because big-model calls cost too much at volume.",
   what:"At its June user conference, Blue Yonder positioned AI as the supply chain's operating layer: agents monitor the network, weigh trade-offs and make changes across warehousing, transportation and planning, with humans handling exceptions. Two supporting moves: an NVIDIA partnership to close the gap between insight and action, and an 'owned intelligence' strategy — smaller models it trains itself for high-volume operational decisions, reserving the big general models for where they're genuinely needed. The stated reason is cost per decision.",
@@ -628,7 +658,8 @@ const SIGNALS = [
     {n:"Blue Yonder — AI agents (SADA)", u:"https://blueyonder.com/why-blue-yonder/ai-and-machine-learning/ai-agents", t:2}
   ]},
 
-{ id:"S04", theme:"supply", date:"2026-05-11", win:"ctx", impact:3, adopt:3, multi:false,
+{ id:"S04", xone:"The big planning platforms are moving into procurement's territory. Reference customers report single-digit improvements — real money at scale, but not miracles.",
+  xwhy:"A realistic bar for vendor promises: platform AI delivers a few percentage points, meaningful at volume. Useful calibration for any pitch that crosses our desk.", theme:"supply", date:"2026-05-11", win:"ctx", impact:3, adopt:3, multi:false,
   title:"Planning platforms push into procurement's territory",
   one:"The big planning platforms are courting procurement teams — wiring purchasing directly into live demand, supplier-risk and production signals. Reference-case gains: single-digit percentages, not miracles.",
   what:"Trade coverage through May tracked procurement teams evaluating Kinaxis, o9 and Blue Yonder to connect purchasing with live planning data — supplier-performance patterns informing selection, contract terms and inventory positioning. Reference case: Lenovo across 30 plants reports +5% forecast accuracy, +4% on-time delivery and +10% delivery accuracy on Blue Yonder. Caveat: the three articles carrying this narrative are separate titles under one publisher (BizClik) — one editorial voice, not three.",
@@ -642,7 +673,8 @@ const SIGNALS = [
     {n:"Manufacturing Digital (May 26)", u:"https://manufacturingdigital.com/news/how-kinaxis-o9-blue-yonder-fix-fragmented-supply-chains", t:3}
   ]},
 
-{ id:"S05", theme:"supply", date:"2026-05-13", win:"ctx", impact:4, adopt:4, multi:false,
+{ id:"S05", xone:"Supplier records built to pay invoices can't answer where material came from or who owns the supplier today — and AI inherits every one of those blind spots.",
+  xwhy:"Most AI project failures trace to data, not technology. The cheapest, highest-return AI investment available to us is cleaning the master data any AI would depend on.", theme:"supply", date:"2026-05-13", win:"ctx", impact:4, adopt:4, multi:false,
   title:"The supplier-record problem: master data built for accounts payable can't support AI in a tariff-era supply chain",
   one:"Supplier records were built to answer 'who do we pay' — not where material was smelted or who owns the company now. AI reading those records inherits every blind spot.",
   what:"A widely shared Forbes practitioner analysis argues supplier master data was designed for accounts-payable workflows, while tariffs now depend on where material was processed, sanctions lists move weekly, and ownership changes quietly between POs. Supporting numbers cited: RAND finds over 80% of AI projects fail (roughly twice other IT projects), mostly on data; major research firms expect over 40% of agent projects to be canceled before end-2027; AI supply chain software spend is projected from under $2B (2025) to $53B by 2030.",
@@ -654,7 +686,8 @@ const SIGNALS = [
     {n:"Forbes Business Council (May 13)", u:"https://www.forbes.com/councils/forbesbusinesscouncil/2026/05/13/the-next-phase-of-supply-chain-ai-4-predictions-for-2026/", t:3}
   ]},
 
-{ id:"S15", theme:"supply", date:"2026-05-20", win:"ctx", impact:3, adopt:2, multi:false,
+{ id:"S15", xone:"C.H. Robinson claims its AI now runs 92% of managed shipments end-to-end, people handling only exceptions. The company's own number — but a loud market signal.",
+  xwhy:"Logistics partners will increasingly arrive AI-first and expect our data to plug in. Worth one direct question about AI capability in the next partner review.", theme:"supply", date:"2026-05-20", win:"ctx", impact:3, adopt:2, multi:false,
   title:"C.H. Robinson claims a closed-loop AI now runs 92% of its 4PL shipments end-to-end",
   one:"C.H. Robinson says AI now runs 92% of its managed shipments end-to-end — booking, routing, exceptions, carrier payment — while a second system studies outcomes and rewrites the operating logic.",
   what:"Announced May 20 (company release): its Lean AI system autonomously handles 92% of 4PL shipments globally across truck, ocean, air and rail — tendering, routing, delivery, exceptions and carrier payment — with a second component that continuously assesses results and adjusts the logic, next extending to carrier-performance early warning. Vendor-reported figures, not independently audited.",
@@ -666,7 +699,8 @@ const SIGNALS = [
     {n:"C.H. Robinson release (BusinessWire, May 20)", u:"https://www.businesswire.com/news/home/20260520874794/en/C.H.-Robinson-Launches-Worlds-First-AI-Technology-That-Continually-Assesses-Improves-and-Operates-Global-Supply-Chains", t:2}
   ]},
 
-{ id:"S06", theme:"mfg", date:"2026-04-20", win:"ctx", impact:4, adopt:3, multi:true,
+{ id:"S06", xone:"Factory AI left the demo stage: SAP's agent writes production routings straight from the bill of materials; Schneider and Microsoft claim engineering time halved.",
+  xwhy:"Vendors picked product master data as the first target because errors there cost quietly and compound. The same logic applies here: our BOM quality gates the value of any future AI.", theme:"mfg", date:"2026-04-20", win:"ctx", impact:4, adopt:3, multi:true,
   title:"Production agents leave the demo booth: SAP's master-data agent generates routings from BOMs; Schneider + Microsoft claim 50% engineering-time cuts",
   one:"The factory-agent demos became products: SAP's agent writes production routings straight from the bill of materials; Schneider and Microsoft claim engineering documentation time cut by half.",
   what:"Hannover Messe (Apr 20–24) headlined AI in machines plus AI that acts. SAP showed an agent that automates production master data and can generate routings directly from BOMs, plus an outbound-logistics agent (GA planned Q2) that detects and fixes pick/pack issues live. Microsoft + Schneider Electric's industrial assistant was credited with up to 50% engineering-time savings on control configuration and documentation. NVIDIA coverage cites Terex (40+ plants) projecting roughly 3% yield gain and 10% rework reduction. All performance figures are vendor claims, not independently audited.",
@@ -682,7 +716,8 @@ const SIGNALS = [
     {n:"SAP Sapphire — autonomous supply chain (May)", u:"https://news.sap.com/2026/05/more-autonomous-supply-chain/", t:2}
   ]},
 
-{ id:"S07", theme:"mfg", date:"2026-06-25", win:"june", impact:3, adopt:2, multi:true,
+{ id:"S07", xone:"Manufacturers expect their use of self-directed AI to quadruple within two years — yet research finds only about one in twenty AI pilots ever reaches scale.",
+  xwhy:"The gap between ambition and delivery is where budgets die. Deployments that stick share one shape: human approval gates, an audit trail, and a way to roll back.", theme:"mfg", date:"2026-06-25", win:"june", impact:3, adopt:2, multi:true,
   title:"The adoption barometer: manufacturers expect agentic AI to quadruple to ~24% — while MIT finds only 5% of GenAI projects ever scale",
   one:"Manufacturers expect their use of self-directed AI to quadruple to ~24% within two years — while MIT finds only 5% of AI pilots ever reach scale. That gap is the budget risk.",
   what:"Two datapoints frame manufacturing's honest position: a Manufacturing Leadership Council survey (cited in Deloitte's roadmap) has manufacturers expecting agentic-AI use to rise from ~6% to ~24% within two years, while MIT research found only ~5% of GenAI projects reach scale. Late-June trade analysis notes the deployments actually reaching production share a shape: draft-fast AI behind human-held approval gates, an audit trail, and a defined rollback — autonomy bounded, not maximized.",
@@ -696,7 +731,8 @@ const SIGNALS = [
     {n:"SCMR — EY on AI ROI scrutiny", u:"https://www.scmr.com/article/ai-wont-fix-a-broken-supply-chain-foundation", t:3}
   ]},
 
-{ id:"S08", theme:"crm", date:"2026-06-25", win:"week", impact:4, adopt:2, multi:true,
+{ id:"S08", xone:"Salesforce now charges for AI customer service only when the AI actually resolves the case — paying for outcomes, not for software seats.",
+  xwhy:"Once an anchor vendor prices per outcome, every software negotiation changes. We should ask vendors — and measure our own AI ideas — in cost-per-outcome terms.", theme:"crm", date:"2026-06-25", win:"week", impact:4, adopt:2, multi:true,
   title:"Salesforce's two-week sprint: $3.6B for Fin, a minutes-to-deploy Help Agent — priced per resolution, not per seat",
   one:"Salesforce bought a packaged service agent for $3.6B, launched another that installs in minutes — and bills only when the AI resolves the case. Escalation to a human costs nothing.",
   what:"Jun 15: agreement to acquire Fin (formerly Intercom) for ~$3.6B — a ready-made customer-service agent whose customers average 76% of cases resolved end-to-end (company figure). Jun 25: Agentforce Help Agent launches — guided setup, live in minutes across channels, priced per successful resolution. Context: Agentforce annual recurring revenue hit $1.2B (+205% year over year), Salesforce bought usage-billing platform m3ter in early June, and coverage frames a deliberate pivot from per-seat to per-work pricing.",
@@ -712,7 +748,8 @@ const SIGNALS = [
     {n:"TheStreet — per-work pricing pivot (Jun 16)", u:"https://www.thestreet.com/investing/stocks/crm-salesforce-bold-ai-bet", t:3}
   ]},
 
-{ id:"S09", theme:"stack", date:"2026-06-02", win:"june", impact:5, adopt:5, multi:true,
+{ id:"S09", xone:"Microsoft's argument: AI models are interchangeable — the durable asset is an owned, governed layer of business definitions. It is building that layer on tools we already run.",
+  xwhy:"Our existing reporting and data investment is the on-ramp, not sunk cost. Consolidating business definitions into one governed place is this quarter's no-regret move.", theme:"stack", date:"2026-06-02", win:"june", impact:5, adopt:5, multi:true,
   title:"Build 2026: Microsoft calls the business-definitions layer the real battleground — and builds it on Power BI",
   one:"Microsoft's argument: AI models are interchangeable — the durable asset is a governed layer of business definitions. It is building that layer directly on the Power BI models we already maintain.",
   what:"At Build (Jun 2–3), Microsoft's pitch was that whoever holds shared business context wins, because every AI that starts from zero must relearn the business. Fabric IQ — a layer that sits on Power BI semantic models and extends them with entities, relationships and rules — reached GA, alongside graph analysis in Fabric. Planning in Fabric (rolling out through June) writes forward-looking plans back into the platform, so AI sees past, present and future state. A new database for AI apps and a GPU-accelerated warehouse claiming up to 7× faster queries (vendor figure; preview July) round it out.",
@@ -728,7 +765,8 @@ const SIGNALS = [
     {n:"Critical read — Windows Forum analysis", u:"https://windowsforum.com/threads/microsoft-fabric-2026-agent-ready-data-layer-beats-chatbots-in-ai-platform-war.423607/", t:4}
   ]},
 
-{ id:"S10", theme:"stack", date:"2026-06-02", win:"june", impact:4, adopt:5, multi:true,
+{ id:"S10", xone:"AI assistants can now draft changes to our reporting environment through the governed, quality-controlled layer — with human review kept before anything publishes.",
+  xwhy:"Analytics capacity could rise materially without new headcount. The safeguard that makes it acceptable — a person approves before publish — is built into the design.", theme:"stack", date:"2026-06-02", win:"june", impact:4, adopt:5, multi:true,
   title:"Power BI models and reports become promptable: AI assistants can now author them through the governed layer",
   one:"Packaged 'skills' teach an AI assistant how Fabric works; a live connector gives it hands. Model and report changes become promptable — with human review kept before publish.",
   what:"Build introduced Agent Skills for Power BI (preview): packaged instructions that make AI coding assistants competent at Fabric-specific work — authoring semantic models, building report files, layout, validation, publishing — while a Power BI connector built on the MCP standard gives the assistant live access to the actual model. The design point practitioner coverage stresses: the assistant works through the trusted definition layer, where relationships and measures already exist, instead of guessing against raw tables.",
@@ -742,7 +780,8 @@ const SIGNALS = [
     {n:"Microsoft Azure blog — Build 2026", u:"https://azure.microsoft.com/en-us/blog/microsoft-build-2026-building-agentic-apps-with-microsoft-fabric-and-microsoft-databases/", t:2}
   ]},
 
-{ id:"S11", theme:"stack", date:"2026-06-24", win:"week", impact:3, adopt:5, multi:false,
+{ id:"S11", xone:"Our analytics platform's AI agents can now run on a schedule with nobody signed in — and report what each run costs.",
+  xwhy:"This opens automated weekly digests — for example, exceptions explained every Monday morning — with the cost of every run visible from day one.", theme:"stack", date:"2026-06-24", win:"week", impact:3, adopt:5, multi:false,
   title:"Fabric June update: data agents can now run unattended on a schedule — with per-call cost tracking",
   one:"Fabric's question-answering agents no longer need a human signed in — the unlock for automated 'explain the exceptions' digests. Cost per call is now visible too.",
   what:"The June feature summary ships app-identity sign-in for Fabric Data Agents — enabling scheduled and backend runs with no user session — plus a model upgrade for Fabric's built-in AI functions, simpler chaining of AI steps in notebooks, and per-call cost statistics with clean retry handling.",
@@ -755,7 +794,8 @@ const SIGNALS = [
     {n:"Fabric June 2026 feature summary", u:"https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-June-2026-Feature-Summary/ba-p/5190690", t:2}
   ]},
 
-{ id:"S12", theme:"stack", date:"2026-05-21", win:"june", impact:4, adopt:4, multi:true,
+{ id:"S12", xone:"The industry's standard 'plug' between AI assistants and business systems gets its biggest upgrade July 28 — and is now safe to build on long-term.",
+  xwhy:"Standardized plumbing means AI investments are less likely to be stranded with one vendor. Anything we pilot from here should target this standard.", theme:"stack", date:"2026-05-21", win:"june", impact:4, adopt:4, multi:true,
   title:"The AI-connector standard grows up: its biggest revision lands Jul 28, built for ordinary web scale and long jobs",
   one:"MCP — the standard 'plug' between AI assistants and business systems — gets its largest upgrade: runs on ordinary web infrastructure, handles long-running jobs, and now carries real adoption numbers.",
   what:"The next MCP specification ships Jul 28 (candidate locked May 21). Headliners: servers no longer need to remember sessions, so they scale like any web app; long-running work — a forecast run, a data-quality sweep — becomes a first-class 'task'; connectors can render small interfaces; sign-in aligns with standard enterprise authentication; and a formal deprecation policy makes building on it safe. Governance moved to the Linux Foundation in December. Adoption footprint: roughly 10K public connectors, 97M monthly developer-kit downloads, and 41% of surveyed software organizations running it in production.",
@@ -770,7 +810,8 @@ const SIGNALS = [
     {n:"Verified adoption statistics (May 24 census)", u:"https://www.digitalapplied.com/blog/mcp-adoption-statistics-2026-model-context-protocol", t:4}
   ]},
 
-{ id:"S14", theme:"stack", date:"2026-03-26", win:"ctx", impact:4, adopt:4, multi:true,
+{ id:"S14", xone:"Our ERP vendor shipped AI across the product: a workflow builder, an in-system assistant, and reports that flag their own anomalies. When our instance gets it is the open question.",
+  xwhy:"Several things we would otherwise build by hand may simply arrive with the upgrade. Confirming our upgrade timeline and licensing gates two quarters of build-vs-wait decisions.", theme:"stack", date:"2026-03-26", win:"ctx", impact:4, adopt:4, multi:true,
   title:"Acumatica 2026 R1: AI Studio, a conversational assistant, and anomaly-detecting reports — pitched directly at supply chain",
   one:"Our ERP vendor shipped a low-code builder for AI workflows (you pick the model), an in-ERP assistant, and reports that flag anomalies themselves. Open question: when Onematica gets it.",
   what:"Acumatica 2026 R1 reached GA in late March, explicitly framed around supply chain execution for manufacturers, distributors and retailers. Headliners: AI Studio, a low-code builder for AI-assisted workflows triggered by ERP business events, with bring-your-own-model connectors so data stays under customer control; an AI Assistant for natural-language queries and task completion across modules (early access per Acumatica's release — some partner guides say GA, a discrepancy noted in Method); reporting with proactive anomaly detection; and governance features now formalized: data masking, AI usage statistics, reusable system instructions.",
@@ -786,25 +827,37 @@ const SIGNALS = [
   ]}
 ];
 
+/* ---------- Weekly delta (pulse strip) — rewritten by each edition ---------- */
+const DELTA = {
+  prev: 0,                                  /* previous edition number; 0 = first edition */
+  next: "Thu Jul 9",                        /* next edition day */
+  headline: "First edition — baseline set",
+  items: [
+    "<b>15</b> signals · 5 domains",
+    "<b>6</b> patterns opened · 4 hardening+",
+    "<b>6</b> dated watch items"
+  ]
+};
+
 /* ---------- Patterns (evidence orgs counted, direction, falsifier) ---------- */
 const PATTERNS = [
 { id:"P1", title:"From insight to execution: AI that acts, not advises",
-  dir:"hard", dirLabel:"Hardening", orgs:["Gartner","Blue Yonder","SAP","AWS","C.H. Robinson","BCG"],
+  dir:"hard", dirLabel:"Hardening", move:{dir:"new"}, orgs:["Gartner","Blue Yonder","SAP","AWS","C.H. Robinson","BCG"],
   verdict:"Six unaffiliated organizations — analyst, three vendors across planning/ERP/logistics, and a strategy firm — told the same story inside eight weeks: AI's role is moving from recommending to executing, with humans supervising exceptions. BCG's framing: agents expand the feasible decision space beyond what sequential human workflows can reach.",
   watch:"Confirms: SAP's outbound agent and Fabric planning actually hit GA on schedule; autonomy percentages appear in customer (not vendor) case studies. Weakens: Q3 earnings calls quietly re-describe 'agents' as 'assistants'.",
   extra:[{n:"BCG — How AI agents are transforming supply chains", u:"https://www.bcg.com/publications/2026/how-ai-agents-are-transforming-supply-chains", t:1}]},
 { id:"P2", title:"The moat is business context, not the model",
-  dir:"accel", dirLabel:"Accelerating", orgs:["Microsoft","Salesforce","Databricks","o9 (knowledge-graph positioning)","Practitioner analyses"],
+  dir:"accel", dirLabel:"Accelerating", move:{dir:"new"}, orgs:["Microsoft","Salesforce","Databricks","o9 (knowledge-graph positioning)","Practitioner analyses"],
   verdict:"Microsoft (Fabric IQ on semantic models), Salesforce + Databricks (federated business context, Jun 16), and o9's long-standing knowledge-graph positioning now compete on the same claim: models are commoditizing, and whoever holds the governed definitions layer holds the account. Critical coverage adds the corollary — AI exposes messy permissions and definitions faster than any audit.",
   watch:"Confirms: pricing/packaging starts bundling a 'context layer' as its own line item. Weakens: frontier models get good enough at raw-table reasoning that definition layers stop mattering (no evidence of this yet).",
   extra:[]},
 { id:"P3", title:"AI economics shift from seats to outcomes and tokens",
-  dir:"accel", dirLabel:"Accelerating", orgs:["Salesforce","Blue Yonder","Gartner"],
+  dir:"accel", dirLabel:"Accelerating", move:{dir:"new"}, orgs:["Salesforce","Blue Yonder","Gartner"],
   verdict:"Salesforce now charges per successful resolution (Help Agent) and is rebuilding billing around work done (m3ter, Flex Credits); Blue Yonder justifies small proprietary models explicitly on per-call cost; Gartner predicts (Jun 24) AI coding costs will exceed an average developer's salary by 2028 as usage surges. Three different angles, one conclusion: the unit economics of AI work are becoming a managed line item.",
   watch:"Confirms: an ERP or planning vendor announces outcome pricing within two quarters. Weakens: outcome pricing quietly reverts to consumption floors and minimums.",
   extra:[{n:"Gartner — AI coding costs prediction (Jun 24)", u:"https://www.gartner.com/en/newsroom/press-releases/2026-06-24-gartner-predicts-ai-coding-costs-will-surpass-average-developer-salary-by-2028-as-token-consumption-surges", t:1}]},
 { id:"P4", title:"Data readiness is the binding constraint — and everyone now says so",
-  dir:"hard", dirLabel:"Consensus", orgs:["EY","RAND (cited)","MIT","MHI + Deloitte","Kearney","MIT CTL"],
+  dir:"hard", dirLabel:"Consensus", move:{dir:"new"}, orgs:["EY","RAND (cited)","MIT","MHI + Deloitte","Kearney","MIT CTL"],
   verdict:"The most corroborated theme in the edition: EY (CFOs demanding ROI; the moat is not tech), RAND's 80%+ AI-project failure rate rooted in data, MIT's 5% scale-up rate, MHI/Deloitte finding AI the decade's top disruptor while investment discipline tightens, Kearney reporting value concentrating in narrow targeted processes, and MIT CTL's data showing capability jumps only where inventory accuracy and real-time visibility exist first.",
   watch:"Settled enough to act on: every AI proposal should lead with the data-foundation work it depends on. Weakens: nothing on the horizon.",
   extra:[
@@ -814,12 +867,12 @@ const PATTERNS = [
     {n:"Modern Retail — Kearney State of Logistics 2026", u:"https://www.modernretail.co/operations/the-reality-of-ai-supply-chain-hype/", t:3}
   ]},
 { id:"P5", title:"The plumbing is standardizing: MCP + A2A move from experiment to default",
-  dir:"hard", dirLabel:"Hardening", orgs:["Linux Foundation / MCP project","Google","Microsoft","Salesforce","Stacklok (survey)"],
+  dir:"hard", dirLabel:"Hardening", move:{dir:"new"}, orgs:["Linux Foundation / MCP project","Google","Microsoft","Salesforce","Stacklok (survey)"],
   verdict:"MCP sits under Linux Foundation governance with a maturing specification (Jul 28) and measured production adoption (41% of surveyed software orgs per Stacklok); Google pairs it with A2A for agent-to-agent coordination and publishes selection guides; Microsoft wires skills plus MCP into Fabric and Power BI; Salesforce gates MCP connectors behind a trusted gateway with audit trails. Competing integration standards have effectively conceded.",
   watch:"Confirms: vendors in the operational stack (ERP, WMS) ship first-party MCP connectors. Weakens: value migrating to proprietary layers on top of the open core — the classic open-standard fragmentation path, flagged but not yet observed.",
   extra:[{n:"IIoT World — A2A + MCP in industrial AI (Google Cloud report)", u:"https://www.iiot-world.com/artificial-intelligence-ml/2026-industrial-ai-trends-driving-global-manufacturing-with-agentic-systems/", t:4}]},
 { id:"P6", title:"Foundation forecasters are the new baseline — routing and hybrids win",
-  dir:"hard", dirLabel:"Hardening", orgs:["Independent researchers (arXiv)","Google Research","Practitioner benchmarks","Domain studies (energy)"],
+  dir:"hard", dirLabel:"Hardening", move:{dir:"new"}, orgs:["Independent researchers (arXiv)","Google Research","Practitioner benchmarks","Domain studies (energy)"],
   verdict:"Converging evidence: zero-shot pre-trained models form a strong baseline and dominate cold-start and related-series cases, but lose to engineered classical/ML models on stable series and to specialists on domain-constrained data; a complexity router beats universal deployment on accuracy and cost. Google's in-context fine-tuning research points at few-shot adaptation replacing per-dataset training.",
   watch:"Confirms: planning vendors expose model-routing controls instead of one embedded model. Weakens: a next-gen pre-trained model decisively closing the stable-series gap in independent tests.",
   extra:[]}
@@ -915,11 +968,28 @@ $("#patternGrid").innerHTML = PATTERNS.map(p=>{
   return '<div class="card pattern" id="'+p.id+'">'+
     '<div class="p-top"><h3>'+p.id+' · '+esc(p.title)+'</h3>'+
     '<span class="dir '+p.dir+'">'+p.dirLabel+'</span></div>'+
-    '<div class="p-strength"><span class="dots">'+dots+'</span><span class="n num">'+n+' independent orgs</span></div>'+
+    '<div class="p-strength"><span class="dots">'+dots+'</span><span class="n num">'+n+' independent orgs</span>'+moveChip(p)+'</div>'+
     '<p class="verdict">'+esc(p.verdict)+'</p>'+
     '<div class="evid"><b>Watch next:</b> '+esc(p.watch)+(extras?'<div class="src-list" style="margin-top:8px">'+extras+'</div>':'')+'</div>'+
   '</div>';
 }).join("");
+
+function moveChip(p){
+  const m = p.move; if(!m) return "";
+  if(m.dir==="new") return '<span class="p-move">NEW</span>';
+  if(m.dir==="up") return '<span class="p-move">&#9650; '+m.from+'&#8594;'+m.to+'</span>';
+  if(m.dir==="down") return '<span class="p-move" style="color:var(--warn);background:var(--warn-bg);border-color:var(--warn-bg)">&#9660; '+m.from+'&#8594;'+m.to+'</span>';
+  return '<span class="p-move" style="color:var(--ink-4);background:transparent;border-color:var(--line-2)">&#8212; steady</span>';
+}
+
+/* ---------- Weekly pulse strip ---------- */
+(function(){
+  const el = document.querySelector("#pulse .pulse-in"); if(!el || typeof DELTA === "undefined") return;
+  const lab = DELTA.prev ? "SINCE EDITION " + String(DELTA.prev).padStart(2,"0") : "THIS EDITION";
+  el.innerHTML = '<span class="pulse-lab">'+lab+'</span>'
+    + DELTA.items.map(i=>'<span class="pulse-item">'+i+'</span>').join("")
+    + '<span class="pulse-item next">NEXT EDITION '+DELTA.next.toUpperCase()+'</span>';
+})();
 
 /* ---------- Filter chips ---------- */
 const chipRow = $("#chipRow");
@@ -940,7 +1010,7 @@ function cardHTML(s){
   return '<details class="sig" id="card-'+s.id+'" data-id="'+s.id+'" data-theme="'+s.theme+'" style="border-left-color:'+T.color+'">'+
     '<summary>'+
       '<span class="sig-code num">'+s.id+'</span>'+
-      '<span class="sig-main"><h3>'+esc(s.title)+'</h3><div class="sig-one">'+esc(s.one)+'</div>'+
+      '<span class="sig-main"><h3>'+esc(s.title)+'</h3><div class="sig-one"><span class="x-only">'+esc(s.xone||s.one)+'</span><span class="an-only">'+esc(s.one)+'</span></div>'+
         '<div class="sig-badges"><span class="badge theme" style="color:'+T.color+'">&#9679;&#8201;'+T.label+'</span>'+winBadge+multiBadge+
         '<span class="badge num">'+fmtDate(s.date)+'</span></div></span>'+
       '<span class="sig-scores">'+
@@ -950,7 +1020,9 @@ function cardHTML(s){
     '</summary>'+
     '<div class="sig-body">'+
       '<div><h4>What happened</h4><p>'+esc(s.what)+'</p></div>'+
-      '<div><h4>Why it matters here</h4><p>'+esc(s.why)+'</p>'+
+      '<div>'+
+        (s.xwhy?'<span class="x-only"><h4>What it means for us</h4><p>'+esc(s.xwhy)+'</p></span>':'')+
+        '<span class="an-only"><h4>Why it matters here</h4><p>'+esc(s.why)+'</p></span>'+
         '<h4>Trend arc</h4><p>'+esc(s.trend)+'</p></div>'+
       '<div class="mimic-cell an-only"><h4>Mimic angle</h4><p>'+esc(s.mimic)+'</p></div>'+
       (s.tech?'<div class="tech-cell an-only"><h4>Stack detail</h4><p>'+esc(s.tech)+'</p></div>':'')+
@@ -966,7 +1038,7 @@ function renderFeed(){
   const q = state.q.trim().toLowerCase();
   const rows = SIGNALS.slice().sort(cmp).filter(s=>{
     const okT = state.theme==="all" || s.theme===state.theme;
-    const okQ = !q || (s.title+" "+s.one+" "+s.what+" "+s.mimic+" "+s.why+" "+(s.tech||"")).toLowerCase().includes(q);
+    const okQ = !q || (s.title+" "+s.one+" "+(s.xone||"")+" "+(s.xwhy||"")+" "+s.what+" "+s.mimic+" "+s.why+" "+(s.tech||"")).toLowerCase().includes(q);
     return okT && okQ;
   });
   $("#feed").innerHTML = rows.length
@@ -1295,19 +1367,39 @@ function setView(v){
   rootEl.dataset.view = v;
   try{ localStorage.setItem("fw-view", v); }catch(e){}
   $$('#topnav [data-seg="view"] button').forEach(b=>b.classList.toggle("on", b.dataset.v===v));
-}
-function setPal(p){
-  if(p!=="gold"&&p!=="graphite") return;
-  rootEl.dataset.pal = p;
-  try{ localStorage.setItem("fw-pal", p); }catch(e){}
-  $$('#topnav [data-seg="pal"] .pal-sw').forEach(b=>b.classList.toggle("on", b.dataset.p===p));
-  refreshCharts();
+  const tc = document.querySelector('meta[name="theme-color"]');
+  if(tc) tc.setAttribute("content", getComputedStyle(rootEl).getPropertyValue("--hero-bg").trim() || "#12150f");
+  refreshCharts();   /* palette is bound to the view */
 }
 $("#topnav").addEventListener("click", e=>{
-  const v = e.target.closest("[data-v]"); if(v) return setView(v.dataset.v);
-  const p = e.target.closest("[data-p]"); if(p) return setPal(p.dataset.p);
+  const v = e.target.closest("[data-v]"); if(v){ dismissCoach(); return setView(v.dataset.v); }
 });
-setView(rootEl.dataset.view); setPal(rootEl.dataset.pal);
+/* First-visit coach mark */
+const coachEl = document.getElementById("coach");
+function dismissCoach(){ if(coachEl){ coachEl.classList.remove("show"); try{ localStorage.setItem("fw-coach","1"); }catch(e){} } }
+try{ if(!localStorage.getItem("fw-coach")) coachEl.classList.add("show"); }catch(e){}
+document.getElementById("coachX").addEventListener("click", dismissCoach);
+setTimeout(dismissCoach, 16000);
+setView(rootEl.dataset.view);
+/* Shareable domain filter: ?domain=plan|supply|mfg|crm|stack */
+(function(){
+  const q = new URLSearchParams(location.search);
+  const d = q.get("domain");
+  if(d && THEMES[d]) setTheme(d);
+})();
+const _setTheme = setTheme;
+setTheme = function(key){
+  _setTheme(key);
+  try{
+    const u = new URL(location.href);
+    if(key && key!=="all") u.searchParams.set("domain", key); else u.searchParams.delete("domain");
+    history.replaceState(null, "", u);
+  }catch(e){}
+};
+/* Service worker (app-like launch + offline re-read); http(s) only */
+if("serviceWorker" in navigator && location.protocol.indexOf("http")===0){
+  window.addEventListener("load", ()=> navigator.serviceWorker.register("../sw.js", {scope:"../"}).catch(()=>{}));
+}
 /* nav glass state: dark-transparent over hero, light glass after */
 const heroEl = document.querySelector(".masthead");
 function navState(){ document.body.classList.toggle("scrolled", window.scrollY > (heroEl ? heroEl.offsetHeight - 64 : 200)); }
@@ -1316,7 +1408,7 @@ window.addEventListener("scroll", navState, {passive:true}); navState();
 renderFeed();
 
 /* Expose for the verification harness */
-window.__FW = { SIGNALS, PATTERNS, MIMICS, THEMES, TIERS, TIMELINE, TERMS, state, allSrcCount: allSrc.length, tierCounts, setTheme, openCard, setView, setPal };
+window.__FW = { SIGNALS, PATTERNS, MIMICS, THEMES, TIERS, TIMELINE, TERMS, DELTA, state, allSrcCount: allSrc.length, tierCounts, setTheme: (k)=>setTheme(k), openCard, setView };
 })();
 </script>
 </body>

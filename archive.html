@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#12150f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="alternate" type="application/rss+xml" title="Frontier Watch" href="feed.xml">
 <title>Frontier Watch · Edition Archive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<script>
-(function(){var d=document.documentElement,p=null;
-try{p=new URLSearchParams(location.search).get("pal")||localStorage.getItem("fw-pal");}catch(e){}
-d.dataset.pal=(p==="graphite"||p==="gold")?p:"graphite";})();
-</script>
+
 <style>
 :root{
   --radius:14px;
@@ -18,24 +19,16 @@ d.dataset.pal=(p==="graphite"||p==="gold")?p:"graphite";})();
   --display:"Newsreader",Georgia,"Times New Roman",serif;
   --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
 }
-html[data-pal="gold"]{
-  --hero-bg:#161209; --hero-ink:#f6f0e3; --hero-muted:rgba(246,240,227,.60); --hero-line:rgba(246,240,227,.14); --hero-glow:rgba(192,163,94,.17);
-  --bg:#f6f3ec; --surface:#fffdf9; --ink:#1d1a14; --ink-2:#464033; --ink-3:#7d745f; --ink-4:#a89d84;
-  --line:#e9e2d2; --line-2:#d8cdb4; --accent:#8a6c2c; --accent-2:#c0a35e;
-  --glass:rgba(255,253,247,.72); --glass-line:rgba(29,26,20,.12);
-  --shadow:0 1px 2px rgba(60,50,20,.04), 0 10px 30px -14px rgba(60,50,20,.13);
-}
-html[data-pal="graphite"]{
-  --hero-bg:#0e1116; --hero-ink:#eef1f6; --hero-muted:rgba(238,241,246,.58); --hero-line:rgba(238,241,246,.13); --hero-glow:rgba(122,142,182,.17);
-  --bg:#f1f2f5; --surface:#fcfdfe; --ink:#15181d; --ink-2:#3a4047; --ink-3:#68707c; --ink-4:#99a1ad;
-  --line:#e2e5ea; --line-2:#c9ced8; --accent:#454f63; --accent-2:#8a94a8;
-  --glass:rgba(252,253,254,.72); --glass-line:rgba(21,24,29,.12);
-  --shadow:0 1px 2px rgba(20,25,35,.04), 0 10px 30px -14px rgba(20,25,35,.13);
+:root{
+  --hero-bg:#12150f; --hero-ink:#f5f1e4; --hero-muted:rgba(245,241,228,.60); --hero-line:rgba(245,241,228,.14); --hero-glow:rgba(63,163,124,.16);
+  --bg:#f7f4ec; --surface:#fffdf7; --ink:#1c1912; --ink-2:#46402f; --ink-3:#7d745c; --ink-4:#a89d82;
+  --line:#eae3d2; --line-2:#d9cfb6; --accent:#1e6b4e; --accent-2:#c0a35e;
+  --glass:rgba(255,253,247,.68); --glass-line:rgba(28,25,18,.12);
+  --shadow:0 1px 2px rgba(55,50,25,.04), 0 12px 34px -16px rgba(55,50,25,.14);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{color:var(--ink);font-family:var(--font);line-height:1.6}
-html[data-pal="gold"] body{background:#f7f4ee}
-html[data-pal="graphite"] body{background:#f2f3f6}
+body{background:#f7f4ec}
 .wrap{max-width:760px;margin:0 auto;padding:0 22px 80px}
 .hero{position:relative;overflow:hidden;background:var(--hero-bg);color:var(--hero-ink);padding:34px 0 30px;margin-bottom:34px}
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(640px 300px at 82% -10%, var(--hero-glow), transparent 62%),linear-gradient(var(--hero-line) 1px, transparent 1px),linear-gradient(90deg, var(--hero-line) 1px, transparent 1px);background-size:auto,52px 52px,52px 52px;opacity:.55}
@@ -56,13 +49,6 @@ h1{font-family:var(--display);font-weight:500;font-size:32px;margin:22px 0 8px;l
 .ed .thesis{font-size:15px;font-weight:600;color:var(--ink-2);line-height:1.5}
 .empty{color:var(--ink-4);font-size:14px;padding:24px 0}
 footer{margin-top:40px;font-size:12px;color:var(--ink-4);border-top:1px solid var(--line);padding-top:14px}
-.fab{position:fixed;right:18px;bottom:18px;z-index:70;display:flex;gap:8px;align-items:center;padding:8px 10px;border-radius:99px;
-  background:var(--glass);backdrop-filter:blur(18px) saturate(1.6);-webkit-backdrop-filter:blur(18px) saturate(1.6);
-  border:1px solid var(--glass-line);box-shadow:0 16px 44px -14px rgba(0,0,0,.28)}
-.pal-sw{width:19px;height:19px;border-radius:50%;border:1px solid var(--glass-line);cursor:pointer;padding:0}
-.pal-sw.gold{background:linear-gradient(135deg,#f6f3ec 50%,#c0a35e 50%)}
-.pal-sw.graphite{background:linear-gradient(135deg,#f1f2f5 50%,#69758e 50%)}
-.pal-sw.on{outline:2px solid var(--accent);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -77,10 +63,6 @@ footer{margin-top:40px;font-size:12px;color:var(--ink-4);border-top:1px solid va
 <div class="wrap">
   <div id="list"></div>
   <footer>Weekly briefing on AI in supply chain, mapped to our own tool stack. Editorial product — sources and method are listed inside each edition.</footer>
-</div>
-<div class="fab" role="group" aria-label="Style">
-  <button type="button" class="pal-sw gold" data-p="gold" title="Ivory &amp; champagne"></button>
-  <button type="button" class="pal-sw graphite" data-p="graphite" title="Stone &amp; silver"></button>
 </div>
 <script>
 /* One entry per line. The weekly automated run appends the new edition ABOVE the marker line. */
@@ -103,14 +85,6 @@ if (!eds.length) {
       <div class="thesis">${e.thesis}</div>
     </a>`).join("");
 }
-function setPal(p){
-  if(p!=="gold"&&p!=="graphite") return;
-  document.documentElement.dataset.pal = p;
-  try{ localStorage.setItem("fw-pal", p); }catch(e){}
-  document.querySelectorAll(".pal-sw").forEach(b=>b.classList.toggle("on", b.dataset.p===p));
-}
-document.querySelectorAll(".pal-sw").forEach(b=>b.addEventListener("click", ()=>setPal(b.dataset.p)));
-setPal(document.documentElement.dataset.pal);
 window.__ARCHIVE = { EDITIONS };
 </script>
 </body>

@@ -36,8 +36,7 @@ Each weekly run adds `frontier-watch-eNN.html` and rewrites `pattern-state.json`
 
 **Step 2 — Build.** Clone the previous edition's HTML; replace only:
 - The data-layer `<script>` block (THEMES/TIERS/TERMS/SIGNALS/PATTERNS/MIMICS/TIMELINE). TERMS: keep existing entries, append new ones as new jargon appears.
-- **Rev D template layers (Jul 3 — do not strip):** dual reading views (`data-view`: `exec` default / `analyst`) and dual palettes (`data-pal`: `graphite` default / `gold`), switched from the sticky glass top nav (`#topnav`). Dark dossier masthead (ghost edition numeral via `data-ed` attribute on `.masthead` — update it each edition) and dark footer bookend. Type: Newsreader (display) / Inter (body) / IBM Plex Mono (labels & numerals). All hands-on content (mimic board + per-card mimic cells, Stack-detail cells, Method box, mimic KPI, nav 'Actions' link) carries class `an-only` and is hidden in the executive view — give any NEW hands-on element the same class. Chart colors read CSS variables live via `V()`; never hardcode hex in chart configs.
-- Masthead (edition #, week, compile date, headline thesis), hero takeaways (3, each pointing at a signal), verdict box, Method box (keep the labeling conventions text; refresh discrepancy notes).
+- **Rev E template layers (Jul 3 — do not strip):** two reading REGISTERS, not just views: every signal carries analyst copy (`one`, `why`) AND executive copy (`xone`, `xwhy` — consequence/decision framing, zero mechanics; both ≤32-word one-liners, linted). The palette is bound to the view as the visual cue — Executive = warm ivory + emerald + champagne; Analyst = cool stone + jade + sage (green = brand, both views). View switch = single control in the sticky glass nav (`#topnav`); no separate palette toggle. Dark dossier masthead (`data-ed` ghost numeral — update per edition) + weekly PULSE STRIP under it fed by the `DELTA` object (rewrite each edition: prev, next, headline, items) with pattern `move:{dir:"new|up|down|flat",from,to}` chips computed from status_history. Hands-on content carries class `an-only` (hidden in exec); exec-only content carries `x-only`. PWA layer: `manifest.webmanifest`, `icons/`, `sw.js`, `feed.xml` (append new edition item below its marker each week), theme-color meta, safe-area insets. First-visit coach mark (`#coach`, localStorage `fw-coach`). Chart colors read CSS variables live via `V()`; never hardcode hex in chart configs.Masthead (edition #, week, compile date, headline thesis), hero takeaways (3, each pointing at a signal), verdict box, Method box (keep the labeling conventions text; refresh discrepancy notes).
 - Target 12–16 signals; keep pattern IDs P1–P6 stable (retire/add only with a note in Method).
 
 **Copy rules (asserted, not aspirational):**
@@ -55,6 +54,7 @@ Each weekly run adds `frontier-watch-eNN.html` and rewrites `pattern-state.json`
 
 ```
 { id:"S01", theme:"plan|supply|mfg|crm|stack", date:"YYYY-MM-DD",
+  xone, xwhy,                     // EXECUTIVE register: one-liner (≤32 words) + 'what it means for us' — written separately from the analyst copy, business-consequence framing, no mechanics
   win:"week|june|ctx",            // recency badge (rename 'june' bucket per month)
   impact:1-5, adopt:1-5,          // EDITORIAL scores — labeled as judgment in UI
   multi:true|false,               // corroboration rule in §3

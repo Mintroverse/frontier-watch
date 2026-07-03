@@ -392,6 +392,6 @@
     "Glossary (TERMS) and Stack-detail line are template-level; append terms, never strip the layer.",
     "Check publisher families before setting multi:true.",
     "Timeline right-hand markers are third-party forecasts, label as such.",
-    "Template Rev D (Jul 3): dark dossier masthead (update data-ed numeral per edition) + sticky glass top nav (#topnav) hosting exec/analyst + gold/graphite switches; Newsreader/Inter/IBM Plex Mono type; hands-on content must carry class 'an-only'; graphite+exec are defaults; never strip the view/palette layer."
+    "Template Rev E (Jul 3): dual REGISTERS — write exec copy (xone/xwhy) separately from analyst copy for every signal; palette bound to view (warm exec / cool analyst, green brand accent); DELTA object + pattern move chips power the weekly pulse strip; append weekly item to feed.xml; update data-ed numeral; PWA assets (icons/manifest/sw) are permanent — never remove."
   ]
 }
