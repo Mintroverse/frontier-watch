@@ -195,13 +195,15 @@
     t("analyst restores mimic board + method box", !hid($("#mimic")) && !hid($(".method")));
     t("view choice persisted", (()=>{ try { return localStorage.getItem("fw-view") === "analyst"; } catch(e){ return true; } })());
 
-    const bg0 = getComputedStyle(document.body).backgroundColor + getComputedStyle(document.body).backgroundImage;
-    FW.setPal("graphite"); await sleep(60);
-    const bg1 = getComputedStyle(document.body).backgroundColor + getComputedStyle(document.body).backgroundImage;
-    t("palette toggle restyles page", bg0 !== bg1);
+    const pal0 = document.documentElement.dataset.pal;
+    const palAlt = pal0 === "gold" ? "graphite" : "gold";
+    const bg0 = getComputedStyle(document.body).backgroundColor + getComputedStyle(document.documentElement).getPropertyValue("--ink");
+    FW.setPal(palAlt); await sleep(60);
+    const bg1 = getComputedStyle(document.body).backgroundColor + getComputedStyle(document.documentElement).getPropertyValue("--ink");
+    t("palette toggle restyles page", bg0 !== bg1, pal0 + " -> " + palAlt);
     t("palette toggle recolors charts", (Object.values(Chart.instances||{})[0]||{options:{plugins:{tooltip:{}}}}).options.plugins.tooltip.backgroundColor === getComputedStyle(document.documentElement).getPropertyValue("--ink").trim());
-    FW.setPal("gold"); await sleep(40);
-    t("floating control bar present", !!$("#fab") && getComputedStyle($("#fab")).position === "fixed");
+    FW.setPal(pal0); await sleep(40);
+    t("sticky glass nav present with view controls", !!$("#topnav") && getComputedStyle($("#topnav")).position === "fixed" && $$('#topnav [data-seg="view"] button').length === 2);
   } else {
     t("view/palette API exposed", false, "FW.setView / FW.setPal missing");
   }

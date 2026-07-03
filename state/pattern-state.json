@@ -392,6 +392,6 @@
     "Glossary (TERMS) and Stack-detail line are template-level; append terms, never strip the layer.",
     "Check publisher families before setting multi:true.",
     "Timeline right-hand markers are third-party forecasts, label as such.",
-    "Template Rev C (Jul 3): executive/analyst dual views + gold/graphite palettes; hands-on content must carry class 'an-only'; graphite+exec are defaults; never strip the view/palette layer or the glass control bar."
+    "Template Rev D (Jul 3): dark dossier masthead (update data-ed numeral per edition) + sticky glass top nav (#topnav) hosting exec/analyst + gold/graphite switches; Newsreader/Inter/IBM Plex Mono type; hands-on content must carry class 'an-only'; graphite+exec are defaults; never strip the view/palette layer."
   ]
 }
