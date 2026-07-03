@@ -5,37 +5,26 @@ Set up 2026-07-03. Fully automated weekly production + publishing of the Frontie
 ## Live site
 
 - **URL (share this):** https://mintroverse.github.io/frontier-watch/
-- Root always shows the **latest edition**; `archive.html` lists all editions (linked from every edition's footer: "All editions →").
-- Repo: https://github.com/Mintroverse/frontier-watch (public)
-
-## Architecture
-
-```
-GitHub repo (source of truth)          GitHub Pages (published site)
-├── index.html      ← latest edition   branch: gh-pages (mirror of main)
-├── archive.html    ← edition list     URL: mintroverse.github.io/frontier-watch
-├── editions/frontier-watch-eNN.html
-├── state/pattern-state.json  ← cross-edition memory (read FIRST, rewritten LAST each run)
-├── assertions.js   ← verification harness (GENERALIZED — no per-edition edits needed)
-├── HANDOFF.md      ← operating procedure
-└── PIPELINE.md     ← this file
-```
-
-The **repo, not the local folder, is the source of truth** for automated runs — they clone it fresh each week. The local "07 Frontier Watch" folder is a working copy; the weekly run copies new editions + state back when accessible (best effort).
+- Root always shows the **latest edition**; `archive.html` lists all editions; `feed.xml` is the RSS feed.
+- Repo: https://github.com/Mintroverse/frontier-watch (public). The repo, not the local folder, is the source of truth for automated runs.
 
 ## Weekly automation
 
-- **Scheduled task:** `frontier-watch-weekly`, Thursdays ~6:00 AM local, managed in the Claude app sidebar ("Scheduled" section). Full run prompt: `..\Scheduled\frontier-watch-weekly\SKILL.md`.
-- **What it does:** clone repo → read pattern-state.json → research (8–12 searches per HANDOFF §3) → build Edition N from previous edition template → webapp-craft verification loop (assertion harness, desktop+mobile screenshots in both views, dual persona role-plays) → update index/archive/editions/state → push to `main` + `gh-pages` → verify live URL → delta report notification.
-- **Publish gate:** an edition that still fails assertions after 3 fix iterations is NOT published — it goes to a `draft-eNN` branch and you get notified instead.
+- **Scheduled task:** `frontier-watch-weekly`, Thursdays ~6:00 AM local (Claude desktop app must be open; missed slots run on next launch). Full prompt: `..\Scheduled\frontier-watch-weekly\SKILL.md`.
+- Run shape: clone repo → read pattern-state.json → research (8–12 searches) → build Edition N from index.html template, **writing both content registers** → webapp-craft verification (62-check harness, both views, dual persona role-plays) → update index/editions/archive/feed/state → push `main` + `gh-pages` → verify live → delta report.
+- **Publish gate:** failing after 3 fix iterations → `draft-eNN` branch + notification, never live.
+- **Token:** fine-grained PAT scoped to this repo, embedded in the task SKILL.md (workaround — CI secrets aren't available since the build runs in Claude). Expiry stops publishing with a clear notification; rotate in GitHub → Developer settings and update the SKILL.md line.
 
-## Constraints & known limitations (read once)
+## Rev E — dual registers, habit layer, PWA (2026-07-03, current)
 
-1. **App must be open.** Scheduled tasks run through the Claude desktop app. If it's closed Thursday 6 AM, the run fires on next app launch instead. There is no server-side execution.
-2. **Token in task file (workaround, not best practice).** The GitHub publish token is embedded in the scheduled task's SKILL.md so unattended runs can push. Mitigation: fine-grained PAT scoped to this one public repo (Contents + Pages) — worst case is someone with access to this machine pushing to the briefing site. Best practice (CI-held secrets) isn't available because the build runs in Claude, not GitHub Actions.
-3. **Token expiry stops publishing.** If the token was created with 90-day expiry, publishing breaks ~early Oct 2026 with a clear "token expired" notification. Rotate: GitHub → Settings → Developer settings → Fine-grained tokens → regenerate for repo `frontier-watch` (Contents: RW, Pages: RW) → update the token line in `..\Scheduled\frontier-watch-weekly\SKILL.md`.
-4. **First run may pause for permissions.** Tool approvals are stored per task after the first run. If the Jul 9 run pauses on permission prompts, approve them once — subsequent weeks run clean. (Alternatively "Run now" any time you're ready to pre-approve.)
-5. **Pages source is the `gh-pages` branch** (auto-enabled via branch push; the token can't call the Pages admin API). `main` and `gh-pages` are kept identical by the weekly run.
+Built from the multi-persona audit (FRONTIER-WATCH-AUDIT.md in the local folder). (1) **Two content registers**: every signal carries separately-written executive copy (`xone`/`xwhy`, consequence + decision framing) and analyst copy (`one`/`what`/`why`/`mimic`/`tech`); the weekly run researches once and writes twice. (2) **Palette bound to view** as the visual cue — Executive = warm ivory/emerald/champagne; Analyst = cool stone/jade/sage; green is the brand accent in both. One control in the sticky glass nav; no palette toggle. (3) **Habit layer** — weekly pulse strip under the masthead (`DELTA` object), pattern movement chips (`move` field from status_history), next-edition marker, RSS feed. (4) **iOS/PWA layer** — FW monogram icon set (`icons/`), `manifest.webmanifest` (standalone, dark), apple-touch-icon, theme-color, safe-area insets, network-first `sw.js` for offline re-read and app-like launch from the iPhone home screen. (5) First-visit coach mark explaining the two reading modes. Harness = 62 checks including register, palette-binding, pulse, and PWA contracts.
+
+## Earlier revisions (superseded)
+
+- **Rev D:** editorial-luxury system — dark dossier masthead + ghost numeral, sticky glass nav, de-boxed numbered sections, Newsreader/Inter/IBM Plex Mono type, dark footer bookend.
+- **Rev C:** first luxury-light pass — gold/graphite palettes, floating glass control bar, exec/analyst element hiding, Fraunces type (rejected: quirky glyphs).
+- **Rev B (pre-pipeline):** business-language copy pass, glossary tooltips, Stack-detail lines.
+- Harness generalized 2026-07-03: signal count asserts the 12–16 range; pattern count reads from `window.__FW` — no per-edition edits.
 
 ## Manual redeploy (if ever needed)
 
@@ -45,12 +34,3 @@ git clone https://x-access-token:<TOKEN>@github.com/Mintroverse/frontier-watch.g
 git add -A && git commit -m "manual update"
 git push origin main && git push origin main:gh-pages --force-with-lease
 ```
-
-## Rev C redesign (2026-07-03, afternoon)
-
-Template redesigned per Ming's direction: luxury-light aesthetic, decluttered. Two palettes on `data-pal` (**graphite** = cool stone/silver, default; **gold** = ivory/champagne), switchable via the floating glass control bar (bottom-right) and remembered per visitor. Two reading views on `data-view`: **executive brief** (default — hides mimic board, per-card mimic/Stack-detail cells, Method box, mimic KPI; built for director-level readers like Liz) and **analyst** (full detail). Serif display type (Fraunces), glass tooltips. Convention: all hands-on content carries class `an-only`; chart colors read CSS vars via `V()`. Harness extended to 51 checks incl. view/palette contracts. HANDOFF §3/§6 and the weekly task prompt updated to preserve these layers.
-
-## Changes made to handoff assets (2026-07-03)
-
-- `assertions.js` generalized per HANDOFF §6 option: signal-count check now asserts the 12–16 target range and the pattern check reads from `window.__FW` — removes the per-edition manual edit entirely.
-- Deployed edition copies get an injected "All editions →" footer link (index → `archive.html`, archived copies → `../archive.html`). The local `frontier-watch-e01.html` is kept in sync with the deployed Rev C template.
