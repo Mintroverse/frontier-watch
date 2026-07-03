@@ -46,7 +46,6 @@ git add -A && git commit -m "manual update"
 git push origin main && git push origin main:gh-pages --force-with-lease
 ```
 
-## Changes made to handoff assets (2026-07-03)
+## Rev C redesign (2026-07-03, afternoon)
 
-- `assertions.js` generalized per HANDOFF §6 option: signal-count check now asserts the 12–16 target range and the pattern check reads from `window.__FW` — removes the per-edition manual edit entirely.
-- Deployed edition copies get an injected "All editions →" footer link (index → `archive.html`, archived copies → `../archive.html`). The canonical `frontier-watch-e01.html` in this folder is untouched.
+Template redesigned per Ming's direction: luxury-light aesthetic, decluttered. Two palettes on `data-pal` (**graphite** = cool stone/silver, default; **gold** = ivory/champagne), switchable via the floating glass control bar (bottom-right) and remembered per visitor. Two reading views on `data-view`: **executive brief** (default — hides mimic board, per-card mimic/Stack-detail cells, Method box, mimic KPI; built for
