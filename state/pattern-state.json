@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "product": "Frontier Watch — AI x Supply Chain",
+    "last_edition": 1,
+    "last_week": "2026-W27",
+    "compiled": "2026-07-02",
+    "next_due": "2026-07-09",
+    "template_file": "frontier-watch-e01.html",
+    "reader_persona": "Supply chain professional; fluent in SC/business language; novice on tech-stack jargon. Use for role-play verification.",
+    "org_stack": ["Microsoft Fabric (Lakehouse/OneLake, Data Agents)", "Power BI (semantic models, DAX)", "Power Query/M", "Acumatica ERP (Onematica)", "Power Automate"],
+    "editorial_conventions": {
+      "impact": "1-5 editorial: consequence for a mid-market supply chain org if the signal holds",
+      "adopt": "1-5 editorial: how directly the org stack can adopt/mimic today",
+      "multi_source": "substance independently reported/evidenced by >=2 unaffiliated organizations; publisher families (e.g., BizClik titles) count as one voice",
+      "vendor_figures": "always labeled as claims, never independently verified",
+      "one_liner_lint": "<=32 words, business-language-first (asserted in harness)"
+    }
+  },
+
+  "patterns": [
+    {
+      "id": "P1",
+      "title": "From insight to execution: AI that acts, not advises",
+      "direction": "hardening",
+      "strength_orgs": 6,
+      "orgs": ["Gartner", "Blue Yonder", "SAP", "AWS", "C.H. Robinson", "BCG"],
+      "verdict_1line": "Six unaffiliated orgs told the same recommend-to-execute story inside eight weeks; humans move to supervising exceptions.",
+      "confirmers": ["SAP Outbound agent hits GA in Q2 as planned", "Fabric planning completes GA rollout", "autonomy percentages appear in customer (not vendor) case studies"],
+      "weakeners": ["Q3 earnings calls re-describe 'agents' as 'assistants'"],
+      "status_history": [{ "edition": 1, "direction": "hardening", "orgs": 6 }]
+    },
+    {
+      "id": "P2",
+      "title": "The moat is business context, not the model",
+      "direction": "accelerating",
+      "strength_orgs": 5,
+      "orgs": ["Microsoft", "Salesforce", "Databricks", "o9", "practitioner analyses"],
+      "verdict_1line": "Microsoft (Fabric IQ on semantic models), Salesforce+Databricks, and o9 now compete on the same claim: whoever holds the governed definitions layer holds the account.",
+      "confirmers": ["'context layer' appears as its own priced SKU/line item"],
+      "weakeners": ["frontier models get good enough at raw-table reasoning that definition layers stop mattering (no evidence yet)"],
+      "status_history": [{ "edition": 1, "direction": "accelerating", "orgs": 5 }]
+    },
+    {
+      "id": "P3",
+      "title": "AI economics shift from seats to outcomes and tokens",
+      "direction": "accelerating",
+      "strength_orgs": 3,
+      "orgs": ["Salesforce", "Blue Yonder", "Gartner"],
+      "verdict_1line": "Per-resolution billing (Help Agent), work-based billing rails (m3ter/Flex Credits), small-model cost logic (BY), and Gartner's token-cost prediction converge: AI unit economics become a managed line item.",
+      "confirmers": ["an ERP or planning vendor announces outcome pricing within two quarters"],
+      "weakeners": ["outcome pricing quietly reverts to consumption floors and minimums"],
+      "status_history": [{ "edition": 1, "direction": "accelerating", "orgs": 3 }]
+    },
+    {
+      "id": "P4",
+      "title": "Data readiness is the binding constraint",
+      "direction": "consensus",
+      "strength_orgs": 6,
+      "orgs": ["EY", "RAND (cited)", "MIT", "MHI + Deloitte", "Kearney", "MIT CTL"],
+      "verdict_1line": "Most corroborated theme in E01: failure rates root in data; value concentrates in narrow processes with clean foundations; every AI proposal should lead with its data-foundation dependency.",
+      "confirmers": ["settled enough to act on"],
+      "weakeners": ["none on the horizon"],
+      "status_history": [{ "edition": 1, "direction": "consensus", "orgs": 6 }]
+    },
+    {
+      "id": "P5",
+      "title": "The plumbing is standardizing: MCP + A2A move from experiment to default",
+      "direction": "hardening",
+      "strength_orgs": 5,
+      "orgs": ["Linux Foundation / MCP project", "Google", "Microsoft", "Salesforce", "Stacklok (survey)"],
+      "verdict_1line": "MCP under vendor-neutral governance with a maturing spec (final 2026-07-28) and 41% surveyed production adoption; Microsoft wires skills+MCP into Fabric/Power BI; competing standards conceded.",
+      "confirmers": ["operational-stack vendors (ERP, WMS) ship first-party MCP connectors", "2026-07-28 spec ships as specced"],
+      "weakeners": ["value migrating to proprietary layers on top of the open core"],
+      "status_history": [{ "edition": 1, "direction": "hardening", "orgs": 5 }]
+    },
+    {
+      "id": "P6",
+      "title": "Foundation forecasters are the new baseline — routing and hybrids win",
+      "direction": "hardening",
+      "strength_orgs": 4,
+      "orgs": ["independent researchers (arXiv)", "Google Research", "practitioner benchmarks", "domain studies (energy)"],
+      "verdict_1line": "Zero-shot pre-trained models = strong baseline, dominant on cold-start/related-series; engineered classical/ML still wins stable series; complexity routing beats universal deployment on accuracy and cost.",
+      "confirmers": ["planning vendors expose model-routing controls instead of one embedded model"],
+      "weakeners": ["a next-gen pre-trained model decisively closes the stable-series gap in independent tests"],
+      "status_history": [{ "edition": 1, "direction": "hardening", "orgs": 4 }]
+    }
+  ],
+
+  "watch_items": [
+    { "due": "2026-07-28", "item": "MCP 2026-07-28 spec final lands — confirm shipped as specced (stateless core, Tasks, MCP Apps)", "links_to": "P5", "status": "open" },
+    { "due": "2026-09-30", "item": "SAP Outbound Task Orchestration Agent GA in Q2 — confirm or flag slip", "links_to": "P1", "status": "open" },
+    { "due": "rolling", "item": "Fabric planning GA rollout completion; overlap check vs. in-house capacity/WIP planning tools", "links_to": "P1/verdict", "status": "open" },
+    { "due": "rolling", "item": "Any ERP or planning vendor announcing outcome-based pricing", "links_to": "P3", "status": "open" },
+    { "due": "rolling", "item": "Acumatica AI Assistant GA vs early-access discrepancy (vendor PR says early access; partner guides say GA)", "links_to": "S14", "status": "open" },
+    { "due": "2026-07-31", "item": "GPU-accelerated Fabric Warehouse early-access preview opens (vendor said July)", "links_to": "S09", "status": "open" }
+  ],
+
+  "open_actions": [
+    { "id": "M1", "action": "Benchmark Chronos-2 / TimesFM 2.5 zero-shot vs existing WAPE+bias framework on a known SKU's POS history", "effort": "low", "status": "proposed" },
+    { "id": "M2", "action": "Read-only Fabric data agent over governed Lakehouse tables (MRP/WIP) + one scheduled unattended run", "effort": "low", "status": "proposed" },
+    { "id": "M3", "action": "Pilot Agent Skills for Power BI + Power BI Modeling MCP server on a non-production semantic model", "effort": "medium", "status": "proposed" },
+    { "id": "M4", "action": "AI pass over Onematica BOMs/routings flagging structural anomalies pre-cutover", "effort": "medium", "status": "proposed" },
+    { "id": "M5", "action": "Verify Onematica upgrade path/timeline to Acumatica 2026 R1 and AI-feature licensing", "effort": "verify", "status": "proposed", "note": "gates build-vs-wait on several backlog items — ask user first" },
+    { "id": "M6", "action": "Adopt SADA loop + human gate as written template for internal agent pilots", "effort": "low", "status": "proposed" }
+  ],
+
+  "signal_registry": [
+    { "edition": 1, "id": "S01", "date": "2026-06-30", "theme": "plan", "multi": false, "title": "Gartner 2026 SC tech trends: agentic + physical AI, decision governance" },
+    { "edition": 1, "id": "S02", "date": "2026-05-23", "theme": "plan", "multi": true, "title": "Pre-trained forecasters mature into baselines; routing beats universal deployment" },
+    { "edition": 1, "id": "S03", "date": "2026-04-28", "theme": "plan", "multi": false, "title": "AWS Amazon Connect Decisions: planning tools as AI teammates on SCOT models" },
+    { "edition": 1, "id": "S13", "date": "2026-06-09", "theme": "plan", "multi": true, "title": "Blue Yonder ICON: agents as execution layer; small in-house models for cost" },
+    { "edition": 1, "id": "S04", "date": "2026-05-11", "theme": "supply", "multi": false, "title": "Planning platforms push into procurement (single-publisher caveat: BizClik)" },
+    { "edition": 1, "id": "S05", "date": "2026-05-13", "theme": "supply", "multi": false, "title": "Supplier master data built for AP can't support AI (tariff era)" },
+    { "edition": 1, "id": "S15", "date": "2026-05-20", "theme": "supply", "multi": false, "title": "C.H. Robinson claims closed-loop AI runs 92% of 4PL shipments (vendor claim)" },
+    { "edition": 1, "id": "S06", "date": "2026-04-20", "theme": "mfg", "multi": true, "title": "Production agents ship: SAP routings-from-BOM agent; Schneider+MSFT 50% claim" },
+    { "edition": 1, "id": "S07", "date": "2026-06-25", "theme": "mfg", "multi": true, "title": "Adoption barometer: 6%->24% expectation vs MIT 5% scale rate" },
+    { "edition": 1, "id": "S08", "date": "2026-06-25", "theme": "crm", "multi": true, "title": "Salesforce: Fin $3.6B + Help Agent priced per resolution" },
+    { "edition": 1, "id": "S09", "date": "2026-06-02", "theme": "stack", "multi": true, "title": "Build 2026: Fabric IQ GA on Power BI semantic models; context-layer thesis" },
+    { "edition": 1, "id": "S10", "date": "2026-06-02", "theme": "stack", "multi": true, "title": "Agent Skills for Power BI + Power BI Modeling MCP server (authoring via governed layer)" },
+    { "edition": 1, "id": "S11", "date": "2026-06-24", "theme": "stack", "multi": false, "title": "Fabric June update: service principals for data agents; per-call cost stats" },
+    { "edition": 1, "id": "S12", "date": "2026-05-21", "theme": "stack", "multi": true, "title": "MCP 2026-07-28 spec RC: stateless core, Tasks, MCP Apps; adoption stats" },
+    { "edition": 1, "id": "S14", "date": "2026-03-26", "theme": "stack", "multi": true, "title": "Acumatica 2026 R1: AI Studio, assistant (early access), anomaly reports" }
+  ],
+
+  "lessons": [
+    "Role-play persona must state reader tech fluency explicitly; defaults drift to the builder's level (E01 draft-1 failure).",
+    "Glossary (TERMS) and Stack-detail line are template-level; append terms, never strip the layer.",
+    "Check publisher families before setting multi:true.",
+    "Timeline right-hand markers are third-party forecasts, label as such."
+  ]
+}
