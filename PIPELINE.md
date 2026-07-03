@@ -21,12 +21,12 @@ GitHub repo (source of truth)          GitHub Pages (published site)
 └── PIPELINE.md     ← this file
 ```
 
-The **repo, not this local folder, is the source of truth** for automated runs — they clone it fresh each week. This folder is a working copy; the weekly run copies new editions + state back here when accessible (best effort).
+The **repo, not the local folder, is the source of truth** for automated runs — they clone it fresh each week. The local "07 Frontier Watch" folder is a working copy; the weekly run copies new editions + state back when accessible (best effort).
 
 ## Weekly automation
 
 - **Scheduled task:** `frontier-watch-weekly`, Thursdays ~6:00 AM local, managed in the Claude app sidebar ("Scheduled" section). Full run prompt: `..\Scheduled\frontier-watch-weekly\SKILL.md`.
-- **What it does:** clone repo → read pattern-state.json → research (8–12 searches per HANDOFF §3) → build Edition N from previous edition template → webapp-craft verification loop (assertion harness, desktop+mobile screenshots, SC-fluent/tech-novice persona role-play) → update index/archive/editions/state → push to `main` + `gh-pages` → verify live URL → delta report notification.
+- **What it does:** clone repo → read pattern-state.json → research (8–12 searches per HANDOFF §3) → build Edition N from previous edition template → webapp-craft verification loop (assertion harness, desktop+mobile screenshots in both views, dual persona role-plays) → update index/archive/editions/state → push to `main` + `gh-pages` → verify live URL → delta report notification.
 - **Publish gate:** an edition that still fails assertions after 3 fix iterations is NOT published — it goes to a `draft-eNN` branch and you get notified instead.
 
 ## Constraints & known limitations (read once)
@@ -48,4 +48,9 @@ git push origin main && git push origin main:gh-pages --force-with-lease
 
 ## Rev C redesign (2026-07-03, afternoon)
 
-Template redesigned per Ming's direction: luxury-light aesthetic, decluttered. Two palettes on `data-pal` (**graphite** = cool stone/silver, default; **gold** = ivory/champagne), switchable via the floating glass control bar (bottom-right) and remembered per visitor. Two reading views on `data-view`: **executive brief** (default — hides mimic board, per-card mimic/Stack-detail cells, Method box, mimic KPI; built for
+Template redesigned per Ming's direction: luxury-light aesthetic, decluttered. Two palettes on `data-pal` (**graphite** = cool stone/silver, default; **gold** = ivory/champagne), switchable via the floating glass control bar (bottom-right) and remembered per visitor. Two reading views on `data-view`: **executive brief** (default — hides mimic board, per-card mimic/Stack-detail cells, Method box, mimic KPI; built for director-level readers like Liz) and **analyst** (full detail). Serif display type (Fraunces), glass tooltips. Convention: all hands-on content carries class `an-only`; chart colors read CSS vars via `V()`. Harness extended to 51 checks incl. view/palette contracts. HANDOFF §3/§6 and the weekly task prompt updated to preserve these layers.
+
+## Changes made to handoff assets (2026-07-03)
+
+- `assertions.js` generalized per HANDOFF §6 option: signal-count check now asserts the 12–16 target range and the pattern check reads from `window.__FW` — removes the per-edition manual edit entirely.
+- Deployed edition copies get an injected "All editions →" footer link (index → `archive.html`, archived copies → `../archive.html`). The local `frontier-watch-e01.html` is kept in sync with the deployed Rev C template.
