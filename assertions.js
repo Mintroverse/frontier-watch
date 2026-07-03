@@ -232,6 +232,7 @@
     t("viewport-fit=cover set (notch clearance)", /viewport-fit=cover/.test((document.querySelector('meta[name="viewport"]')||{content:""}).content));
     t("nav + masthead use safe-area insets", (()=>{ const css = [...document.querySelectorAll("style")].map(x=>x.textContent).join(""); return (css.match(/safe-area-inset-top/g)||[]).length >= 3; })());
     t("single data accent: meters use brand green", (()=>{ const m=$(".meter i.on"); return m && getComputedStyle(m).backgroundColor === "rgb(63, 163, 124)"; })());
+    t("social share metas present (og:title/og:image/description)", !!document.querySelector('meta[property="og:title"]') && !!document.querySelector('meta[property="og:image"]') && !!document.querySelector('meta[name="description"]'));
   } else {
     t("view API exposed", false, "FW.setView missing");
   }
