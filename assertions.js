@@ -27,10 +27,15 @@
   t("theme counts sum to total", Object.values(dataCounts).reduce((a,b)=>a+b,0) === FW.SIGNALS.length,
     JSON.stringify(dataCounts));
   const chipOK = themeKeys.every(k => {
-    const chip = $(`.chip[data-theme="${k}"] .ct`);
-    return chip && parseInt(chip.textContent) === dataCounts[k];
+    const tab = $(`#ribbon .stage-tab[data-theme="${k}"] .ct`);
+    return tab && parseInt(tab.textContent) === dataCounts[k];
   });
-  t("chip counts match data", chipOK);
+  t("ribbon tab counts match data", chipOK);
+
+  // Rev G: taxonomy v2 contract — five SCOR stages + infrastructure, locked keys
+  t("taxonomy = plan,source,make,deliver,sell,infra", JSON.stringify(themeKeys) === JSON.stringify(["plan","source","make","deliver","sell","infra"]), themeKeys.join(","));
+  t("infrastructure flagged as cross-cutting", FW.THEMES.infra && FW.THEMES.infra.infra === true);
+  t("ribbon renders all + 5 stages + infra band", $$("#ribbon .stage-tab").length === 7 && !!$("#ribbon .infra-band"), $$("#ribbon .stage-tab").length);
 
   // KPI strip recomputation
   const kpiVals = $$("#kpis .kpi .v").map(e => e.textContent.trim());
@@ -86,14 +91,21 @@
   t("scatter points == signal count", scatterPts === FW.SIGNALS.length, scatterPts);
 
   // ---------- Interaction contracts ----------
-  // Filter: pick the 'stack' chip -> card count == data count for stack
-  FW.setTheme("stack"); await sleep(60);
-  t("filter[stack] shows correct card count", $$("#feed details.sig").length === dataCounts.stack,
-    $$("#feed details.sig").length + " vs " + dataCounts.stack);
-  t("filter[stack] all cards themed stack", $$("#feed details.sig").every(d=>d.dataset.theme==="stack"));
+  // Filter via ribbon: infra tab -> card count == data count for infra
+  FW.setTheme("infra"); await sleep(60);
+  t("filter[infra] shows correct card count", $$("#feed details.sig").length === dataCounts.infra,
+    $$("#feed details.sig").length + " vs " + dataCounts.infra);
+  t("filter[infra] all cards themed infra", $$("#feed details.sig").every(d=>d.dataset.theme==="infra"));
+  t("stage focus line renders on selection", (()=>{ const f=$("#stageFocus"); return f && !f.hidden && /signal/.test(f.textContent); })());
+
+  // legacy key mapping (old shared links must not break)
+  FW.setTheme("stack"); await sleep(40);
+  t("legacy key 'stack' maps to 'infra'", FW.state.theme === "infra", FW.state.theme);
+  FW.setTheme("mfg"); await sleep(40);
+  t("legacy key 'mfg' maps to 'make'", FW.state.theme === "make", FW.state.theme);
 
   FW.setTheme("all"); await sleep(60);
-  t("filter[all] restores full feed", $$("#feed details.sig").length === FW.SIGNALS.length);
+  t("filter[all] restores full feed + hides stage focus", $$("#feed details.sig").length === FW.SIGNALS.length && $("#stageFocus").hidden);
 
   // Search: a term unique to S12 ("stateless") should narrow the feed and include S12
   const sb = $("#searchBox");
@@ -125,8 +137,13 @@
   document.dispatchEvent(new KeyboardEvent("keydown", {key:"Escape", bubbles:true})); await sleep(60);
   t("Escape collapses all cards", $$("#feed details[open]").length === 0);
 
+  // Cannabis lens: conditional contract — section exists iff tagged signals exist
+  const cannTagged = FW.SIGNALS.some(x=>x.cann);
+  t("cannabis lens renders iff tagged signals exist", cannTagged ? !!$("#cannabis") : !$("#cannabis"), "tagged=" + cannTagged);
+  t("cannabis nav link matches section presence", cannTagged ? !!$("#navCann") : !$("#navCann"));
+
   // openCard navigates + opens (from a filtered state, proving filter reset)
-  FW.setTheme("crm"); await sleep(60);
+  FW.setTheme("sell"); await sleep(60);
   FW.openCard("S09", false); await sleep(80);
   const c9 = document.getElementById("card-S09");
   t("openCard resets filter and opens target", !!c9 && c9.open && FW.state.theme === "all",

@@ -20,7 +20,8 @@
       "multi_source": "substance independently reported/evidenced by >=2 unaffiliated organizations; publisher families (e.g., BizClik titles) count as one voice",
       "vendor_figures": "always labeled as claims, never independently verified",
       "one_liner_lint": "<=32 words, business-language-first (asserted in harness)"
-    }
+    },
+    "taxonomy": "v2 (2026-07-03): plan/source/make/deliver/sell + infra (cross-cutting); SCOR-based; legacy keys mapped; cannabis lens standing sweep with cann:true flag"
   },
   "patterns": [
     {
@@ -302,7 +303,7 @@
       "edition": 1,
       "id": "S04",
       "date": "2026-05-11",
-      "theme": "supply",
+      "theme": "source",
       "multi": false,
       "title": "Planning platforms push into procurement (single-publisher caveat: BizClik)"
     },
@@ -310,7 +311,7 @@
       "edition": 1,
       "id": "S05",
       "date": "2026-05-13",
-      "theme": "supply",
+      "theme": "source",
       "multi": false,
       "title": "Supplier master data built for AP can't support AI (tariff era)"
     },
@@ -318,7 +319,7 @@
       "edition": 1,
       "id": "S15",
       "date": "2026-05-20",
-      "theme": "supply",
+      "theme": "deliver",
       "multi": false,
       "title": "C.H. Robinson claims closed-loop AI runs 92% of 4PL shipments (vendor claim)"
     },
@@ -326,7 +327,7 @@
       "edition": 1,
       "id": "S06",
       "date": "2026-04-20",
-      "theme": "mfg",
+      "theme": "make",
       "multi": true,
       "title": "Production agents ship: SAP routings-from-BOM agent; Schneider+MSFT 50% claim"
     },
@@ -334,7 +335,7 @@
       "edition": 1,
       "id": "S07",
       "date": "2026-06-25",
-      "theme": "mfg",
+      "theme": "make",
       "multi": true,
       "title": "Adoption barometer: 6%->24% expectation vs MIT 5% scale rate"
     },
@@ -342,7 +343,7 @@
       "edition": 1,
       "id": "S08",
       "date": "2026-06-25",
-      "theme": "crm",
+      "theme": "sell",
       "multi": true,
       "title": "Salesforce: Fin $3.6B + Help Agent priced per resolution"
     },
@@ -350,7 +351,7 @@
       "edition": 1,
       "id": "S09",
       "date": "2026-06-02",
-      "theme": "stack",
+      "theme": "infra",
       "multi": true,
       "title": "Build 2026: Fabric IQ GA on Power BI semantic models; context-layer thesis"
     },
@@ -358,7 +359,7 @@
       "edition": 1,
       "id": "S10",
       "date": "2026-06-02",
-      "theme": "stack",
+      "theme": "infra",
       "multi": true,
       "title": "Agent Skills for Power BI + Power BI Modeling MCP server (authoring via governed layer)"
     },
@@ -366,7 +367,7 @@
       "edition": 1,
       "id": "S11",
       "date": "2026-06-24",
-      "theme": "stack",
+      "theme": "infra",
       "multi": false,
       "title": "Fabric June update: service principals for data agents; per-call cost stats"
     },
@@ -374,7 +375,7 @@
       "edition": 1,
       "id": "S12",
       "date": "2026-05-21",
-      "theme": "stack",
+      "theme": "infra",
       "multi": true,
       "title": "MCP 2026-07-28 spec RC: stateless core, Tasks, MCP Apps; adoption stats"
     },
@@ -382,7 +383,7 @@
       "edition": 1,
       "id": "S14",
       "date": "2026-03-26",
-      "theme": "stack",
+      "theme": "infra",
       "multi": true,
       "title": "Acumatica 2026 R1: AI Studio, assistant (early access), anomaly reports"
     }
@@ -393,6 +394,7 @@
     "Check publisher families before setting multi:true.",
     "Timeline right-hand markers are third-party forecasts, label as such.",
     "Template Rev E (Jul 3): dual REGISTERS — write exec copy (xone/xwhy) separately from analyst copy for every signal; palette bound to view (warm exec / cool analyst, green brand accent); DELTA object + pattern move chips power the weekly pulse strip; append weekly item to feed.xml; update data-ed numeral; PWA assets (icons/manifest/sw) are permanent — never remove.",
-    "Rev F editorial rules (Jul 3): never embed UI pills in running prose; badges nowrap; 62ch reading measures; one green data accent; app icon = approved radar-sweep mark (no redesign/recolor without sign-off); 390px mobile checklist incl. notch clearance runs every edition."
+    "Rev F editorial rules (Jul 3): never embed UI pills in running prose; badges nowrap; 62ch reading measures; one green data accent; app icon = approved radar-sweep mark (no redesign/recolor without sign-off); 390px mobile checklist incl. notch clearance runs every edition.",
+    "Taxonomy v2 + cannabis lens (Jul 3, Rev G): six locked keys (plan/source/make/deliver/sell/infra); value-chain ribbon + infrastructure foundation band replace filter chips; every research week sweeps all 5 stages + infra + cannabis industry; cann:true signals feed the conditional Industry Lens section (auto-hidden when none qualify); stage-focus line must show honest thin/empty states."
   ]
 }

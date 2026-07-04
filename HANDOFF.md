@@ -8,7 +8,7 @@ Operating document for producing the weekly **Frontier Watch** briefing (AI × s
 
 - **What:** single-file interactive HTML briefing, ~15-min read. Signals feed + cross-source pattern tracker + stack-mapped mimic board + obsolescence verdict + timeline + tiered sources.
 - **Cadence:** weekly. Edition N covers the ISO week ending the compile date. Next due: **~Thu Jul 9, 2026 (Edition 02, Week 28)**.
-- **Domains (fixed taxonomy):** Planning & Demand · Supply & Procurement · Manufacturing · Commercial & CRM · Data & Agent Stack. Theme colors are locked in the template.
+- **Domains (fixed taxonomy v2, Rev G Jul 3):** five value-chain stages after the SCOR model, vendor → customer — **Plan** (`plan`) · **Source** (`source`) · **Make** (`make`) · **Deliver** (`deliver`) · **Sell & Serve** (`sell`) — plus **Infrastructure** (`infra`, cross-cutting shared data/agent layer, drawn as the foundation band, `infra:true`). Colors locked incl. deliver `#0891b2`. Legacy keys (supply/mfg/crm/stack) map automatically via `THEME_LEGACY`. **Cannabis industry lens:** a standing weekly sweep (AI × cannabis supply chain — cultivation, compliance/track-and-trace, testing, distribution, retail); qualifying signals carry `cann:true` (renders a CANNABIS badge + the conditional 'Industry lens' section, which auto-hides in weeks with zero tagged signals).
 - **Reader persona (explicit — this is a hard requirement):** supply chain professional, fluent in SC/business language (S&OP, MRP, WOS, BOM…), **novice on tech-stack jargon**. Every tech term must be either replaced with business language, glossed via the TERMS tooltip layer, or confined to the card's "Stack detail" line. Use this persona for the role-play verification step. *Background: Edition 01's first draft failed this — the role-play was run with a tech-fluent persona and jargon shipped. Do not repeat.*
 - **Audience org stack (mimic actions must map to it):** Microsoft Fabric (Lakehouse/OneLake, Data Agents, notebooks) · Power BI (semantic models, DAX) · Power Query/M · Acumatica ERP ("Onematica" consolidated instance) · Power Automate. Business units: PSF and ROSE.
 
@@ -29,7 +29,7 @@ Each weekly run adds `frontier-watch-eNN.html` and rewrites `pattern-state.json`
 **Step 0 — Read state.** Load `pattern-state.json`: prior pattern verdicts/strengths, watch items due, open mimic actions, and the signal registry (to reference, not repeat, prior coverage). Ask the user for status on open actions if convenient; otherwise mark `status: "unknown"` and carry forward.
 
 **Step 1 — Research (~8–12 web searches).**
-- One sweep per domain (5), one "this week" recency sweep, plus targeted follow-ups on every watch item due.
+- One sweep per value-chain stage (5) + one Infrastructure sweep + one cannabis-industry sweep, one "this week" recency sweep, plus targeted follow-ups on every watch item due (~10–14 searches).
 - Prefer primary/analyst sources; tier everything T1–T4 (see §5).
 - **Corroboration rule:** `multi: true` only if the substance is independently reported/evidenced by ≥2 *unaffiliated* organizations. Check publisher families — separate trade titles under one publisher (e.g., BizClik: Procurement Magazine / Supply Chain Digital / Manufacturing Digital) count as ONE voice; flag this in the card when it happens.
 - Vendor performance figures are always labeled as claims. Source discrepancies get named in the Method box, not silently resolved.

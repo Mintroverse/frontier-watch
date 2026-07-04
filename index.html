@@ -133,6 +133,37 @@ body.scrolled .seg button.on{background:var(--ink);color:var(--surface)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 
+/* ============ Value-chain ribbon (Rev G) ============ */
+#ribbonWrap{background:var(--surface);border-bottom:1px solid var(--line);padding:14px 0 12px}
+.rib-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.rib-flow{display:flex;align-items:center;gap:2px;flex-wrap:wrap}
+.stage-tab{font-family:var(--font);font-size:12px;font-weight:600;padding:8px 14px;border-radius:99px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink-2);cursor:pointer;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;transition:border-color .15s,background .15s}
+.stage-tab .ct{font-family:var(--mono);font-size:10px;color:var(--ink-4);font-weight:500}
+.stage-tab:hover{border-color:var(--ink-3)}
+.stage-tab.active{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.stage-tab.active .ct{color:var(--line-2)}
+.stage-tab:not(.all):not(.infra-band)::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--tc,var(--ink-3))}
+.stage-tab.active:not(.all):not(.infra-band)::before{outline:1.5px solid var(--surface);outline-offset:1px}
+.rib-arr{color:var(--ink-4);font-size:12px;padding:0 1px;user-select:none}
+.infra-band{width:100%;margin-top:10px;justify-content:center;border-radius:10px;border:1px dashed var(--line-2);background:color-mix(in srgb, #7c3aed 4%, var(--surface));font-weight:500;color:var(--ink-3)}
+.infra-band::before{content:"";width:8px;height:8px;border-radius:2px;background:#7c3aed}
+.infra-band .ib-lab{font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:var(--ink-4);font-weight:600}
+.infra-band.active{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.infra-band.active .ib-lab{color:var(--line-2)}
+.stage-focus{margin-top:10px;font-size:12.5px;color:var(--ink-3);border-top:1px dashed var(--line);padding-top:9px}
+.stage-focus b{color:var(--ink-2)}
+@media (max-width:700px){
+  .rib-row{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+  .rib-flow{flex-wrap:nowrap}
+  .rib-arr{display:none}
+}
+
+/* Cannabis lens */
+.badge.cann{background:var(--accent);color:var(--surface);padding:2.5px 9px;border-radius:99px}
+.cann-item{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:14px 18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;color:inherit;transition:border-color .15s}
+.cann-item:hover{border-color:var(--accent);text-decoration:none}
+.cann-item b{font-size:14px;line-height:1.4;display:block;margin-bottom:3px;color:var(--ink)}
+
 /* ============ Sections — numbered editorial ============ */
 section{padding:72px 0 8px;counter-increment:sec}
 .sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px;border-top:1px solid var(--line-2);padding-top:22px}
@@ -194,7 +225,7 @@ section{padding:72px 0 8px;counter-increment:sec}
 .btn{font-family:var(--font);font-size:12px;font-weight:600;padding:7.5px 13px;border-radius:99px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink-2);cursor:pointer;transition:border-color .15s}
 .btn:hover{border-color:var(--ink-3)}
 select.btn{padding:7px 9px;border-radius:9px}
-.theme-bar-box{position:relative;height:132px;padding:12px 16px 4px}
+.theme-bar-box{position:relative;height:152px;padding:12px 16px 4px}
 
 .feed{display:flex;flex-direction:column;gap:12px;margin-top:16px}
 details.sig{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:none;border-left:2px solid var(--ink-3);overflow:hidden;transition:box-shadow .2s,border-color .2s}
@@ -341,6 +372,7 @@ footer a{color:var(--accent-2)!important}
     <a href="#landscape">Glance</a>
     <a href="#patterns">Patterns</a>
     <a href="#signals">Signals</a>
+    <a href="#cannabis" id="navCann" hidden>Cannabis</a>
     <a class="an-only" href="#mimic">Actions</a>
     <a href="#verdict">Verdict</a>
     <a href="#arc">Timeline</a>
@@ -370,10 +402,13 @@ footer a{color:var(--accent-2)!important}
       </div>
     </div>
     <h1>The execution layer arrived: platforms across planning, manufacturing, CRM and logistics shipped agents that <em>act</em> — and the pricing model just flipped to outcomes.</h1>
-    <p class="mh-scope">Weekly scan of AI developments touching demand planning, supply &amp; procurement, manufacturing, commercial/CRM, and the data + agent stack. Emphasis on signals with high impact potential, transferable logic, or a stack we can mimic (Microsoft Fabric · Power BI · Acumatica · Power Query/DAX). Sources are diversified and tiered; cross-source corroboration is flagged.</p>
+    <p class="mh-scope">Weekly scan of AI developments across the full supply chain, vendor to customer — Plan · Source · Make · Deliver · Sell &amp; Serve, after the SCOR model — plus the shared data &amp; agent infrastructure underneath, with a standing lens on the cannabis industry. Emphasis on signals with high impact potential, transferable logic, or a stack we can mimic (Microsoft Fabric · Power BI · Acumatica · Power Query/DAX). Sources are diversified and tiered; cross-source corroboration is flagged.</p>
   </div>
   <div id="pulse"><div class="wrap pulse-in"></div></div>
 </header>
+
+<!-- ================= VALUE CHAIN RIBBON (Rev G) ================= -->
+<div id="ribbonWrap"><div class="wrap" id="ribbon" role="tablist" aria-label="Value chain stages"></div></div>
 
 <!-- ================= HERO: SIGNAL LANDSCAPE ================= -->
 <section id="landscape">
@@ -416,12 +451,11 @@ footer a{color:var(--accent-2)!important}
     <div class="sec-head">
       <div>
         <div class="sec-kicker">Signal feed</div>
-        <h2 class="sec-title">What happened, domain by domain</h2>
+        <h2 class="sec-title">What happened along the chain</h2>
       </div>
     </div>
     <p class="sec-sub">Each card: what happened → why it matters here<span class="an-only"> → what we could mimic</span>. Expand for detail and sources. Cards marked <b>multi-source</b> are corroborated by two or more unaffiliated organizations; the impact and adoptability scores repeat the editorial scales from the chart above. Dotted-underlined terms carry a plain-language definition — hover or tap.</p>
-    <div class="card theme-bar-box"><canvas id="themeBar" role="img" aria-label="Bar chart of signal count per domain"></canvas></div>
-    <div class="controls" id="chipRow"></div>
+    <div class="card theme-bar-box"><canvas id="themeBar" role="img" aria-label="Bar chart of signal count per stage"></canvas></div>
     <div class="controls" style="margin-top:0">
       <div class="ctl-right" style="margin-left:0">
         <input class="search" id="searchBox" type="search" placeholder="Search signals…" aria-label="Search signals">
@@ -436,6 +470,20 @@ footer a{color:var(--accent-2)!important}
     </div>
     <div class="feed" id="feed"></div>
     <p class="foot-note">Esc collapses all open cards. Signal cards are keyboard-navigable (Tab + Enter).</p>
+  </div>
+</section>
+
+<!-- ================= INDUSTRY LENS — CANNABIS (conditional; rendered only when tagged signals exist) ================= -->
+<section id="cannabis" hidden>
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="sec-kicker">Industry lens</div>
+        <h2 class="sec-title">Cannabis: what reached our industry this week</h2>
+      </div>
+    </div>
+    <p class="sec-sub">Developments specific to the cannabis supply chain — cultivation, compliance and track-and-trace, testing, distribution, retail. This section appears only in weeks with qualifying developments; the sweep runs every week regardless.</p>
+    <div id="cannList" class="feed"></div>
   </div>
 </section>
 
@@ -528,7 +576,7 @@ footer a{color:var(--accent-2)!important}
           <ul id="srcList"></ul>
         </div>
         <div class="card method an-only">
-          <b>Method.</b> Compiled Jul 2, 2026 from web research across analyst releases, primary vendor announcements, trade press and practitioner/academic sources. <b>Impact</b> (1–5) = editorial estimate of consequence for a mid-market supply chain organization if the signal holds. <b>Adoptability</b> (1–5) = editorial estimate of how directly a Fabric + Power BI + Acumatica stack can adopt or mimic it today. <b>Multi-source</b> = the substance is independently reported or evidenced by ≥2 unaffiliated organizations. Vendor-reported performance figures (e.g., resolution rates, speed-ups) are labeled as claims and not independently verified. One known coverage note: vendor materials differ on whether Acumatica's conversational assistant is GA or early-access in 2026 R1 — treated here as early-access per the vendor's own press release. <b>Rev B (Jul 2):</b> copy tightened for a business reader; deep technical specifics moved into each card's 'Stack detail' line; dotted-underlined terms show a plain-language definition on hover or tap. <b>Rev E (Jul 3):</b> two reading registers written separately from the same sources — an <b>executive brief</b> (default; consequence and decision framing, warm palette) and the full <b>analyst view</b> (mechanics and how-to, cool palette). The color temperature is the cue for which register you are reading. Green accents mark the brand; the weekly pulse strip at the top tracks what changed between editions.
+          <b>Method.</b> Compiled Jul 2, 2026 from web research across analyst releases, primary vendor announcements, trade press and practitioner/academic sources. <b>Impact</b> (1–5) = editorial estimate of consequence for a mid-market supply chain organization if the signal holds. <b>Adoptability</b> (1–5) = editorial estimate of how directly a Fabric + Power BI + Acumatica stack can adopt or mimic it today. <b>Multi-source</b> = the substance is independently reported or evidenced by ≥2 unaffiliated organizations. Vendor-reported performance figures (e.g., resolution rates, speed-ups) are labeled as claims and not independently verified. One known coverage note: vendor materials differ on whether Acumatica's conversational assistant is GA or early-access in 2026 R1 — treated here as early-access per the vendor's own press release. <b>Rev B (Jul 2):</b> copy tightened for a business reader; deep technical specifics moved into each card's 'Stack detail' line; dotted-underlined terms show a plain-language definition on hover or tap. <b>Taxonomy v2 (Jul 3, Rev G):</b> domains reorganized into five value-chain stages after the SCOR model (Plan &middot; Source &middot; Make &middot; Deliver &middot; Sell &amp; Serve) with the data &amp; agent stack reclassified as shared infrastructure; prior editions' signals re-tagged for continuity (old keys map automatically in links). A standing cannabis-industry sweep runs weekly; its section appears only in weeks with qualifying developments — none met the bar this edition. <b>Rev E (Jul 3):</b> two reading registers written separately from the same sources — an <b>executive brief</b> (default; consequence and decision framing, warm palette) and the full <b>analyst view</b> (mechanics and how-to, cool palette). The color temperature is the cue for which register you are reading. Green accents mark the brand; the weekly pulse strip at the top tracks what changed between editions.
         </div>
       </div>
     </div>
@@ -551,13 +599,18 @@ footer a{color:var(--accent-2)!important}
    Rev B (Jul 2): copy rewritten business-language-first; jargon moved to tech
    or defined via the TERMS glossary below. */
 
+/* Taxonomy v2 (Rev G): five value-chain stages after the SCOR model, vendor -> customer,
+   plus Infrastructure as the shared cross-cutting layer. Keys + colors locked. */
 const THEMES = {
-  plan:   { label:"Planning & Demand",      color:"#2563eb" },
-  supply: { label:"Supply & Procurement",   color:"#0f766e" },
-  mfg:    { label:"Manufacturing",          color:"#c2410c" },
-  crm:    { label:"Commercial & CRM",       color:"#c026d3" },
-  stack:  { label:"Data & Agent Stack",     color:"#7c3aed" }
+  plan:    { label:"Plan",           long:"Planning & Demand",        color:"#2563eb", desc:"Demand & supply planning, forecasting, S&OP" },
+  source:  { label:"Source",         long:"Sourcing & Procurement",   color:"#0f766e", desc:"Suppliers, purchasing, supplier risk & master data" },
+  make:    { label:"Make",           long:"Manufacturing",            color:"#c2410c", desc:"Production, quality, plant operations" },
+  deliver: { label:"Deliver",        long:"Logistics & Fulfillment",  color:"#0891b2", desc:"Transport, warehousing, order fulfillment" },
+  sell:    { label:"Sell & Serve",   long:"Commercial & Customer",    color:"#c026d3", desc:"Sales, CRM, customer service" },
+  infra:   { label:"Infrastructure", long:"Data & Agent Stack",       color:"#7c3aed", desc:"Shared data, analytics and AI plumbing under every stage", infra:true }
 };
+/* Legacy key map — old shared links and prior-edition registries */
+const THEME_LEGACY = { supply:"source", mfg:"make", crm:"sell", stack:"infra" };
 
 const TIERS = {
   1:{label:"Analyst / peer-reviewed research", color:"#0f172a"},
@@ -668,7 +721,7 @@ const SIGNALS = [
   ]},
 
 { id:"S04", xone:"The big planning platforms are moving into procurement's territory. Reference customers report single-digit improvements — real money at scale, but not miracles.",
-  xwhy:"A realistic bar for vendor promises: platform AI delivers a few percentage points, meaningful at volume. Useful calibration for any pitch that crosses our desk.", theme:"supply", date:"2026-05-11", win:"ctx", impact:3, adopt:3, multi:false,
+  xwhy:"A realistic bar for vendor promises: platform AI delivers a few percentage points, meaningful at volume. Useful calibration for any pitch that crosses our desk.", theme:"source", date:"2026-05-11", win:"ctx", impact:3, adopt:3, multi:false,
   title:"Planning platforms push into procurement's territory",
   one:"The big planning platforms are courting procurement teams — wiring purchasing directly into live demand, supplier-risk and production signals. Reference-case gains: single-digit percentages, not miracles.",
   what:"Trade coverage through May tracked procurement teams evaluating Kinaxis, o9 and Blue Yonder to connect purchasing with live planning data — supplier-performance patterns informing selection, contract terms and inventory positioning. Reference case: Lenovo across 30 plants reports +5% forecast accuracy, +4% on-time delivery and +10% delivery accuracy on Blue Yonder. Caveat: the three articles carrying this narrative are separate titles under one publisher (BizClik) — one editorial voice, not three.",
@@ -683,7 +736,7 @@ const SIGNALS = [
   ]},
 
 { id:"S05", xone:"Supplier records built to pay invoices can't answer where material came from or who owns the supplier today — and AI inherits every one of those blind spots.",
-  xwhy:"Most AI project failures trace to data, not technology. The cheapest, highest-return AI investment available to us is cleaning the master data any AI would depend on.", theme:"supply", date:"2026-05-13", win:"ctx", impact:4, adopt:4, multi:false,
+  xwhy:"Most AI project failures trace to data, not technology. The cheapest, highest-return AI investment available to us is cleaning the master data any AI would depend on.", theme:"source", date:"2026-05-13", win:"ctx", impact:4, adopt:4, multi:false,
   title:"The supplier-record problem: master data built for accounts payable can't support AI in a tariff-era supply chain",
   one:"Supplier records were built to answer 'who do we pay' — not where material was smelted or who owns the company now. AI reading those records inherits every blind spot.",
   what:"A widely shared Forbes practitioner analysis argues supplier master data was designed for accounts-payable workflows, while tariffs now depend on where material was processed, sanctions lists move weekly, and ownership changes quietly between POs. Supporting numbers cited: RAND finds over 80% of AI projects fail (roughly twice other IT projects), mostly on data; major research firms expect over 40% of agent projects to be canceled before end-2027; AI supply chain software spend is projected from under $2B (2025) to $53B by 2030.",
@@ -696,7 +749,7 @@ const SIGNALS = [
   ]},
 
 { id:"S15", xone:"C.H. Robinson claims its AI now runs 92% of managed shipments end-to-end, people handling only exceptions. The company's own number — but a loud market signal.",
-  xwhy:"Logistics partners will increasingly arrive AI-first and expect our data to plug in. Worth one direct question about AI capability in the next partner review.", theme:"supply", date:"2026-05-20", win:"ctx", impact:3, adopt:2, multi:false,
+  xwhy:"Logistics partners will increasingly arrive AI-first and expect our data to plug in. Worth one direct question about AI capability in the next partner review.", theme:"deliver", date:"2026-05-20", win:"ctx", impact:3, adopt:2, multi:false,
   title:"C.H. Robinson claims a closed-loop AI now runs 92% of its 4PL shipments end-to-end",
   one:"C.H. Robinson says AI now runs 92% of its managed shipments end-to-end — booking, routing, exceptions, carrier payment — while a second system studies outcomes and rewrites the operating logic.",
   what:"Announced May 20 (company release): its Lean AI system autonomously handles 92% of 4PL shipments globally across truck, ocean, air and rail — tendering, routing, delivery, exceptions and carrier payment — with a second component that continuously assesses results and adjusts the logic, next extending to carrier-performance early warning. Vendor-reported figures, not independently audited.",
@@ -709,7 +762,7 @@ const SIGNALS = [
   ]},
 
 { id:"S06", xone:"Factory AI left the demo stage: SAP's agent writes production routings straight from the bill of materials; Schneider and Microsoft claim engineering time halved.",
-  xwhy:"Vendors picked product master data as the first target because errors there cost quietly and compound. The same logic applies here: our BOM quality gates the value of any future AI.", theme:"mfg", date:"2026-04-20", win:"ctx", impact:4, adopt:3, multi:true,
+  xwhy:"Vendors picked product master data as the first target because errors there cost quietly and compound. The same logic applies here: our BOM quality gates the value of any future AI.", theme:"make", date:"2026-04-20", win:"ctx", impact:4, adopt:3, multi:true,
   title:"Production agents leave the demo booth: SAP's master-data agent generates routings from BOMs; Schneider + Microsoft claim 50% engineering-time cuts",
   one:"The factory-agent demos became products: SAP's agent writes production routings straight from the bill of materials; Schneider and Microsoft claim engineering documentation time cut by half.",
   what:"Hannover Messe (Apr 20–24) headlined AI in machines plus AI that acts. SAP showed an agent that automates production master data and can generate routings directly from BOMs, plus an outbound-logistics agent (GA planned Q2) that detects and fixes pick/pack issues live. Microsoft + Schneider Electric's industrial assistant was credited with up to 50% engineering-time savings on control configuration and documentation. NVIDIA coverage cites Terex (40+ plants) projecting roughly 3% yield gain and 10% rework reduction. All performance figures are vendor claims, not independently audited.",
@@ -726,7 +779,7 @@ const SIGNALS = [
   ]},
 
 { id:"S07", xone:"Manufacturers expect their use of self-directed AI to quadruple within two years — yet research finds only about one in twenty AI pilots ever reaches scale.",
-  xwhy:"The gap between ambition and delivery is where budgets die. Deployments that stick share one shape: human approval gates, an audit trail, and a way to roll back.", theme:"mfg", date:"2026-06-25", win:"june", impact:3, adopt:2, multi:true,
+  xwhy:"The gap between ambition and delivery is where budgets die. Deployments that stick share one shape: human approval gates, an audit trail, and a way to roll back.", theme:"make", date:"2026-06-25", win:"june", impact:3, adopt:2, multi:true,
   title:"The adoption barometer: manufacturers expect agentic AI to quadruple to ~24% — while MIT finds only 5% of GenAI projects ever scale",
   one:"Manufacturers expect their use of self-directed AI to quadruple to ~24% within two years — while MIT finds only 5% of AI pilots ever reach scale. That gap is the budget risk.",
   what:"Two datapoints frame manufacturing's honest position: a Manufacturing Leadership Council survey (cited in Deloitte's roadmap) has manufacturers expecting agentic-AI use to rise from ~6% to ~24% within two years, while MIT research found only ~5% of GenAI projects reach scale. Late-June trade analysis notes the deployments actually reaching production share a shape: draft-fast AI behind human-held approval gates, an audit trail, and a defined rollback — autonomy bounded, not maximized.",
@@ -741,7 +794,7 @@ const SIGNALS = [
   ]},
 
 { id:"S08", xone:"Salesforce now charges for AI customer service only when the AI actually resolves the case — paying for outcomes, not for software seats.",
-  xwhy:"Once an anchor vendor prices per outcome, every software negotiation changes. We should ask vendors — and measure our own AI ideas — in cost-per-outcome terms.", theme:"crm", date:"2026-06-25", win:"week", impact:4, adopt:2, multi:true,
+  xwhy:"Once an anchor vendor prices per outcome, every software negotiation changes. We should ask vendors — and measure our own AI ideas — in cost-per-outcome terms.", theme:"sell", date:"2026-06-25", win:"week", impact:4, adopt:2, multi:true,
   title:"Salesforce's two-week sprint: $3.6B for Fin, a minutes-to-deploy Help Agent — priced per resolution, not per seat",
   one:"Salesforce bought a packaged service agent for $3.6B, launched another that installs in minutes — and bills only when the AI resolves the case. Escalation to a human costs nothing.",
   what:"Jun 15: agreement to acquire Fin (formerly Intercom) for ~$3.6B — a ready-made customer-service agent whose customers average 76% of cases resolved end-to-end (company figure). Jun 25: Agentforce Help Agent launches — guided setup, live in minutes across channels, priced per successful resolution. Context: Agentforce annual recurring revenue hit $1.2B (+205% year over year), Salesforce bought usage-billing platform m3ter in early June, and coverage frames a deliberate pivot from per-seat to per-work pricing.",
@@ -758,7 +811,7 @@ const SIGNALS = [
   ]},
 
 { id:"S09", xone:"Microsoft's argument: AI models are interchangeable — the durable asset is an owned, governed layer of business definitions. It is building that layer on tools we already run.",
-  xwhy:"Our existing reporting and data investment is the on-ramp, not sunk cost. Consolidating business definitions into one governed place is this quarter's no-regret move.", theme:"stack", date:"2026-06-02", win:"june", impact:5, adopt:5, multi:true,
+  xwhy:"Our existing reporting and data investment is the on-ramp, not sunk cost. Consolidating business definitions into one governed place is this quarter's no-regret move.", theme:"infra", date:"2026-06-02", win:"june", impact:5, adopt:5, multi:true,
   title:"Build 2026: Microsoft calls the business-definitions layer the real battleground — and builds it on Power BI",
   one:"Microsoft's argument: AI models are interchangeable — the durable asset is a governed layer of business definitions. It is building that layer directly on the Power BI models we already maintain.",
   what:"At Build (Jun 2–3), Microsoft's pitch was that whoever holds shared business context wins, because every AI that starts from zero must relearn the business. Fabric IQ — a layer that sits on Power BI semantic models and extends them with entities, relationships and rules — reached GA, alongside graph analysis in Fabric. Planning in Fabric (rolling out through June) writes forward-looking plans back into the platform, so AI sees past, present and future state. A new database for AI apps and a GPU-accelerated warehouse claiming up to 7× faster queries (vendor figure; preview July) round it out.",
@@ -775,7 +828,7 @@ const SIGNALS = [
   ]},
 
 { id:"S10", xone:"AI assistants can now draft changes to our reporting environment through the governed, quality-controlled layer — with human review kept before anything publishes.",
-  xwhy:"Analytics capacity could rise materially without new headcount. The safeguard that makes it acceptable — a person approves before publish — is built into the design.", theme:"stack", date:"2026-06-02", win:"june", impact:4, adopt:5, multi:true,
+  xwhy:"Analytics capacity could rise materially without new headcount. The safeguard that makes it acceptable — a person approves before publish — is built into the design.", theme:"infra", date:"2026-06-02", win:"june", impact:4, adopt:5, multi:true,
   title:"Power BI models and reports become promptable: AI assistants can now author them through the governed layer",
   one:"Packaged 'skills' teach an AI assistant how Fabric works; a live connector gives it hands. Model and report changes become promptable — with human review kept before publish.",
   what:"Build introduced Agent Skills for Power BI (preview): packaged instructions that make AI coding assistants competent at Fabric-specific work — authoring semantic models, building report files, layout, validation, publishing — while a Power BI connector built on the MCP standard gives the assistant live access to the actual model. The design point practitioner coverage stresses: the assistant works through the trusted definition layer, where relationships and measures already exist, instead of guessing against raw tables.",
@@ -790,7 +843,7 @@ const SIGNALS = [
   ]},
 
 { id:"S11", xone:"Our analytics platform's AI agents can now run on a schedule with nobody signed in — and report what each run costs.",
-  xwhy:"This opens automated weekly digests — for example, exceptions explained every Monday morning — with the cost of every run visible from day one.", theme:"stack", date:"2026-06-24", win:"week", impact:3, adopt:5, multi:false,
+  xwhy:"This opens automated weekly digests — for example, exceptions explained every Monday morning — with the cost of every run visible from day one.", theme:"infra", date:"2026-06-24", win:"week", impact:3, adopt:5, multi:false,
   title:"Fabric June update: data agents can now run unattended on a schedule — with per-call cost tracking",
   one:"Fabric's question-answering agents no longer need a human signed in — the unlock for automated 'explain the exceptions' digests. Cost per call is now visible too.",
   what:"The June feature summary ships app-identity sign-in for Fabric Data Agents — enabling scheduled and backend runs with no user session — plus a model upgrade for Fabric's built-in AI functions, simpler chaining of AI steps in notebooks, and per-call cost statistics with clean retry handling.",
@@ -804,7 +857,7 @@ const SIGNALS = [
   ]},
 
 { id:"S12", xone:"The industry's standard 'plug' between AI assistants and business systems gets its biggest upgrade July 28 — and is now safe to build on long-term.",
-  xwhy:"Standardized plumbing means AI investments are less likely to be stranded with one vendor. Anything we pilot from here should target this standard.", theme:"stack", date:"2026-05-21", win:"june", impact:4, adopt:4, multi:true,
+  xwhy:"Standardized plumbing means AI investments are less likely to be stranded with one vendor. Anything we pilot from here should target this standard.", theme:"infra", date:"2026-05-21", win:"june", impact:4, adopt:4, multi:true,
   title:"The AI-connector standard grows up: its biggest revision lands Jul 28, built for ordinary web scale and long jobs",
   one:"MCP — the standard 'plug' between AI assistants and business systems — gets its largest upgrade: runs on ordinary web infrastructure, handles long-running jobs, and now carries real adoption numbers.",
   what:"The next MCP specification ships Jul 28 (candidate locked May 21). Headliners: servers no longer need to remember sessions, so they scale like any web app; long-running work — a forecast run, a data-quality sweep — becomes a first-class 'task'; connectors can render small interfaces; sign-in aligns with standard enterprise authentication; and a formal deprecation policy makes building on it safe. Governance moved to the Linux Foundation in December. Adoption footprint: roughly 10K public connectors, 97M monthly developer-kit downloads, and 41% of surveyed software organizations running it in production.",
@@ -820,7 +873,7 @@ const SIGNALS = [
   ]},
 
 { id:"S14", xone:"Our ERP vendor shipped AI across the product: a workflow builder, an in-system assistant, and reports that flag their own anomalies. When our instance gets it is the open question.",
-  xwhy:"Several things we would otherwise build by hand may simply arrive with the upgrade. Confirming our upgrade timeline and licensing gates two quarters of build-vs-wait decisions.", theme:"stack", date:"2026-03-26", win:"ctx", impact:4, adopt:4, multi:true,
+  xwhy:"Several things we would otherwise build by hand may simply arrive with the upgrade. Confirming our upgrade timeline and licensing gates two quarters of build-vs-wait decisions.", theme:"infra", date:"2026-03-26", win:"ctx", impact:4, adopt:4, multi:true,
   title:"Acumatica 2026 R1: AI Studio, a conversational assistant, and anomaly-detecting reports — pitched directly at supply chain",
   one:"Our ERP vendor shipped a low-code builder for AI workflows (you pick the model), an in-ERP assistant, and reports that flag anomalies themselves. Open question: when Onematica gets it.",
   what:"Acumatica 2026 R1 reached GA in late March, explicitly framed around supply chain execution for manufacturers, distributors and retailers. Headliners: AI Studio, a low-code builder for AI-assisted workflows triggered by ERP business events, with bring-your-own-model connectors so data stays under customer control; an AI Assistant for natural-language queries and task completion across modules (early access per Acumatica's release — some partner guides say GA, a discrepancy noted in Method); reporting with proactive anomaly detection; and governance features now formalized: data masking, AI usage statistics, reusable system instructions.",
@@ -1001,18 +1054,42 @@ function moveChip(p){
 })();
 
 /* ---------- Filter chips ---------- */
-const chipRow = $("#chipRow");
-const chipDefs = [{key:"all",label:"All domains",color:null,ct:SIGNALS.length}]
-  .concat(Object.entries(THEMES).map(([k,t])=>({key:k,label:t.label,color:t.color,ct:SIGNALS.filter(s=>s.theme===k).length})));
-chipRow.innerHTML = chipDefs.map(c=>
-  '<button class="chip'+(c.key==="all"?" active":"")+'" data-theme="'+c.key+'">'+
-  (c.color?'<span class="sw" style="background:'+c.color+'"></span>':'')+
-  esc(c.label)+' <span class="ct num">'+c.ct+'</span></button>').join("");
+/* ---------- Value-chain ribbon (Rev G): stage tabs + infrastructure band ---------- */
+const ribbon = $("#ribbon");
+const stageKeys = Object.keys(THEMES).filter(k=>!THEMES[k].infra);
+function stageCount(k){ return SIGNALS.filter(s=>s.theme===k).length; }
+ribbon.innerHTML =
+  '<div class="rib-row">'+
+    '<button class="stage-tab all active" data-theme="all" title="Every stage">All <span class="ct num">'+SIGNALS.length+'</span></button>'+
+    '<div class="rib-flow">'+ stageKeys.map((k,i)=>{
+      const t = THEMES[k];
+      return '<button class="stage-tab" data-theme="'+k+'" title="'+esc(t.desc)+'" style="--tc:'+t.color+'">'+
+        esc(t.label)+' <span class="ct num">'+stageCount(k)+'</span></button>'+(i<stageKeys.length-1?'<span class="rib-arr">&#8594;</span>':'');
+    }).join("")+'</div>'+
+  '</div>'+
+  '<button class="infra-band stage-tab" data-theme="infra" title="'+esc(THEMES.infra.desc)+'">'+
+    '<span class="ib-lab">SHARED INFRASTRUCTURE</span> '+esc(THEMES.infra.long)+' <span class="ct num">'+stageCount("infra")+'</span>'+
+  '</button>'+
+  '<div id="stageFocus" class="stage-focus" hidden></div>';
+function renderStageFocus(){
+  const el = $("#stageFocus"); const k = state.theme;
+  if(k === "all"){ el.hidden = true; return; }
+  const t = THEMES[k];
+  const list = SIGNALS.filter(s=>s.theme===k);
+  const pats = [...new Set(list.flatMap(s=>s.pats||[]))].sort();
+  const avg = list.length ? (list.reduce((a,s)=>a+s.impact,0)/list.length).toFixed(1) : "—";
+  el.hidden = false;
+  el.innerHTML = list.length
+    ? '<b>'+esc(t.long)+'</b> — '+list.length+' signal'+(list.length>1?'s':'')+' this edition · avg impact '+avg+
+      (pats.length?' · feeds '+pats.join(", "):'')+' · <a href="#signals">view signals ↓</a>'
+    : '<b>'+esc(t.long)+'</b> — no qualifying signals this edition; the weekly sweep still covers this stage. <a href="#signals">view all ↓</a>';
+}
 
 /* ---------- Signal cards ---------- */
 function cardHTML(s){
   const T = THEMES[s.theme];
   const winBadge = s.win==="week" ? '<span class="badge week">THIS WEEK</span>' : '';
+  const cannBadge = s.cann ? '<span class="badge cann">CANNABIS</span>' : '';
   const multiBadge = s.multi ? '<span class="badge multi">multi-source</span>' : '<span class="badge">single source</span>';
   const srcs = s.sources.map(x=>'<a class="src" href="'+x.u+'" target="_blank" rel="noopener"><span class="tier-dot" style="background:'+TIERS[x.t].color+'"></span>'+esc(x.n)+'</a>').join("");
   const pats = (s.pats||[]).map(p=>'<a class="badge" href="#'+p+'">feeds '+p+'</a>').join(" ");
@@ -1020,7 +1097,7 @@ function cardHTML(s){
     '<summary>'+
       '<span class="sig-code num">'+s.id+'</span>'+
       '<span class="sig-main"><h3>'+esc(s.title)+'</h3><div class="sig-one"><span class="x-only">'+esc(s.xone||s.one)+'</span><span class="an-only">'+esc(s.one)+'</span></div>'+
-        '<div class="sig-badges"><span class="badge theme" style="color:'+T.color+'">&#9679;&#8201;'+T.label+'</span>'+winBadge+multiBadge+
+        '<div class="sig-badges"><span class="badge theme" style="color:'+T.color+'">&#9679;&#8201;'+T.label+'</span>'+winBadge+cannBadge+multiBadge+
         '<span class="badge num">'+fmtDate(s.date)+'</span></div></span>'+
       '<span class="sig-scores">'+
         '<span class="score">IMPACT '+meter(s.impact)+'</span>'+
@@ -1052,12 +1129,24 @@ function renderFeed(){
   });
   $("#feed").innerHTML = rows.length
     ? rows.map(cardHTML).join("")
-    : '<div class="card empty">No signals match — clear the search or switch domain.</div>';
+    : '<div class="card empty">No signals match — clear the search or switch stage.</div>';
   $$("#feed details.sig").forEach(glossRoot);  /* decorate glossary terms per card */
   syncScatterDim();
 }
 
 /* ---------- Mimic board ---------- */
+/* ---------- Industry lens: cannabis (conditional) ---------- */
+(function(){
+  const tagged = SIGNALS.filter(s=>s.cann);
+  const sec = document.getElementById("cannabis");
+  const navCann = document.getElementById("navCann");
+  if(!tagged.length){ if(sec) sec.remove(); if(navCann) navCann.remove(); return; }
+  sec.hidden = false; if(navCann) navCann.hidden = false;
+  document.getElementById("cannList").innerHTML = tagged.map(s=>
+    '<a class="cann-item" href="#card-'+s.id+'" data-open="'+s.id+'"><span class="sig-code num">'+s.id+'</span>'+
+    '<span><b>'+esc(s.title)+'</b><span class="sig-one"><span class="x-only">'+esc(s.xone||s.one)+'</span><span class="an-only">'+esc(s.one)+'</span></span></span></a>').join("");
+})();
+
 $("#mimicTable tbody").innerHTML = MIMICS.map(m=>{
   const effLabel = {low:"Low",med:"Medium",watch:"Verify"}[m.eff];
   const links = m.from.split("·").map(x=>x.trim()).map(id=>'<a href="#card-'+id+'" data-open="'+id+'">'+id+'</a>').join(" · ");
@@ -1269,13 +1358,15 @@ function openCard(id, exclusiveScroll){
   }
 }
 function setTheme(key){
+  key = THEME_LEGACY[key] || key;
   state.theme = key;
-  $$(".chip", chipRow).forEach(c=>c.classList.toggle("active", c.dataset.theme===key));
+  $$("#ribbon .stage-tab").forEach(c=>c.classList.toggle("active", c.dataset.theme===key));
+  renderStageFocus();
   renderFeed();
 }
-chipRow.addEventListener("click", e=>{
-  const chip = e.target.closest(".chip"); if(!chip) return;
-  setTheme(chip.dataset.theme);
+ribbon.addEventListener("click", e=>{
+  const tab = e.target.closest(".stage-tab"); if(!tab) return;
+  setTheme(tab.dataset.theme);
 });
 $("#searchBox").addEventListener("input", e=>{ state.q=e.target.value; renderFeed(); });
 $("#sortSel").addEventListener("change", e=>{ state.sort=e.target.value; renderFeed(); });
