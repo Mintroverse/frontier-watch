@@ -16,8 +16,8 @@
   // Rev C: run the full harness in analyst view (everything visible)
   if (FW.setView) { FW.setView("analyst"); await sleep(60); }
 
-  // HANDOFF §3 target: 12-16 signals per edition (generalized from hardcoded 15)
-  t("signal count in 12-16 target range", FW.SIGNALS.length >= 12 && FW.SIGNALS.length <= 16, FW.SIGNALS.length);
+  // HANDOFF §3 target: 12-18 signals per edition (widened Jul 3 for taxonomy v2's six categories)
+  t("signal count in 12-18 target range", FW.SIGNALS.length >= 12 && FW.SIGNALS.length <= 18, FW.SIGNALS.length);
   t("rendered cards == signal count", $$("#feed details.sig").length === FW.SIGNALS.length,
     $$("#feed details.sig").length + " vs " + FW.SIGNALS.length);
 

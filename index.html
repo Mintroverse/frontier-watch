@@ -134,28 +134,32 @@ body.scrolled .seg button.on{background:var(--ink);color:var(--surface)}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 
 /* ============ Value-chain ribbon (Rev G) ============ */
-#ribbonWrap{background:var(--surface);border-bottom:1px solid var(--line);padding:14px 0 12px}
-.rib-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.rib-flow{display:flex;align-items:center;gap:2px;flex-wrap:wrap}
-.stage-tab{font-family:var(--font);font-size:12px;font-weight:600;padding:8px 14px;border-radius:99px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink-2);cursor:pointer;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;transition:border-color .15s,background .15s}
+#ribbonWrap{background:var(--surface);border-bottom:1px solid var(--line);padding:18px 0 14px}
+.rib-cap{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;color:var(--ink-4);font-weight:600;margin-bottom:9px}
+.rib-cap b{color:var(--accent);font-weight:600}
+.rib-shell{border:1px solid var(--line-2);border-radius:var(--radius);overflow:hidden;background:var(--bg)}
+.rib-stages{display:flex;align-items:stretch}
+.stage-tab{font-family:var(--font);font-size:12.5px;font-weight:600;padding:13px 10px;border:none;background:transparent;color:var(--ink-2);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;flex:1;border-left:1px solid var(--line);transition:background .15s;min-height:44px}
+.rib-stages .stage-tab:first-child{border-left:none;flex:0 0 auto;padding:13px 18px}
+.rib-stages .stage-tab:first-child:not(.active){background:var(--surface)}
+.stage-tab .sdot{width:8px;height:8px;border-radius:50%;background:var(--tc,var(--ink-3));flex-shrink:0}
 .stage-tab .ct{font-family:var(--mono);font-size:10px;color:var(--ink-4);font-weight:500}
-.stage-tab:hover{border-color:var(--ink-3)}
-.stage-tab.active{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.stage-tab:hover{background:color-mix(in srgb, var(--ink) 3%, var(--surface))}
+.stage-tab.active{background:var(--ink);color:var(--surface)}
 .stage-tab.active .ct{color:var(--line-2)}
-.stage-tab:not(.all):not(.infra-band)::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--tc,var(--ink-3))}
-.stage-tab.active:not(.all):not(.infra-band)::before{outline:1.5px solid var(--surface);outline-offset:1px}
-.rib-arr{color:var(--ink-4);font-size:12px;padding:0 1px;user-select:none}
-.infra-band{width:100%;margin-top:10px;justify-content:center;border-radius:10px;border:1px dashed var(--line-2);background:color-mix(in srgb, #7c3aed 4%, var(--surface));font-weight:500;color:var(--ink-3)}
-.infra-band::before{content:"";width:8px;height:8px;border-radius:2px;background:#7c3aed}
-.infra-band .ib-lab{font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:var(--ink-4);font-weight:600}
-.infra-band.active{background:var(--ink);color:var(--surface);border-color:var(--ink)}
-.infra-band.active .ib-lab{color:var(--line-2)}
-.stage-focus{margin-top:10px;font-size:12.5px;color:var(--ink-3);border-top:1px dashed var(--line);padding-top:9px}
+.stage-tab.active .sdot{outline:1.5px solid var(--surface);outline-offset:1px}
+.infra-band{width:100%;justify-content:flex-start;border-left:none!important;border-top:1px solid var(--line-2);background:color-mix(in srgb, #7c3aed 3.5%, var(--surface));color:var(--ink-3);font-weight:500;padding:11px 18px;min-height:40px}
+.infra-band .sdot{border-radius:2px;background:#7c3aed}
+.infra-band .ib-lab{font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:var(--ink-4);font-weight:600;margin-right:2px}
+.infra-band .ib-name{color:var(--ink-2)}
+.infra-band.active{background:var(--ink);color:var(--surface)}
+.infra-band.active .ib-lab,.infra-band.active .ib-name{color:var(--surface)}
+.stage-focus{margin-top:11px;font-size:12.5px;color:var(--ink-3)}
 .stage-focus b{color:var(--ink-2)}
-@media (max-width:700px){
-  .rib-row{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px}
-  .rib-flow{flex-wrap:nowrap}
-  .rib-arr{display:none}
+@media (max-width:820px){
+  .rib-stages{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .stage-tab{flex:0 0 auto;padding:12px 15px}
+  .infra-band{padding:11px 15px}
 }
 
 /* Cannabis lens */
@@ -225,7 +229,7 @@ section{padding:72px 0 8px;counter-increment:sec}
 .btn{font-family:var(--font);font-size:12px;font-weight:600;padding:7.5px 13px;border-radius:99px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink-2);cursor:pointer;transition:border-color .15s}
 .btn:hover{border-color:var(--ink-3)}
 select.btn{padding:7px 9px;border-radius:9px}
-.theme-bar-box{position:relative;height:152px;padding:12px 16px 4px}
+.theme-bar-box{position:relative;height:172px;padding:12px 16px 6px}
 
 .feed{display:flex;flex-direction:column;gap:12px;margin-top:16px}
 details.sig{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:none;border-left:2px solid var(--ink-3);overflow:hidden;transition:box-shadow .2s,border-color .2s}
@@ -576,7 +580,7 @@ footer a{color:var(--accent-2)!important}
           <ul id="srcList"></ul>
         </div>
         <div class="card method an-only">
-          <b>Method.</b> Compiled Jul 2, 2026 from web research across analyst releases, primary vendor announcements, trade press and practitioner/academic sources. <b>Impact</b> (1–5) = editorial estimate of consequence for a mid-market supply chain organization if the signal holds. <b>Adoptability</b> (1–5) = editorial estimate of how directly a Fabric + Power BI + Acumatica stack can adopt or mimic it today. <b>Multi-source</b> = the substance is independently reported or evidenced by ≥2 unaffiliated organizations. Vendor-reported performance figures (e.g., resolution rates, speed-ups) are labeled as claims and not independently verified. One known coverage note: vendor materials differ on whether Acumatica's conversational assistant is GA or early-access in 2026 R1 — treated here as early-access per the vendor's own press release. <b>Rev B (Jul 2):</b> copy tightened for a business reader; deep technical specifics moved into each card's 'Stack detail' line; dotted-underlined terms show a plain-language definition on hover or tap. <b>Taxonomy v2 (Jul 3, Rev G):</b> domains reorganized into five value-chain stages after the SCOR model (Plan &middot; Source &middot; Make &middot; Deliver &middot; Sell &amp; Serve) with the data &amp; agent stack reclassified as shared infrastructure; prior editions' signals re-tagged for continuity (old keys map automatically in links). A standing cannabis-industry sweep runs weekly; its section appears only in weeks with qualifying developments — none met the bar this edition. <b>Rev E (Jul 3):</b> two reading registers written separately from the same sources — an <b>executive brief</b> (default; consequence and decision framing, warm palette) and the full <b>analyst view</b> (mechanics and how-to, cool palette). The color temperature is the cue for which register you are reading. Green accents mark the brand; the weekly pulse strip at the top tracks what changed between editions.
+          <b>Method.</b> Compiled Jul 2, 2026 from web research across analyst releases, primary vendor announcements, trade press and practitioner/academic sources. <b>Impact</b> (1–5) = editorial estimate of consequence for a mid-market supply chain organization if the signal holds. <b>Adoptability</b> (1–5) = editorial estimate of how directly a Fabric + Power BI + Acumatica stack can adopt or mimic it today. <b>Multi-source</b> = the substance is independently reported or evidenced by ≥2 unaffiliated organizations. Vendor-reported performance figures (e.g., resolution rates, speed-ups) are labeled as claims and not independently verified. One known coverage note: vendor materials differ on whether Acumatica's conversational assistant is GA or early-access in 2026 R1 — treated here as early-access per the vendor's own press release. <b>Rev B (Jul 2):</b> copy tightened for a business reader; deep technical specifics moved into each card's 'Stack detail' line; dotted-underlined terms show a plain-language definition on hover or tap. <b>Taxonomy v2 (Jul 3, Rev G):</b> domains reorganized into five value-chain stages after the SCOR model (Plan &middot; Source &middot; Make &middot; Deliver &middot; Sell &amp; Serve) with the data &amp; agent stack reclassified as shared infrastructure; prior editions' signals re-tagged for continuity (old keys map automatically in links). A standing cannabis-industry sweep runs weekly; its section appears only in weeks with qualifying developments. A Jul 3 rescan under the new taxonomy added S16 (Deliver: autonomous fulfillment-as-a-service) and S17 (cannabis-AI proof points, activating the lens); the per-edition target widened to 12–18 signals to fit six categories. <b>Rev E (Jul 3):</b> two reading registers written separately from the same sources — an <b>executive brief</b> (default; consequence and decision framing, warm palette) and the full <b>analyst view</b> (mechanics and how-to, cool palette). The color temperature is the cue for which register you are reading. Green accents mark the brand; the weekly pulse strip at the top tracks what changed between editions.
         </div>
       </div>
     </div>
@@ -887,6 +891,41 @@ const SIGNALS = [
     {n:"TechFinitive — supply chain focus (Mar 27)", u:"https://www.techfinitive.com/acumatica-targets-supply-chain-management-with-2026-r1-release/", t:3},
     {n:"SWK Technologies — feature rundown incl. governance", u:"https://www.swktech.com/acumatica-ai-features-available-in-2026/", t:4}
   ]}
+,
+
+{ id:"S16", xone:"Warehouse automation just became something you can rent rather than build: fully robotic order fulfillment is now sold as a monthly service, with no capital project required.",
+  xwhy:"Automated fulfillment stops being a capital decision and becomes a procurement line item — worth knowing before the next logistics contract renewal, because providers running these sites will quote different economics.",
+  theme:"deliver", date:"2026-04-10", win:"ctx", impact:4, adopt:2, multi:true,
+  title:"Fulfillment goes autonomous-as-a-service: Locus ships a fully self-running picking system; Exol opens rent-a-robot warehouses",
+  one:"Locus Array pairs mobile robots with an AI picking arm for end-to-end autonomous fulfillment; Exol launches six US 'physical AI' sites sold as fulfillment-as-a-service — no capex required.",
+  what:"Locus Robotics launched Locus Array (Apr 10): mobile robotics plus an integrated robotic picking arm and AI-powered perception, executing end-to-end fulfillment workflows without manual intervention — early-access deployments already running in North America. The same month, Exol opened the first of six planned US 'physical AI' fulfillment sites (~6M sq ft total) sold under a fulfillment-as-a-service model for retail, wholesale and consumer-goods companies, backed by SoftBank and Symbotic.",
+  tech:"Locus Array: AMR fleet + integrated robotic picking arm + AI perception, autonomous end-to-end · Exol: 6 US sites, ~6M sq ft, FaaS commercial model, SoftBank/Symbotic backing.",
+  why:"The as-a-service model moves warehouse automation from a multi-year capital project to a procurement decision — a live benchmark for any future 3PL or fulfillment RFP. It also resets the cost floor that autonomous sites establish for standard service levels.",
+  mimic:"Not the robots — the evaluation frame: in the next logistics-partner review, ask whether and when they run autonomous sites and what that does to their pricing and error rates. A one-question insert into an existing QBR.",
+  trend:"Execution keeps outrunning planning on autonomy (see S15): repetitive, physical, rule-dense work automates first — 4PL software loops and warehouse robotics are converging on the same 'people supervise exceptions' shape.",
+  pats:["P1"],
+  sources:[
+    {n:"Locus Robotics — Locus Array launch (BusinessWire, Apr 10)", u:"https://www.businesswire.com/news/home/20260410524554/en/Locus-Robotics-Launches-Locus-Array-a-New-Class-of-Physical-AI-Robotics-for-Fully-Autonomous-Fulfillment", t:2},
+    {n:"SDC Executive — Exol fulfillment-as-a-service", u:"https://www.sdcexec.com/software-technology/ai-ar/news/22964303/exol-exol-launches-fulfillmentasaservice-model-for-enterprisegrade-automation", t:3},
+    {n:"Robotics & Automation News — Exol US network (Apr 9)", u:"https://roboticsandautomationnews.com/2026/04/09/exol-launches-us-robotic-fulfillment-network-with-fulfillment-as-a-service-model/100462/", t:3}
+  ]},
+
+{ id:"S17", cann:true, xone:"Our industry now has real AI numbers: a cultivator reporting roughly 20% higher yields from AI crop monitoring, and nine-figure capital committed to cannabis AI platforms.",
+  xwhy:"Competitors in our industry are publishing AI proof points and attracting serious capital. The question for us: which of these — cultivation monitoring, compliance automation, retail recommendations — belongs on our roadmap first.",
+  theme:"make", date:"2026-05-08", win:"ctx", impact:4, adopt:2, multi:true,
+  title:"Cannabis operations get their AI proof points: ~20% yield claims from cultivation vision, nine-figure capital into cannabis AI",
+  one:"BCC Research's cannabis-AI report lands numbers: PURPLEFARM claims ~20% yield lift from Neatleaf's Spyder vision system; Flora Growth commits $401M to its Zero Gravity AI project; Tilray and iAnthus push adoption.",
+  what:"BCC Research's 'AI Impact on Cannabis Market' pulse report (May 8) finds North America leading cannabis-AI adoption, with controlled-environment cultivation the primary use case: PURPLEFARM reports ~20% yield improvement after deploying Neatleaf's Spyder AI monitoring; Flora Growth announced a $401M commitment to its Zero Gravity AI project; Tilray, Flora and iAnthus are named adoption leaders across cultivation, manufacturing and retail. Retail-side AI budtenders and recommendation engines accelerate; compliance and lab-information systems are flagged as the next opportunity. Independent trade analysis (Cannabis Risk Manager, Feb) frames the same arc: precision cultivation, predictive retail, seed-to-sale compliance automation becoming standard. Yield and deal figures are company-reported claims within an analyst report.",
+  tech:"BCC 'AI Impact on Cannabis Market' Pulse (May 8) · Neatleaf Spyder cultivation vision · Flora Growth 'Zero Gravity' $401M · named adopters: Tilray, Flora Growth, iAnthus · retail: AI budtenders/recommenders · next wave: compliance + LIMS AI.",
+  why:"First-degree industry relevance: cultivation vision, extraction optimization and compliance automation are exactly the operations around us. The 20% figure — even discounted as a vendor claim — sets the benchmark conversation for any cultivation-AI pilot, and the capital flow signals vendor consolidation ahead.",
+  mimic:"Pull the BCC report and shortlist the named tool classes (cultivation vision, compliance/LIMS AI) against our own cultivation and compliance pain points — a half-day desk review before any vendor call.",
+  trend:"Cannabis tracks the broader supply chain AI arc roughly 12–24 months behind: proof-point stage now (yields, deals); compliance and agentic automation next — the same assistant → workflow-builder → agent ladder the ERP vendors are climbing (S14).",
+  pats:["P4"],
+  sources:[
+    {n:"BCC Research via Greenway Magazine (May 8)", u:"https://mogreenway.com/2026/05/08/ai-technology-transforms-cannabis-industry-as-leading-operators-drive-adoption-to-enhance-yields-and-compliance/", t:3},
+    {n:"BCC Research — AI Impact on Cannabis Market (report page)", u:"https://www.bccresearch.com/market-research/artificial-intelligence-technology/ai-impact-on-cannabis-market.html", t:1},
+    {n:"Cannabis Risk Manager — 4 shifts in cannabis tech 2026 (Feb 2)", u:"https://cannabisriskmanager.com/4-major-shifts-set-to-redefine-cannabis-technology-in-2026/", t:4}
+  ]}
 ];
 
 /* ---------- Weekly delta (pulse strip) — rewritten by each edition ---------- */
@@ -895,9 +934,9 @@ const DELTA = {
   next: "Thu Jul 9",                        /* next edition day */
   headline: "First edition — baseline set",
   items: [
-    "<b>15</b> signals · 5 domains",
+    "<b>17</b> signals · 5 stages + infra",
     "<b>6</b> patterns opened · 4 hardening+",
-    "<b>6</b> dated watch items"
+    "cannabis lens active · <b>1</b> industry signal"
   ]
 };
 
@@ -1059,17 +1098,20 @@ const ribbon = $("#ribbon");
 const stageKeys = Object.keys(THEMES).filter(k=>!THEMES[k].infra);
 function stageCount(k){ return SIGNALS.filter(s=>s.theme===k).length; }
 ribbon.innerHTML =
-  '<div class="rib-row">'+
-    '<button class="stage-tab all active" data-theme="all" title="Every stage">All <span class="ct num">'+SIGNALS.length+'</span></button>'+
-    '<div class="rib-flow">'+ stageKeys.map((k,i)=>{
-      const t = THEMES[k];
-      return '<button class="stage-tab" data-theme="'+k+'" title="'+esc(t.desc)+'" style="--tc:'+t.color+'">'+
-        esc(t.label)+' <span class="ct num">'+stageCount(k)+'</span></button>'+(i<stageKeys.length-1?'<span class="rib-arr">&#8594;</span>':'');
-    }).join("")+'</div>'+
+  '<div class="rib-cap">THE VALUE CHAIN &middot; <b>VENDOR &#8594; CUSTOMER</b> &middot; after the SCOR model</div>'+
+  '<div class="rib-shell">'+
+    '<div class="rib-stages" role="tablist">'+
+      '<button class="stage-tab all active" data-theme="all" title="Every stage">All <span class="ct num">'+SIGNALS.length+'</span></button>'+
+      stageKeys.map(k=>{
+        const t = THEMES[k];
+        return '<button class="stage-tab" data-theme="'+k+'" title="'+esc(t.desc)+'" style="--tc:'+t.color+'">'+
+          '<span class="sdot"></span>'+esc(t.label)+' <span class="ct num">'+stageCount(k)+'</span></button>';
+      }).join("")+
+    '</div>'+
+    '<button class="infra-band stage-tab" data-theme="infra" title="'+esc(THEMES.infra.desc)+'">'+
+      '<span class="sdot"></span><span class="ib-lab">SHARED INFRASTRUCTURE</span><span class="ib-name">'+esc(THEMES.infra.long)+'</span><span class="ct num" style="margin-left:auto">'+stageCount("infra")+'</span>'+
+    '</button>'+
   '</div>'+
-  '<button class="infra-band stage-tab" data-theme="infra" title="'+esc(THEMES.infra.desc)+'">'+
-    '<span class="ib-lab">SHARED INFRASTRUCTURE</span> '+esc(THEMES.infra.long)+' <span class="ct num">'+stageCount("infra")+'</span>'+
-  '</button>'+
   '<div id="stageFocus" class="stage-focus" hidden></div>';
 function renderStageFocus(){
   const el = $("#stageFocus"); const k = state.theme;
@@ -1300,10 +1342,10 @@ new Chart($("#themeBar"), {
   },
   options:{
     indexAxis:"y", responsive:true, maintainAspectRatio:false,
-    layout:{padding:{right:22}},
+    layout:{padding:{right:24, left:6}},
     scales:{
       x:{display:false, max:Math.max(...themeKeys.map(k=>SIGNALS.filter(s=>s.theme===k).length))+1},
-      y:{grid:{display:false}, ticks:{color:V("--ink-2"), font:{size:11.5, weight:"600"}}}
+      y:{grid:{display:false}, ticks:{color:V("--ink-2"), font:{size:11.5, weight:"600"}, padding:6}}
     },
     plugins:{legend:{display:false},
       tooltip:{backgroundColor:V("--ink"), displayColors:false, callbacks:{

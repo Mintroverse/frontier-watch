@@ -21,7 +21,8 @@
       "vendor_figures": "always labeled as claims, never independently verified",
       "one_liner_lint": "<=32 words, business-language-first (asserted in harness)"
     },
-    "taxonomy": "v2 (2026-07-03): plan/source/make/deliver/sell + infra (cross-cutting); SCOR-based; legacy keys mapped; cannabis lens standing sweep with cann:true flag"
+    "taxonomy": "v2 (2026-07-03): plan/source/make/deliver/sell + infra (cross-cutting); SCOR-based; legacy keys mapped; cannabis lens standing sweep with cann:true flag",
+    "signal_target": "12-18 per edition (widened Jul 3 for taxonomy v2's six categories)"
   },
   "patterns": [
     {
@@ -386,6 +387,23 @@
       "theme": "infra",
       "multi": true,
       "title": "Acumatica 2026 R1: AI Studio, assistant (early access), anomaly reports"
+    },
+    {
+      "edition": 1,
+      "id": "S16",
+      "date": "2026-04-10",
+      "theme": "deliver",
+      "multi": true,
+      "title": "Autonomous fulfillment-as-a-service: Locus Array; Exol six-site FaaS network (rescan Jul 3)"
+    },
+    {
+      "edition": 1,
+      "id": "S17",
+      "date": "2026-05-08",
+      "theme": "make",
+      "multi": true,
+      "cann": true,
+      "title": "Cannabis AI proof points: ~20% yield claim (Neatleaf/PURPLEFARM), Flora $401M Zero Gravity (BCC report; rescan Jul 3)"
     }
   ],
   "lessons": [
