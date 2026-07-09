@@ -8,6 +8,13 @@
   <atom:link href="https://mintroverse.github.io/frontier-watch/feed.xml" rel="self" type="application/rss+xml"/>
   <!-- EDITIONS:APPEND-BELOW — newest item first; the weekly run inserts the new edition directly below this marker -->
   <item>
+    <title>Edition 02 (Week 28, 2026) — The confirmers started firing</title>
+    <link>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e02.html</link>
+    <guid>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e02.html</guid>
+    <pubDate>Thu, 09 Jul 2026 06:00:00 +0000</pubDate>
+    <description>Outcome pricing reached the ERP suite (SAP Joule; Deloitte publishes the accounting), commerce agents went GA inside ChatGPT and Google, and Schneider moved to buy Cognite — the context-layer thesis with a price tag. 15 signals, 6 patterns, 2 watch items resolved.</description>
+  </item>
+  <item>
     <title>Edition 01 (Week 27, 2026) — The execution layer arrived</title>
     <link>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e01.html</link>
     <guid>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e01.html</guid>
