@@ -1,11 +1,11 @@
 {
   "meta": {
     "product": "Frontier Watch — AI x Supply Chain",
-    "last_edition": 2,
-    "last_week": "2026-W28",
-    "compiled": "2026-07-09",
-    "next_due": "2026-07-16",
-    "template_file": "index.html (= frontier-watch-e02)",
+    "last_edition": 3,
+    "last_week": "2026-W29",
+    "compiled": "2026-07-16",
+    "next_due": "2026-07-23",
+    "template_file": "index.html (= frontier-watch-e03)",
     "reader_persona": "Supply chain professional; fluent in SC/business language; novice on tech-stack jargon. Use for role-play verification.",
     "org_stack": [
       "Microsoft Fabric (Lakehouse/OneLake, Data Agents)",
@@ -17,7 +17,7 @@
     "editorial_conventions": {
       "impact": "1-5 editorial: consequence for a mid-market supply chain org if the signal holds",
       "adopt": "1-5 editorial: how directly the org stack can adopt/mimic today",
-      "multi_source": "substance independently reported/evidenced by >=2 unaffiliated organizations; publisher families (e.g., BizClik titles) count as one voice",
+      "multi_source": "substance independently reported/evidenced by >=2 unaffiliated organizations; publisher families (e.g., BizClik titles, Industry Dive titles) count as one voice",
       "vendor_figures": "always labeled as claims, never independently verified",
       "one_liner_lint": "<=32 words, business-language-first (asserted in harness)"
     },
@@ -29,7 +29,7 @@
       "id": "P1",
       "title": "From insight to execution: AI that acts, not advises",
       "direction": "hardening",
-      "strength_orgs": 12,
+      "strength_orgs": 17,
       "orgs": [
         "Gartner",
         "Blue Yonder",
@@ -42,29 +42,27 @@
         "commercetools",
         "FarEye",
         "Samsung",
-        "ARC Advisory"
+        "ARC Advisory",
+        "FedEx",
+        "Walmart",
+        "Kinaxis",
+        "o9 Solutions",
+        "NVIDIA"
       ],
-      "verdict_1line": "Six orgs in E01, six more shipped or validated in E02 (Oracle agent workspaces, Salesforce commerce GA, commercetools intake agent, FarEye dispatcher, Samsung factory program, ARC decision-systems framing); form factor settled: agents progress routine work, humans own exceptions.",
+      "verdict_1line": "E03: the customer side arrived — FedEx targets agents in >50% of workflows by 2028, Walmart runs agentic end-to-end flows; all three planning majors ship in-model agents. Targets and architecture, not yet audited results.",
       "confirmers": [
-        "SAP Outbound agent GA confirmation (Q2 target passed unconfirmed — now overdue check)",
+        "autonomy percentages appear in customer (not vendor) case studies — FedEx 2028 target and Walmart flows are plans/architecture, not audited results",
+        "SAP Outbound agent GA confirmation (now two editions past Q2 target)",
         "Fabric planning completes GA rollout",
-        "autonomy percentages appear in customer (not vendor) case studies",
         "Oracle agentic apps earn named-customer autonomy numbers"
       ],
       "weakeners": [
         "Q3 earnings calls re-describe 'agents' as 'assistants'"
       ],
       "status_history": [
-        {
-          "edition": 1,
-          "direction": "hardening",
-          "orgs": 6
-        },
-        {
-          "edition": 2,
-          "direction": "hardening",
-          "orgs": 12
-        }
+        { "edition": 1, "direction": "hardening", "orgs": 6 },
+        { "edition": 2, "direction": "hardening", "orgs": 12 },
+        { "edition": 3, "direction": "hardening", "orgs": 17 }
       ]
     },
     {
@@ -81,7 +79,7 @@
         "Schneider Electric",
         "ARC Advisory"
       ],
-      "verdict_1line": "The thesis got a price tag: Schneider Electric moves to buy Cognite (fuse with AVEVA into a unified industrial-AI platform) — acquiring the context layer rather than rebuilding it; ARC names the same asset ('decision intelligence layer') from the analyst side.",
+      "verdict_1line": "E03: quiet by the counting rule (no new priced voice), but architecturally corroborated — Kinaxis/o9/Blue Yonder converging on agents-inside-the-model is the context thesis restated by the planning market itself.",
       "confirmers": [
         "'context layer' appears as its own priced SKU/line item (watch AVEVA+Cognite packaging post-close)"
       ],
@@ -89,16 +87,9 @@
         "frontier models get good enough at raw-table reasoning that definition layers stop mattering (no evidence yet)"
       ],
       "status_history": [
-        {
-          "edition": 1,
-          "direction": "accelerating",
-          "orgs": 5
-        },
-        {
-          "edition": 2,
-          "direction": "accelerating",
-          "orgs": 7
-        }
+        { "edition": 1, "direction": "accelerating", "orgs": 5 },
+        { "edition": 2, "direction": "accelerating", "orgs": 7 },
+        { "edition": 3, "direction": "accelerating", "orgs": 7 }
       ]
     },
     {
@@ -113,7 +104,7 @@
         "SAP",
         "Deloitte"
       ],
-      "verdict_1line": "Named confirmer FIRED a quarter early: SAP bills Joule agents on business outcomes and consumption units; Deloitte published the revenue-accounting guidance (Jun 4). Direction moved accelerating -> hardening in E02.",
+      "verdict_1line": "E03: holding, not advancing — no new org joined; GPT-5.6's three price tiers keep token economics moving under agent contracts. Next tell unchanged: Acumatica AI Units terms at 2026 R2 GA.",
       "confirmers": [
         "outcome terms appear in mid-market ERP quotes (Acumatica AI Units at 2026 R2 GA is the tell)"
       ],
@@ -121,16 +112,9 @@
         "outcome pricing quietly reverts to consumption floors and minimums"
       ],
       "status_history": [
-        {
-          "edition": 1,
-          "direction": "accelerating",
-          "orgs": 3
-        },
-        {
-          "edition": 2,
-          "direction": "hardening",
-          "orgs": 5
-        }
+        { "edition": 1, "direction": "accelerating", "orgs": 3 },
+        { "edition": 2, "direction": "hardening", "orgs": 5 },
+        { "edition": 3, "direction": "hardening", "orgs": 5 }
       ]
     },
     {
@@ -148,7 +132,7 @@
         "Sage (survey)",
         "First Analysis"
       ],
-      "verdict_1line": "Most corroborated theme across the source set; E02 quantifies the gap: 85% raising AI spend vs 10% live in supply chain workflows (Sage) and 23% with a formal AI strategy (First Analysis).",
+      "verdict_1line": "E03: consensus stands, no new counting additions; inverse-case echo from cannabis (S13) — where regulation mandates the data foundation, the AI layer forms fast on top.",
       "confirmers": [
         "settled enough to act on"
       ],
@@ -156,23 +140,16 @@
         "none on the horizon"
       ],
       "status_history": [
-        {
-          "edition": 1,
-          "direction": "consensus",
-          "orgs": 6
-        },
-        {
-          "edition": 2,
-          "direction": "consensus",
-          "orgs": 8
-        }
+        { "edition": 1, "direction": "consensus", "orgs": 6 },
+        { "edition": 2, "direction": "consensus", "orgs": 8 },
+        { "edition": 3, "direction": "consensus", "orgs": 8 }
       ]
     },
     {
       "id": "P5",
       "title": "The plumbing is standardizing: MCP + A2A move from experiment to default",
       "direction": "hardening",
-      "strength_orgs": 7,
+      "strength_orgs": 8,
       "orgs": [
         "Linux Foundation / MCP project",
         "Google",
@@ -180,27 +157,22 @@
         "Salesforce",
         "Stacklok (survey)",
         "FarEye",
-        "implementer analyses (Stacktree, MCP.Directory)"
+        "implementer analyses (Stacktree, MCP.Directory, WorkOS)",
+        "Oracle NetSuite"
       ],
-      "verdict_1line": "Jul 28 final holding through the RC validation window with independent implementer confirmation (stateless core, Tasks); operational-stack confirmer starting to fire: FarEye ships MCP-first dispatch agents.",
+      "verdict_1line": "E03: both ends fired — RC formally published (stateless core, Tasks/Apps extensions, deprecation policy; implementers corroborate) AND the E01-named confirmer landed: NetSuite ships a first-party MCP connector in an operational mid-market ERP.",
       "confirmers": [
-        "operational-stack vendors (ERP, WMS) ship first-party MCP connectors",
-        "2026-07-28 spec ships as specced"
+        "2026-07-28 spec ships as specced — CHECK IN E05 (Jul 30 edition), after the final lands; E04 (Jul 23) is the last pre-final read",
+        "Acumatica answers with first-party MCP at 2026 R2 (NetSuite set the reference posture)",
+        "more operational-stack vendors (WMS, TMS) ship first-party MCP connectors"
       ],
       "weakeners": [
         "value migrating to proprietary layers on top of the open core"
       ],
       "status_history": [
-        {
-          "edition": 1,
-          "direction": "hardening",
-          "orgs": 5
-        },
-        {
-          "edition": 2,
-          "direction": "hardening",
-          "orgs": 7
-        }
+        { "edition": 1, "direction": "hardening", "orgs": 5 },
+        { "edition": 2, "direction": "hardening", "orgs": 7 },
+        { "edition": 3, "direction": "hardening", "orgs": 8 }
       ]
     },
     {
@@ -214,74 +186,67 @@
         "practitioner benchmarks",
         "domain studies (energy)"
       ],
-      "verdict_1line": "No new independent tests in E02 — honest quiet cycle; E01 read stands (zero-shot = strong baseline; routing beats universal deployment). E01 M1 benchmark remains the cheapest local evidence.",
+      "verdict_1line": "E03: SECOND consecutive quiet cycle — no new independent forecaster tests despite full plan sweeps; faint echo in model-tier routing at the LLM layer (GPT-5.6 tiers). If E04 is also silent, run a deliberate deep-dive (targeted arXiv/benchmark sweep) instead of passive sweeps.",
       "confirmers": [
-        "planning vendors expose model-routing controls instead of one embedded model"
+        "planning vendors expose model-routing controls instead of one embedded model (S03's converged suites are where to look)"
       ],
       "weakeners": [
         "a next-gen pre-trained model decisively closes the stable-series gap in independent tests"
       ],
       "status_history": [
-        {
-          "edition": 1,
-          "direction": "hardening",
-          "orgs": 4
-        },
-        {
-          "edition": 2,
-          "direction": "hardening",
-          "orgs": 4
-        }
+        { "edition": 1, "direction": "hardening", "orgs": 4 },
+        { "edition": 2, "direction": "hardening", "orgs": 4 },
+        { "edition": 3, "direction": "hardening", "orgs": 4 }
       ]
     }
   ],
   "watch_items": [
     {
       "due": "2026-07-28",
-      "item": "MCP 2026-07-28 spec final lands — confirm shipped as specced (stateless core, Tasks, MCP Apps). E02: RC holding; independent implementer analyses confirm shape.",
+      "item": "MCP 2026-07-28 spec final lands — confirm shipped as specced (stateless core, Tasks/Apps extensions, deprecation policy). E03: RC formally published; implementers corroborate. NOTE: confirmable only in E05 (Jul 30), after the final lands.",
       "links_to": "P5",
       "status": "open"
     },
     {
       "due": "2026-09-30",
-      "item": "SAP Outbound Task Orchestration Agent GA — Q2 2026 target PASSED with no GA confirmation found in E02 compile; carried as unconfirmed/possible slip.",
+      "item": "SAP Outbound Task Orchestration Agent GA — now TWO editions past the Q2 2026 target with no GA confirmation (E02, E03). Carried as unconfirmed/possible slip; treat a third silent edition as a soft weakener for vendor GA claims.",
       "links_to": "P1",
       "status": "open"
     },
     {
       "due": "rolling",
-      "item": "Fabric planning GA rollout completion; overlap check vs in-house capacity/WIP planning tools. E02: nothing observed this cycle.",
+      "item": "Fabric planning GA rollout completion; overlap check vs in-house capacity/WIP planning tools. E03: nothing observed — third silent cycle.",
       "links_to": "P1/verdict",
       "status": "open"
     },
     {
-      "due": "resolved 2026-07-09",
-      "item": "ERP/planning vendor announcing outcome-based pricing — RESOLVED: SAP Joule billed on outcomes/consumption units; Deloitte accounting guidance Jun 4 (E02 S14). P3 confirmer fired.",
-      "links_to": "P3",
+      "due": "resolved 2026-07-16",
+      "item": "GPU-accelerated Fabric Warehouse early access — RESOLVED: window independently confirmed open (Microsoft Fabric blog + independent coverage; UNC Health 5x early adopter). M7 benchmark itself still pending user action.",
+      "links_to": "E03 S09 / M7",
       "status": "resolved"
-    },
-    {
-      "due": "resolved 2026-07-09",
-      "item": "Acumatica AI Assistant GA-vs-early-access discrepancy — RESOLVED: vendor community FAQ confirms Managed Availability through 2026 R1; GA at 2026 R2 launch (purchasable, AI Units consumption model).",
-      "links_to": "E01 S14",
-      "status": "resolved"
-    },
-    {
-      "due": "2026-07-31",
-      "item": "GPU-accelerated Fabric Warehouse early access — window opened July per vendor (E02 S13); access not independently verified as open. Confirm access + run M7 benchmark.",
-      "links_to": "E02 S13 / M7",
-      "status": "open"
     },
     {
       "due": "2026-10-31",
-      "item": "Acumatica 2026 R2 launch: AI Assistant GA terms + AI Units pricing (outcome/consumption structure) — read floors and outcome definitions (M9).",
-      "links_to": "P3 / M9 / M12",
+      "item": "Acumatica 2026 R2 launch: AI Assistant GA terms + AI Units pricing (outcome/consumption structure) — read floors and outcome definitions (M9). E03 adds: does R2 also answer NetSuite with first-party MCP (M13)?",
+      "links_to": "P3 / P5 / M9 / M12 / M13",
       "status": "open"
     },
     {
       "due": "2026-09-30",
-      "item": "AVEVA + Cognite packaging post-close: does 'context' become its own priced line item (P2 confirmer)?",
+      "item": "AVEVA + Cognite packaging post-close: does 'context' become its own priced line item (P2 confirmer)? E03: nothing new observed.",
       "links_to": "P2",
+      "status": "open"
+    },
+    {
+      "due": "2026-11-15",
+      "item": "Q3 earnings-call language check: do vendors quietly re-describe 'agents' as 'assistants' (P1 weakener)? Opened E03 now that customer-side commitments (FedEx, Walmart) raise the stakes.",
+      "links_to": "P1",
+      "status": "open"
+    },
+    {
+      "due": "2026-07-23",
+      "item": "P6 quiet-cycle guard: if E04's plan sweep again surfaces no independent forecaster tests, run a deliberate deep-dive (targeted arXiv / benchmark search) — chronic zero-states are a research failure.",
+      "links_to": "P6",
       "status": "open"
     }
   ],
@@ -290,335 +255,134 @@
       "id": "M1",
       "action": "Benchmark Chronos-2 / TimesFM 2.5 zero-shot vs existing WAPE+bias framework on a known SKU's POS history",
       "effort": "low",
-      "status": "unknown (unattended run E02 — carried forward)"
+      "status": "unknown (unattended runs E02-E03 — carried forward)"
     },
     {
       "id": "M2",
       "action": "Read-only Fabric data agent over governed Lakehouse tables (MRP/WIP) + one scheduled unattended run",
       "effort": "low",
-      "status": "unknown (unattended run E02 — carried forward)"
+      "status": "unknown (unattended runs E02-E03 — carried forward). E03 note: data agents now GA with AI-guided setup — pilot cost dropped."
     },
     {
       "id": "M3",
       "action": "Pilot Agent Skills for Power BI + Power BI Modeling MCP server on a non-production semantic model",
       "effort": "medium",
-      "status": "unknown (unattended run E02 — carried forward)"
+      "status": "unknown (unattended runs E02-E03 — carried forward). Gated by M11 (post-Jul 28 spec validation)."
     },
     {
       "id": "M4",
       "action": "AI pass over Onematica BOMs/routings flagging structural anomalies pre-cutover",
       "effort": "medium",
-      "status": "unknown (unattended run E02 — carried forward)"
+      "status": "unknown (unattended runs E02-E03 — carried forward)"
     },
     {
       "id": "M5",
       "action": "Verify Onematica upgrade path/timeline to Acumatica 2026 R1 and AI-feature licensing",
       "effort": "verify",
-      "status": "unknown (unattended run E02 — carried forward)",
+      "status": "unknown (unattended runs E02-E03 — carried forward)",
       "note": "gates build-vs-wait on several backlog items — ask user first"
     },
     {
       "id": "M6",
       "action": "Adopt SADA loop + human gate as written template for internal agent pilots",
       "effort": "low",
-      "status": "unknown (unattended run E02 — carried forward)"
+      "status": "unknown (unattended runs E02-E03 — carried forward)"
     },
     {
       "id": "M7",
-      "action": "Request GPU-accelerated Fabric Warehouse early-access preview on a non-production workspace; benchmark heaviest month-end workload before/after",
+      "action": "Request GPU-accelerated Fabric Warehouse early-access preview on a non-production workspace; benchmark heaviest month-end workload before/after — score wall-clock AND capacity-unit consumption",
       "effort": "low",
-      "status": "proposed"
+      "status": "proposed — E03: access window confirmed open, ready to execute"
     },
     {
       "id": "M8",
       "action": "Prototype agent-assisted order intake: parse emailed POs against Onematica items/customers via Power Automate + AI Builder; human confirms draft sales orders",
       "effort": "medium",
-      "status": "proposed"
+      "status": "proposed (carried E02→E03)"
     },
     {
       "id": "M9",
       "action": "Add outcome-pricing questions (billable outcome definition, floors/minimums, audit rights) to every AI purchase/renewal",
       "effort": "low",
-      "status": "proposed"
+      "status": "proposed (carried E02→E03; applies to Acumatica AI Units at R2)"
     },
     {
       "id": "M10",
       "action": "Extend SADA-plus-gates pilot template with Basware-style authority tiers (unassisted / review / always-escalate) per AP flow",
       "effort": "low",
-      "status": "proposed"
+      "status": "proposed (carried E02→E03)"
     },
     {
       "id": "M11",
       "action": "Hold new MCP connector work until Jul 28 final; then validate Power BI Modeling MCP server against final spec before M3 pilot",
       "effort": "watch",
-      "status": "proposed"
+      "status": "proposed (carried E02→E03; 12 days to final at E03 compile)"
     },
     {
       "id": "M12",
-      "action": "Track Oracle-style agent-workspace form factor as the pattern to expect from Acumatica at 2026 R2",
+      "action": "Track agent-workspace form factor (Oracle E02; echoed by Kinaxis/o9/Blue Yonder E03) as the pattern to expect from Acumatica at 2026 R2",
       "effort": "watch",
-      "status": "proposed"
+      "status": "proposed (carried E02→E03)"
+    },
+    {
+      "id": "M13",
+      "action": "Ask Acumatica the first-party MCP question at every 2026 R2 touchpoint; meanwhile pilot CData's Acumatica MCP server read-only on a non-production tenant (post-Jul 28)",
+      "effort": "low",
+      "status": "proposed (new E03, from S10)"
+    },
+    {
+      "id": "M14",
+      "action": "Digital-twin-lite: what-if replica of one flow (DC outbound day or one plant's WIP) in a Fabric notebook on Lakehouse data; test one policy change against replayed history; deliverable = decision memo",
+      "effort": "medium",
+      "status": "proposed (new E03, from S02)"
     }
   ],
   "signal_registry": [
-    {
-      "edition": 1,
-      "id": "S01",
-      "date": "2026-06-30",
-      "theme": "plan",
-      "multi": false,
-      "title": "Gartner 2026 SC tech trends: agentic + physical AI, decision governance"
-    },
-    {
-      "edition": 1,
-      "id": "S02",
-      "date": "2026-05-23",
-      "theme": "plan",
-      "multi": true,
-      "title": "Pre-trained forecasters mature into baselines; routing beats universal deployment"
-    },
-    {
-      "edition": 1,
-      "id": "S03",
-      "date": "2026-04-28",
-      "theme": "plan",
-      "multi": false,
-      "title": "AWS Amazon Connect Decisions: planning tools as AI teammates on SCOT models"
-    },
-    {
-      "edition": 1,
-      "id": "S13",
-      "date": "2026-06-09",
-      "theme": "plan",
-      "multi": true,
-      "title": "Blue Yonder ICON: agents as execution layer; small in-house models for cost"
-    },
-    {
-      "edition": 1,
-      "id": "S04",
-      "date": "2026-05-11",
-      "theme": "source",
-      "multi": false,
-      "title": "Planning platforms push into procurement (single-publisher caveat: BizClik)"
-    },
-    {
-      "edition": 1,
-      "id": "S05",
-      "date": "2026-05-13",
-      "theme": "source",
-      "multi": false,
-      "title": "Supplier master data built for AP can't support AI (tariff era)"
-    },
-    {
-      "edition": 1,
-      "id": "S15",
-      "date": "2026-05-20",
-      "theme": "deliver",
-      "multi": false,
-      "title": "C.H. Robinson claims closed-loop AI runs 92% of 4PL shipments (vendor claim)"
-    },
-    {
-      "edition": 1,
-      "id": "S06",
-      "date": "2026-04-20",
-      "theme": "make",
-      "multi": true,
-      "title": "Production agents ship: SAP routings-from-BOM agent; Schneider+MSFT 50% claim"
-    },
-    {
-      "edition": 1,
-      "id": "S07",
-      "date": "2026-06-25",
-      "theme": "make",
-      "multi": true,
-      "title": "Adoption barometer: 6%->24% expectation vs MIT 5% scale rate"
-    },
-    {
-      "edition": 1,
-      "id": "S08",
-      "date": "2026-06-25",
-      "theme": "sell",
-      "multi": true,
-      "title": "Salesforce: Fin $3.6B + Help Agent priced per resolution"
-    },
-    {
-      "edition": 1,
-      "id": "S09",
-      "date": "2026-06-02",
-      "theme": "infra",
-      "multi": true,
-      "title": "Build 2026: Fabric IQ GA on Power BI semantic models; context-layer thesis"
-    },
-    {
-      "edition": 1,
-      "id": "S10",
-      "date": "2026-06-02",
-      "theme": "infra",
-      "multi": true,
-      "title": "Agent Skills for Power BI + Power BI Modeling MCP server (authoring via governed layer)"
-    },
-    {
-      "edition": 1,
-      "id": "S11",
-      "date": "2026-06-24",
-      "theme": "infra",
-      "multi": false,
-      "title": "Fabric June update: service principals for data agents; per-call cost stats"
-    },
-    {
-      "edition": 1,
-      "id": "S12",
-      "date": "2026-05-21",
-      "theme": "infra",
-      "multi": true,
-      "title": "MCP 2026-07-28 spec RC: stateless core, Tasks, MCP Apps; adoption stats"
-    },
-    {
-      "edition": 1,
-      "id": "S14",
-      "date": "2026-03-26",
-      "theme": "infra",
-      "multi": true,
-      "title": "Acumatica 2026 R1: AI Studio, assistant (early access), anomaly reports"
-    },
-    {
-      "edition": 1,
-      "id": "S16",
-      "date": "2026-04-10",
-      "theme": "deliver",
-      "multi": true,
-      "title": "Autonomous fulfillment-as-a-service: Locus Array; Exol six-site FaaS network (rescan Jul 3)"
-    },
-    {
-      "edition": 1,
-      "id": "S17",
-      "date": "2026-05-08",
-      "theme": "make",
-      "multi": true,
-      "cann": true,
-      "title": "Cannabis AI proof points: ~20% yield claim (Neatleaf/PURPLEFARM), Flora $401M Zero Gravity (BCC report; rescan Jul 3)"
-    },
-    {
-      "edition": 2,
-      "id": "S01",
-      "date": "2026-07-06",
-      "theme": "sell",
-      "multi": true,
-      "title": "Salesforce Agentforce Commerce GA: Shopper/Buyer/Merchant agents inside ChatGPT + Google"
-    },
-    {
-      "edition": 2,
-      "id": "S02",
-      "date": "2026-06-17",
-      "theme": "sell",
-      "multi": false,
-      "title": "commercetools + Mirion B2B Intake Agent: unstructured orders to ready-to-action quotes"
-    },
-    {
-      "edition": 2,
-      "id": "S03",
-      "date": "2026-06-29",
-      "theme": "plan",
-      "multi": false,
-      "title": "Oracle ships four agentic applications for Fusion SCM (single-voice PR)"
-    },
-    {
-      "edition": 2,
-      "id": "S04",
-      "date": "2026-07-02",
-      "theme": "plan",
-      "multi": true,
-      "title": "Adoption gap quantified: 85% raising spend vs 10% live (Sage / First Analysis)"
-    },
-    {
-      "edition": 2,
-      "id": "S05",
-      "date": "2026-07-08",
-      "theme": "source",
-      "multi": false,
-      "title": "Basware Governed Autonomy Framework for finance AI"
-    },
-    {
-      "edition": 2,
-      "id": "S06",
-      "date": "2026-07-01",
-      "theme": "source",
-      "multi": true,
-      "title": "Procurement AI to scaled deployment: long-tail POs, autonomous sourcing (trend synthesis)"
-    },
-    {
-      "edition": 2,
-      "id": "S07",
-      "date": "2026-07-01",
-      "theme": "make",
-      "multi": true,
-      "cann": true,
-      "title": "Cannabis AI bifurcates: compliance automation + cultivation intelligence (trend synthesis)"
-    },
-    {
-      "edition": 2,
-      "id": "S08",
-      "date": "2026-07-08",
-      "theme": "make",
-      "multi": false,
-      "title": "Schneider Electric to acquire Cognite — buying the industrial context layer"
-    },
-    {
-      "edition": 2,
-      "id": "S09",
-      "date": "2026-03-01",
-      "theme": "make",
-      "multi": false,
-      "title": "Samsung AI-driven factories by 2030 (ctx; governance-paired autonomy roadmap)"
-    },
-    {
-      "edition": 2,
-      "id": "S10",
-      "date": "2026-04-24",
-      "theme": "deliver",
-      "multi": false,
-      "title": "FarEye PILOT: 11-agent MCP-first dispatcher (vendor claims labeled)"
-    },
-    {
-      "edition": 2,
-      "id": "S11",
-      "date": "2026-07-08",
-      "theme": "deliver",
-      "multi": true,
-      "title": "Logistics consolidation week: CMA CGM/FedEx SC $1.4B; Descartes, Symbotic AI tuck-ins"
-    },
-    {
-      "edition": 2,
-      "id": "S12",
-      "date": "2026-05-21",
-      "theme": "infra",
-      "multi": true,
-      "title": "MCP 2026-07-28 final holds; implementers validate stateless core + Tasks (countdown card)"
-    },
-    {
-      "edition": 2,
-      "id": "S13",
-      "date": "2026-07-01",
-      "theme": "infra",
-      "multi": true,
-      "title": "GPU-accelerated Fabric Warehouse July early-access window (CoddSpeed; SIGMOD paper)"
-    },
-    {
-      "edition": 2,
-      "id": "S14",
-      "date": "2026-06-04",
-      "theme": "infra",
-      "multi": true,
-      "title": "Outcome pricing operational: Deloitte accounting guidance; SAP Joule outcome/consumption billing"
-    },
-    {
-      "edition": 2,
-      "id": "S15",
-      "date": "2026-07-03",
-      "theme": "infra",
-      "multi": false,
-      "title": "ARC white papers: the decision intelligence layer (context, governance, thresholds, pathways)"
-    }
+    { "edition": 1, "id": "S01", "date": "2026-06-30", "theme": "plan", "multi": false, "title": "Gartner 2026 SC tech trends: agentic + physical AI, decision governance" },
+    { "edition": 1, "id": "S02", "date": "2026-05-23", "theme": "plan", "multi": true, "title": "Pre-trained forecasters mature into baselines; routing beats universal deployment" },
+    { "edition": 1, "id": "S03", "date": "2026-04-28", "theme": "plan", "multi": false, "title": "AWS Amazon Connect Decisions: planning tools as AI teammates on SCOT models" },
+    { "edition": 1, "id": "S13", "date": "2026-06-09", "theme": "plan", "multi": true, "title": "Blue Yonder ICON: agents as execution layer; small in-house models for cost" },
+    { "edition": 1, "id": "S04", "date": "2026-05-11", "theme": "source", "multi": false, "title": "Planning platforms push into procurement (single-publisher caveat: BizClik)" },
+    { "edition": 1, "id": "S05", "date": "2026-05-13", "theme": "source", "multi": false, "title": "Supplier master data built for AP can't support AI (tariff era)" },
+    { "edition": 1, "id": "S15", "date": "2026-05-20", "theme": "deliver", "multi": false, "title": "C.H. Robinson claims closed-loop AI runs 92% of 4PL shipments (vendor claim)" },
+    { "edition": 1, "id": "S06", "date": "2026-04-20", "theme": "make", "multi": true, "title": "Production agents ship: SAP routings-from-BOM agent; Schneider+MSFT 50% claim" },
+    { "edition": 1, "id": "S07", "date": "2026-06-25", "theme": "make", "multi": true, "title": "Adoption barometer: 6%->24% expectation vs MIT 5% scale rate" },
+    { "edition": 1, "id": "S08", "date": "2026-06-25", "theme": "sell", "multi": true, "title": "Salesforce: Fin $3.6B + Help Agent priced per resolution" },
+    { "edition": 1, "id": "S09", "date": "2026-06-02", "theme": "infra", "multi": true, "title": "Build 2026: Fabric IQ GA on Power BI semantic models; context-layer thesis" },
+    { "edition": 1, "id": "S10", "date": "2026-06-02", "theme": "infra", "multi": true, "title": "Agent Skills for Power BI + Power BI Modeling MCP server (authoring via governed layer)" },
+    { "edition": 1, "id": "S11", "date": "2026-06-24", "theme": "infra", "multi": false, "title": "Fabric June update: service principals for data agents; per-call cost stats" },
+    { "edition": 1, "id": "S12", "date": "2026-05-21", "theme": "infra", "multi": true, "title": "MCP 2026-07-28 spec RC: stateless core, Tasks, MCP Apps; adoption stats" },
+    { "edition": 1, "id": "S14", "date": "2026-03-26", "theme": "infra", "multi": true, "title": "Acumatica 2026 R1: AI Studio, assistant (early access), anomaly reports" },
+    { "edition": 1, "id": "S16", "date": "2026-04-10", "theme": "deliver", "multi": true, "title": "Autonomous fulfillment-as-a-service: Locus Array; Exol six-site FaaS network (rescan Jul 3)" },
+    { "edition": 1, "id": "S17", "date": "2026-05-08", "theme": "make", "multi": true, "cann": true, "title": "Cannabis AI proof points: ~20% yield claim (Neatleaf/PURPLEFARM), Flora $401M Zero Gravity (BCC report; rescan Jul 3)" },
+    { "edition": 2, "id": "S01", "date": "2026-07-06", "theme": "sell", "multi": true, "title": "Salesforce Agentforce Commerce GA: Shopper/Buyer/Merchant agents inside ChatGPT + Google" },
+    { "edition": 2, "id": "S02", "date": "2026-06-17", "theme": "sell", "multi": false, "title": "commercetools + Mirion B2B Intake Agent: unstructured orders to ready-to-action quotes" },
+    { "edition": 2, "id": "S03", "date": "2026-06-29", "theme": "plan", "multi": false, "title": "Oracle ships four agentic applications for Fusion SCM (single-voice PR)" },
+    { "edition": 2, "id": "S04", "date": "2026-07-02", "theme": "plan", "multi": true, "title": "Adoption gap quantified: 85% raising spend vs 10% live (Sage / First Analysis)" },
+    { "edition": 2, "id": "S05", "date": "2026-07-08", "theme": "source", "multi": false, "title": "Basware Governed Autonomy Framework for finance AI" },
+    { "edition": 2, "id": "S06", "date": "2026-07-01", "theme": "source", "multi": true, "title": "Procurement AI to scaled deployment: long-tail POs, autonomous sourcing (trend synthesis)" },
+    { "edition": 2, "id": "S07", "date": "2026-07-01", "theme": "make", "multi": true, "cann": true, "title": "Cannabis AI bifurcates: compliance automation + cultivation intelligence (trend synthesis)" },
+    { "edition": 2, "id": "S08", "date": "2026-07-08", "theme": "make", "multi": false, "title": "Schneider Electric to acquire Cognite — buying the industrial context layer" },
+    { "edition": 2, "id": "S09", "date": "2026-03-01", "theme": "make", "multi": false, "title": "Samsung AI-driven factories by 2030 (ctx; governance-paired autonomy roadmap)" },
+    { "edition": 2, "id": "S10", "date": "2026-04-24", "theme": "deliver", "multi": false, "title": "FarEye PILOT: 11-agent MCP-first dispatcher (vendor claims labeled)" },
+    { "edition": 2, "id": "S11", "date": "2026-07-08", "theme": "deliver", "multi": true, "title": "Logistics consolidation week: CMA CGM/FedEx SC $1.4B; Descartes, Symbotic AI tuck-ins" },
+    { "edition": 2, "id": "S12", "date": "2026-05-21", "theme": "infra", "multi": true, "title": "MCP 2026-07-28 final holds; implementers validate stateless core + Tasks (countdown card)" },
+    { "edition": 2, "id": "S13", "date": "2026-07-01", "theme": "infra", "multi": true, "title": "GPU-accelerated Fabric Warehouse July early-access window (CoddSpeed; SIGMOD paper)" },
+    { "edition": 2, "id": "S14", "date": "2026-06-04", "theme": "infra", "multi": true, "title": "Outcome pricing operational: Deloitte accounting guidance; SAP Joule outcome/consumption billing" },
+    { "edition": 2, "id": "S15", "date": "2026-07-03", "theme": "infra", "multi": false, "title": "ARC white papers: the decision intelligence layer (context, governance, thresholds, pathways)" },
+    { "edition": 3, "id": "S01", "date": "2026-07-13", "theme": "deliver", "multi": true, "title": "FedEx commits the network: agents targeted into >50% of operational workflows by 2028; FedEx Freight rebuilds LTL stack AI-first" },
+    { "edition": 3, "id": "S02", "date": "2026-07-14", "theme": "plan", "multi": false, "title": "Walmart scales agentic workflows + digital twins; four 'super agents' (Industry Dive single family — flagged)" },
+    { "edition": 3, "id": "S03", "date": "2026-07-14", "theme": "plan", "multi": true, "title": "Planning majors converge: Kinaxis/o9/Blue Yonder all ship in-model agents (trend synthesis)" },
+    { "edition": 3, "id": "S04", "date": "2026-07-14", "theme": "source", "multi": true, "title": "Autonomous negotiation on tail spend posts claimed savings (~4.7%); procurement agents scale (trend synthesis)" },
+    { "edition": 3, "id": "S05", "date": "2026-07-14", "theme": "make", "multi": true, "title": "Factory-manager agent stack commercializes: NVIDIA blueprint, Invisible AI vision agents, IMTS preview (trend synthesis)" },
+    { "edition": 3, "id": "S06", "date": "2026-07-13", "theme": "deliver", "multi": false, "title": "AI as freight demand: data-center cargo lifts Asia->NA air volumes ~20%, June spot rates ~36% (single brief; candidate new pattern: AI as demand-side force)" },
+    { "edition": 3, "id": "S07", "date": "2026-06-26", "theme": "sell", "multi": true, "title": "Prime Day 2026 as agentic-commerce stress test: $26.4B; AI-referred visitors ~40% likelier to buy; Alexa for Shopping" },
+    { "edition": 3, "id": "S08", "date": "2026-07-13", "theme": "sell", "multi": true, "title": "Salesforce Agentic Order Management: plain-language fulfillment rules across 7k+ locations (follow-up to E02 S01)" },
+    { "edition": 3, "id": "S09", "date": "2026-07-14", "theme": "infra", "multi": true, "title": "Fabric data agents GA + guided setup; GPU Warehouse early access confirmed open (UNC Health 5x)" },
+    { "edition": 3, "id": "S10", "date": "2026-03-26", "theme": "infra", "multi": true, "title": "NetSuite first-party MCP connector (AI Connector Service + Mar Companion wave) — P5 confirmer fired; Acumatica third-party only (CData)" },
+    { "edition": 3, "id": "S11", "date": "2026-07-09", "theme": "infra", "multi": true, "title": "GPT-5.6 ships in three price tiers after CAISI pre-release review — model layer as managed supply input" },
+    { "edition": 3, "id": "S12", "date": "2026-07-14", "theme": "infra", "multi": true, "title": "MCP 2026-07-28 RC formally published: stateless core, Tasks/Apps extensions, deprecation policy (12 days to final)" },
+    { "edition": 3, "id": "S13", "date": "2026-07-08", "theme": "deliver", "multi": false, "cann": true, "title": "Cannabis: compliance rails consolidate (NY BioTrack->Metrc; hemp onboarding) — AI layer forming on top (single specialist source for AI substance)" }
   ],
   "lessons": [
     "Role-play persona must state reader tech fluency explicitly; defaults drift to the builder's level (E01 draft-1 failure).",
@@ -628,6 +392,7 @@
     "Template Rev E (Jul 3): dual REGISTERS — write exec copy (xone/xwhy) separately from analyst copy for every signal; palette bound to view (warm exec / cool analyst, green brand accent); DELTA object + pattern move chips power the weekly pulse strip; append weekly item to feed.xml; update data-ed numeral; PWA assets (icons/manifest/sw) are permanent — never remove.",
     "Rev F editorial rules (Jul 3): never embed UI pills in running prose; badges nowrap; 62ch reading measures; one green data accent; app icon = approved radar-sweep mark (no redesign/recolor without sign-off); 390px mobile checklist incl. notch clearance runs every edition.",
     "Taxonomy v2 + cannabis lens (Jul 3, Rev G): six locked keys (plan/source/make/deliver/sell/infra); value-chain ribbon + infrastructure foundation band replace filter chips; every research week sweeps all 5 stages + infra + cannabis industry; cann:true signals feed the conditional Industry Lens section (auto-hidden when none qualify); stage-focus line must show honest thin/empty states.",
-    "E02 (Jul 9, unattended): mimic-board 'from' links must reference current-edition signal codes — board is edition-scoped (M7-M12), while open_actions in state carries all editions; role-play subagent caught exec-register mechanics leakage in shared 'what' blocks (S12/S13) — shared blocks must pass the exec bar too, since both registers render them."
+    "E02 (Jul 9, unattended): mimic-board 'from' links must reference current-edition signal codes — board is edition-scoped (M7-M12), while open_actions in state carries all editions; role-play subagent caught exec-register mechanics leakage in shared 'what' blocks (S12/S13) — shared blocks must pass the exec bar too, since both registers render them.",
+    "E03 (Jul 16, unattended): role-play subagents caught (a) date-logic errors in forward-looking copy — check every 'next edition confirms X' claim against the actual calendar (a Jul 23 edition cannot confirm a Jul 28 ship); (b) orphan numbers referencing prior editions ($262B) — attribute cross-edition figures explicitly; (c) internal shorthand (Onematica, SADA) needs TERMS glosses since every edition has potential first-time readers; (d) the scatter caption had a hardcoded signal range (S01-S15) — now genericized, keep it generic; (e) assertions.js still hardcodes 'search stateless finds S12' — keep the MCP-spec card at code S12 (or generalize the assertion when next editing the harness is authorized)."
   ]
 }

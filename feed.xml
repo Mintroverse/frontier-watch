@@ -8,6 +8,13 @@
   <atom:link href="https://mintroverse.github.io/frontier-watch/feed.xml" rel="self" type="application/rss+xml"/>
   <!-- EDITIONS:APPEND-BELOW — newest item first; the weekly run inserts the new edition directly below this marker -->
   <item>
+    <title>Edition 03 (Week 29, 2026) — The customer side took over the story</title>
+    <link>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e03.html</link>
+    <guid>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e03.html</guid>
+    <pubDate>Thu, 16 Jul 2026 06:00:00 +0000</pubDate>
+    <description>FedEx targets agents in over half of workflows by 2028, Walmart runs agentic end-to-end flows, the planning majors converge on in-model agents — and NetSuite ships a first-party MCP connector (P5 confirmer fired). 13 signals, 6 patterns, 1 watch item resolved.</description>
+  </item>
+  <item>
     <title>Edition 02 (Week 28, 2026) — The confirmers started firing</title>
     <link>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e02.html</link>
     <guid>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e02.html</guid>
