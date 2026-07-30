@@ -1,11 +1,11 @@
 {
   "meta": {
     "product": "Frontier Watch — AI x Supply Chain",
-    "last_edition": 4,
-    "last_week": "2026-W30",
-    "compiled": "2026-07-23",
-    "next_due": "2026-07-30",
-    "template_file": "index.html (= frontier-watch-e04)",
+    "last_edition": 5,
+    "last_week": "2026-W31",
+    "compiled": "2026-07-30",
+    "next_due": "2026-08-06",
+    "template_file": "index.html (= frontier-watch-e05)",
     "reader_persona": "Supply chain professional; fluent in SC/business language; novice on tech-stack jargon. Use for role-play verification.",
     "org_stack": [
       "Microsoft Fabric (Lakehouse/OneLake, Data Agents)",
@@ -29,7 +29,7 @@
       "id": "P1",
       "title": "From insight to execution: AI that acts, not advises",
       "direction": "hardening",
-      "strength_orgs": 21,
+      "strength_orgs": 24,
       "orgs": [
         "Gartner",
         "Blue Yonder",
@@ -51,17 +51,20 @@
         "DeepFabric",
         "Auger",
         "Board",
-        "Invisible AI"
+        "Invisible AI",
+        "UPS",
+        "Microsoft (agent revenue)",
+        "Freehand"
       ],
-      "verdict_1line": "E04: third act — after vendors and operators, a market: DeepFabric GA (50+ agents, named customers), Auger $150M, Board joins the in-model wave. Still no audited customer autonomy/savings number after four editions; S04's reality check says absorption is the constraint.",
+      "verdict_1line": "E05: fourth act — operators published unit economics (UPS 68.5% automated volume / ~28% lower cost per piece; CHR 60% cumulative productivity) and Microsoft disclosed agent revenue run-rates ($450M LinkedIn agentic). All company-reported; audited customer number still missing after five editions. First execution stall logged: in-chat checkout converts ~3x worse than site (S08).",
       "confirmers": [
-        "audited autonomy or savings percentages in customer (not vendor) case studies — a DeepFabric/Auger reference publishing numbers counts",
-        "SAP Outbound agent GA confirmation (unconfirmed a third straight edition since Q2 target passed — now counts mildly against vendor GA claims)",
-        "Fabric planning completes GA rollout",
-        "Oracle agentic apps earn named-customer autonomy numbers"
+        "audited autonomy or savings percentages in customer (not vendor) case studies",
+        "agent revenue disclosures spreading across Q3 vendor earnings",
+        "SAP Outbound agent GA confirmation (4th silent edition; drop to background if silent through Q3)",
+        "Fabric planning completes GA rollout (5th silent cycle)"
       ],
       "weakeners": [
-        "Q3 earnings calls re-describe 'agents' as 'assistants'"
+        "Q3 earnings calls re-describe 'agents' as 'assistants' — early Q2 reads (Microsoft, C.H. Robinson) show the opposite"
       ],
       "status_history": [
         {
@@ -83,6 +86,11 @@
           "edition": 4,
           "direction": "hardening",
           "orgs": 21
+        },
+        {
+          "edition": 5,
+          "direction": "hardening",
+          "orgs": 24
         }
       ]
     },
@@ -90,7 +98,7 @@
       "id": "P2",
       "title": "The moat is business context, not the model",
       "direction": "accelerating",
-      "strength_orgs": 8,
+      "strength_orgs": 9,
       "orgs": [
         "Microsoft",
         "Salesforce",
@@ -99,9 +107,10 @@
         "practitioner analyses",
         "Schneider Electric",
         "ARC Advisory",
-        "Auger (venture-priced context layer)"
+        "Auger (venture-priced context layer)",
+        "Freehand (spend-layer entrant)"
       ],
-      "verdict_1line": "E04: the context thesis got a term sheet — Auger's $150M is capital priced against the layer-above-the-systems claim; Fabric's platform-for-agents positioning (S09) is the incumbent's same bet. Still unpriced as a SKU; now priced as an equity story.",
+      "verdict_1line": "E05: third funded pure-play — Freehand's $75M Series B (spend agents above the systems) joins DeepFabric and Auger. Capital keeps pricing the layer-above thesis; still no published mid-market price list, which is the number that would make build-vs-buy real.",
       "confirmers": [
         "'context layer' appears as its own priced SKU/line item (watch AVEVA+Cognite packaging post-close)"
       ],
@@ -128,6 +137,11 @@
           "edition": 4,
           "direction": "accelerating",
           "orgs": 8
+        },
+        {
+          "edition": 5,
+          "direction": "accelerating",
+          "orgs": 9
         }
       ]
     },
@@ -135,20 +149,23 @@
       "id": "P3",
       "title": "AI economics shift from seats to outcomes and tokens",
       "direction": "hardening",
-      "strength_orgs": 5,
+      "strength_orgs": 8,
       "orgs": [
         "Salesforce",
         "Blue Yonder",
         "Gartner",
         "SAP",
-        "Deloitte"
+        "Deloitte",
+        "Zendesk (published per-resolution pricing)",
+        "Epicor (ERP outcome pricing)",
+        "Futurum (buyer survey)"
       ],
-      "verdict_1line": "E04: quiet again — no new priced voice; DeepFabric's ROI-first positioning gestures at outcome economics without pricing disclosure. Tell unchanged: Acumatica AI Units terms at 2026 R2 (AI Document Intelligence now confirmed on the R2 slate; pricing still not).",
+      "verdict_1line": "E05: two quiet cycles triggered the deep-dive rule; the deliberate pricing sweep ran and the market had moved — SAP CEO (Jul 23 call): per-user pricing 'foolish' for AI-era ERP; Zendesk publishes $1.50/resolution; Epicor sells an ERP agent on outcomes since Sep 2025; Futurum: <1 in 5 buyers prefer per-seat; hybrids dominate. Tell unchanged: Acumatica AI Units terms at 2026 R2.",
       "confirmers": [
         "outcome terms appear in mid-market ERP quotes (Acumatica AI Units at 2026 R2 GA is the tell)"
       ],
       "weakeners": [
-        "outcome pricing quietly reverts to consumption floors and minimums"
+        "outcome pricing quietly reverting to consumption floors and minimums — read the fixed/metered/outcome split in every hybrid quote (S13)"
       ],
       "status_history": [
         {
@@ -170,6 +187,11 @@
           "edition": 4,
           "direction": "hardening",
           "orgs": 5
+        },
+        {
+          "edition": 5,
+          "direction": "hardening",
+          "orgs": 8
         }
       ]
     },
@@ -177,7 +199,7 @@
       "id": "P4",
       "title": "Data readiness is the binding constraint",
       "direction": "consensus",
-      "strength_orgs": 10,
+      "strength_orgs": 11,
       "orgs": [
         "EY",
         "RAND (cited)",
@@ -188,9 +210,10 @@
         "Sage (survey)",
         "First Analysis",
         "Gartner (change-management prediction)",
-        "SCMR / RELEX (scaling syntheses)"
+        "SCMR / RELEX (scaling syntheses)",
+        "Dell Technologies (operator CSCO)"
       ],
-      "verdict_1line": "E04: consensus widened into mechanism — Gartner's 60%-fail-by-2028 names change management, scaling syntheses name unredesigned workflows; 4-in-5 report no bottom-line impact. Constraint set now: data + workflow redesign + ownership.",
+      "verdict_1line": "E05: consensus found an operator's voice — Dell's CSCO published simplify-standardize-automate ('AI amplifies whatever system it inherits'), the first named operator executive making the constraint argument from inside a major supply chain. Gartner hype cycle (Apr): peak of inflated expectations; 17% deployed vs >60% intent quantifies the same gap.",
       "confirmers": [
         "settled enough to act on"
       ],
@@ -217,6 +240,11 @@
           "edition": 4,
           "direction": "consensus",
           "orgs": 10
+        },
+        {
+          "edition": 5,
+          "direction": "consensus",
+          "orgs": 11
         }
       ]
     },
@@ -224,7 +252,7 @@
       "id": "P5",
       "title": "The plumbing is standardizing: MCP + A2A move from experiment to default",
       "direction": "hardening",
-      "strength_orgs": 9,
+      "strength_orgs": 12,
       "orgs": [
         "Linux Foundation / MCP project",
         "Google",
@@ -234,11 +262,13 @@
         "FarEye",
         "implementer analyses (Stacktree, MCP.Directory, WorkOS)",
         "Oracle NetSuite",
-        "SecurityWeek (enterprise security analysis)"
+        "SecurityWeek (enterprise security analysis)",
+        "AWS (day-zero platform support)",
+        "Cloudflare (day-zero platform support)",
+        "Honeycomb (agent-traffic disclosure)"
       ],
-      "verdict_1line": "E04: last pre-final read (5 days out) — RC holding since May 21; ecosystem behaving like infrastructure: security reviews, App Service scaling guidance, migration checklists; Fabric local MCP GA surfaced (S09). Final-vs-promise check runs in E05.",
+      "verdict_1line": "E05: CONFIRMER FIRED — the 2026-07-28 final shipped on schedule matching the RC (stateless core, extensions framework, auth hardening, 12-month deprecation policy); four Tier-1 SDKs same-day; day-zero support across major clouds; Honeycomb reports ~20% of interactive queries from agents. Watch moves to who ships first-party connectors next.",
       "confirmers": [
-        "2026-07-28 final matches the release candidate — CHECK IN E05 (Jul 30 edition; final lands Tue Jul 28)",
         "Acumatica answers with first-party MCP at 2026 R2 (NetSuite set the reference posture)",
         "more operational-stack vendors (WMS, TMS) ship first-party MCP connectors"
       ],
@@ -265,6 +295,11 @@
           "edition": 4,
           "direction": "hardening",
           "orgs": 9
+        },
+        {
+          "edition": 5,
+          "direction": "hardening",
+          "orgs": 12
         }
       ]
     },
@@ -280,7 +315,7 @@
         "domain studies (energy)",
         "Academic benchmark wave (2026: volatility, returns, multi-regime)"
       ],
-      "verdict_1line": "E04: quiet streak broken by the prescribed deep-dive — fresh independent benchmarks (realized volatility, financial returns, zero/few/full-shot) keep reaching the pattern's conclusion: credible zero-shot baselines, hybrids and routing win. Gap: no demand/POS-domain benchmark yet.",
+      "verdict_1line": "E05: quiet cycle after E04's deep-dive delivered — no new independent benchmarks this week. Standing conclusion holds: credible zero-shot baselines; hybrids and routing win. Quiet-cycle counter: 1 (two triggers the deliberate deep-dive again).",
       "confirmers": [
         "a demand/POS-domain independent benchmark",
         "planning vendors expose model-routing controls instead of one embedded model"
@@ -308,6 +343,11 @@
           "edition": 4,
           "direction": "hardening",
           "orgs": 5
+        },
+        {
+          "edition": 5,
+          "direction": "hardening",
+          "orgs": 5
         }
       ]
     },
@@ -315,14 +355,15 @@
       "id": "P7",
       "title": "AI is a demand-side force: the compute buildout moves freight, power and components",
       "direction": "forming",
-      "strength_orgs": 4,
+      "strength_orgs": 5,
       "orgs": [
         "Aevean",
         "Xeneta",
         "WorldACD",
-        "Morrison Express (trade interviews)"
+        "Morrison Express (trade interviews)",
+        "Microsoft (capex disclosure)"
       ],
-      "verdict_1line": "E04: OPENED (candidate flagged E03 S06; corroborated this cycle) — AI cargo ~10% of global air volume and the named June growth driver (+7%); DC-related volumes +42% in 2025; chipmakers booked to 2028; spot $3.40/kg +38% YoY. Mechanism is physical, not organizational.",
+      "verdict_1line": "E05: second corroborated cycle — market microstructure moving: Q2 shipper-forwarder contracts ≤3 months hit 58% (vs 22% a year ago); spot holds ~+38% YoY as Middle East premium fades and AI/semis carry demand; demand side hardened by MSFT's $41B quarterly capex (~$190B calendar-2026 focus). Structural while the buildout runs; fragile if it stalls.",
       "confirmers": [
         "Q3 forwarder/carrier earnings quantifying AI-cargo share",
         "pressure spreading to ocean freight or power-constrained warehouse siting"
@@ -335,69 +376,74 @@
           "edition": 4,
           "direction": "forming",
           "orgs": 4
+        },
+        {
+          "edition": 5,
+          "direction": "forming",
+          "orgs": 5
         }
       ]
     }
   ],
   "watch_items": [
     {
-      "due": "2026-07-28",
-      "item": "MCP 2026-07-28 spec final lands Tue Jul 28 — confirm it matches the RC (stateless core, Tasks/Apps extensions, deprecation policy). E04: RC holding, 5 days out; ecosystem shipping security/scaling/migration guidance. CONFIRM IN E05 (Jul 30).",
-      "links_to": "P5",
-      "status": "open"
+      "due": "resolved 2026-07-30",
+      "item": "MCP 2026-07-28 final — RESOLVED E05: shipped on schedule Tue Jul 28 matching the RC (stateless core, MRTR, extensions framework incl. Tasks/Apps/EMA, CIMD over DCR, 12-month deprecation policy). P5 confirmer fired. M11 hold lifted: validate Power BI Modeling + Fabric local MCP servers vs final, then M3.",
+      "links_to": "P5 / M11 / M3",
+      "status": "resolved"
     },
     {
       "due": "2026-09-30",
-      "item": "SAP Outbound Task Orchestration Agent GA — unconfirmed a THIRD straight edition since the Q2 2026 target passed (E02–E04). Now treated as counting mildly against vendor GA claims generally (P1). Next check E05+; drop to background if silent through Q3.",
+      "item": "SAP Outbound Task Orchestration Agent GA — unconfirmed a FOURTH straight edition since the Q2 2026 target passed (E02–E05). Counting mildly against vendor GA claims (P1). Drop to background if silent through Q3.",
       "links_to": "P1",
       "status": "open"
     },
     {
       "due": "rolling",
-      "item": "Fabric planning GA rollout completion; overlap check vs in-house capacity/WIP planning tools. E04: nothing observed — fourth silent cycle.",
+      "item": "Fabric planning GA rollout completion; overlap check vs in-house capacity/WIP planning tools. E05: nothing observed — fifth silent cycle.",
       "links_to": "P1/verdict",
       "status": "open"
     },
     {
-      "due": "resolved 2026-07-16",
-      "item": "GPU-accelerated Fabric Warehouse early access — RESOLVED: window independently confirmed open (Microsoft Fabric blog + independent coverage; UNC Health 5x early adopter). M7 benchmark itself still pending user action.",
-      "links_to": "E03 S09 / M7",
-      "status": "resolved"
-    },
-    {
       "due": "2026-10-31",
-      "item": "Acumatica 2026 R2 launch: AI Assistant GA terms + AI Units pricing (outcome/consumption structure) — read floors and outcome definitions (M9). E04 adds: AI Document Intelligence confirmed on the R2 slate (AP invoices/PO capture — overlaps M15's parsing half); still no first-party MCP news (M13).",
+      "item": "Acumatica 2026 R2 launch: AI Assistant GA terms + AI Units pricing (M9 — now including the hybrid fixed/metered/outcome split question from S13); AI Document Intelligence on the slate; still no first-party MCP news (M13). E05: no new R2 news observed.",
       "links_to": "P3 / P5 / M9 / M12 / M13",
       "status": "open"
     },
     {
       "due": "2026-09-30",
-      "item": "AVEVA + Cognite packaging post-close: does 'context' become its own priced line item (P2 confirmer)? E04: integration analyses published (ARC, Verdantix); deal pending regulatory close; no packaging/pricing news.",
+      "item": "AVEVA + Cognite packaging post-close: does 'context' become its own priced line item (P2 confirmer)? E05: no packaging/pricing news observed this cycle.",
       "links_to": "P2",
       "status": "open"
     },
     {
       "due": "2026-11-15",
-      "item": "Q3 earnings-call language check: do vendors quietly re-describe 'agents' as 'assistants' (P1 weakener)? Opened E03 now that customer-side commitments (FedEx, Walmart) raise the stakes.",
+      "item": "Q3 earnings-call language check: do vendors re-describe 'agents' as 'assistants' (P1 weakener)? E05 early reads run the other way — Microsoft discloses agent revenue run-rates; C.H. Robinson holds 'Lean AI'/agents framing through a fourth beat. Full check at Q3 season.",
       "links_to": "P1",
       "status": "open"
     },
     {
-      "due": "resolved 2026-07-23",
-      "item": "P6 quiet-cycle guard — RESOLVED E04: the deliberate deep-dive ran and found a fresh wave of independent benchmarks (E04 S05); P6 4→5 orgs. Standing rule kept: two silent cycles on any pattern triggers a deliberate deep-dive.",
-      "links_to": "P6",
-      "status": "resolved"
-    },
-    {
       "due": "2026-10-31",
-      "item": "P7 validation: Q3 forwarder/carrier earnings quantifying AI-cargo share; watch for spread to ocean freight and power-constrained warehouse siting; weakener = AI capex correction deflating the freight premium.",
+      "item": "P7 validation: Q3 forwarder/carrier earnings quantifying AI-cargo share; watch spread to ocean freight and power-constrained warehouse siting; weakener = AI capex correction (now openly war-gamed in trade coverage). E05 added: contract windows collapsed to ≤3 months for 58% of new agreements.",
       "links_to": "P7",
       "status": "open"
     },
     {
       "due": "2026-12-31",
-      "item": "Agent-platform pricing: first public mid-market pricing/packaging of DeepFabric- or Auger-class platforms (feeds S01/M15 build-vs-buy math; also a P2/P3 read).",
-      "links_to": "P1 / P2 / P3 / M15",
+      "item": "Agent-platform pricing: first public mid-market pricing/packaging of DeepFabric-, Auger- or Freehand-class platforms (feeds build-vs-buy math; P1/P2/P3 read). E05: Freehand ($75M Series B) joins the class; still nothing priced publicly.",
+      "links_to": "P1 / P2 / P3 / M15 / M16",
+      "status": "open"
+    },
+    {
+      "due": "rolling",
+      "item": "P6 quiet-cycle counter: 1 (E05). If E06 is also silent, the standing two-quiet-cycles rule triggers the deliberate TSFM deep-dive again — demand/POS-domain benchmark remains the gap.",
+      "links_to": "P6",
+      "status": "open"
+    },
+    {
+      "due": "2026-12-31",
+      "item": "Cannabis lens: does the 40–60% AI-influenced-transactions projection (E05 S11, trade estimate) get actual measurement? Also standing: do Metrc-class rail owners ship first-party AI vs leaving the layer to specialists?",
+      "links_to": "E05 S11 / P4",
       "status": "open"
     }
   ],
@@ -406,7 +452,7 @@
       "id": "M1",
       "action": "Benchmark Chronos-2 / TimesFM 2.5 zero-shot vs existing WAPE+bias framework on a known SKU's POS history",
       "effort": "low",
-      "status": "unknown (unattended runs E02-E04 — carried forward); E04: academic wave (S05) revalidates the baseline claim — flagged overdue"
+      "status": "unknown (unattended runs E02–E05 — carried forward); still overdue relative to the accumulated benchmark evidence (P6)"
     },
     {
       "id": "M2",
@@ -453,7 +499,7 @@
     },
     {
       "id": "M9",
-      "action": "Add outcome-pricing questions (billable outcome definition, floors/minimums, audit rights) to every AI purchase/renewal",
+      "action": "Add outcome-pricing questions (billable outcome definition, floors/minimums, audit rights) to every AI purchase/renewal E05 addition (S13): also ask for the hybrid split — fixed vs metered vs outcome-tied share of the quote — and model each at own volumes.",
       "effort": "low",
       "status": "proposed (carried E02→E04; applies to Acumatica AI Units at R2)"
     },
@@ -467,7 +513,7 @@
       "id": "M11",
       "action": "Hold new MCP connector work until Jul 28 final; then validate Power BI Modeling MCP server against final spec before M3 pilot",
       "effort": "watch",
-      "status": "proposed — ACTIVE: final lands Tue Jul 28; validate Power BI Modeling MCP + Fabric local MCP (E04 S09) against the final before M3 pilot"
+      "status": "ACTIVE — final shipped Jul 28 matching RC (E05 S12). Do now: validate Power BI Modeling MCP + Fabric local MCP against the final on non-production workspaces; read E04's enterprise security analyses first; then schedule M3."
     },
     {
       "id": "M12",
@@ -497,19 +543,43 @@
       "id": "M16",
       "action": "Tail-spend sizing in Power BI: classify PO volume by category, value band and negotiability — the tactical share bounds any autonomous-negotiation pitch.",
       "effort": "low",
-      "status": "proposed (new E04, from S07)"
+      "status": "proposed (carried E04→E05; sharper trigger — Freehand-class vendors now sell this exact scope)"
     },
     {
       "id": "M17",
       "action": "Freight-rate exposure view in Power BI: trans-Pacific expedite spend vs lane spot indices with an alert threshold (P7 hedge). Open question for user: what premium level should trigger re-quoting lanes?",
       "effort": "low",
-      "status": "proposed (new E04, from S06; promoted from E03 S06 mimic angle)"
+      "status": "proposed (carried E04→E05; S07 adds: pair the alert with a re-quote trigger — lanes get re-quoted, not absorbed)"
     },
     {
       "id": "M18",
       "action": "Add an adoption gate to the SADA-plus-gates pilot template: no pilot graduates without a named workflow owner, a redesigned decision path, and a measured baseline.",
       "effort": "low",
       "status": "proposed (new E04, from S04)"
+    },
+    {
+      "id": "M19",
+      "action": "Adopt the operator scoreboard: every automation pilot reports cost per unit processed and hours reclaimed against a dated baseline — one Power BI page per pilot (UPS/CHR framing).",
+      "effort": "low",
+      "status": "proposed (new E05, from S01/S02)"
+    },
+    {
+      "id": "M20",
+      "action": "Sell-side agent-readiness check: verify product pages/catalog data are readable by AI shopping assistants; add an analytics segment for AI-referred visits before any agentic-commerce spend.",
+      "effort": "low",
+      "status": "proposed (new E05, from S08)"
+    },
+    {
+      "id": "M21",
+      "action": "Apply the simplify-standardize screen (Dell CSCO ordering, S03) to the next queued pilot (M15 freight audit): strip no-value approvals, write the standard decision rule, then automate.",
+      "effort": "low",
+      "status": "proposed (new E05, from S03; extends M18's adoption gate)"
+    },
+    {
+      "id": "M22",
+      "action": "Script the Power BI report estate with July's org-app and paginated-report REST APIs: automate deployment + audit of the reporting workspace; log admin hours saved.",
+      "effort": "low",
+      "status": "proposed (new E05, from S10)"
     }
   ],
   "signal_registry": [
@@ -980,6 +1050,111 @@
       "theme": "deliver",
       "multi": false,
       "title": "Uber Freight DocAI: 20k+ PODs/week, >99% claimed precision, -50% invoice disputes (FreightWaves awards; company figures)"
+    },
+    {
+      "edition": 5,
+      "id": "S01",
+      "date": "2026-07-28",
+      "theme": "deliver",
+      "multi": true,
+      "title": "UPS Q2: automation 68.5% of US volume, ~28% lower cost/piece, RFID complete, AI digital twin; Amazon glide-down complete, guidance raised"
+    },
+    {
+      "edition": 5,
+      "id": "S02",
+      "date": "2026-07-29",
+      "theme": "deliver",
+      "multi": true,
+      "title": "C.H. Robinson Q2: 4th straight beat in 15-quarter trough; 'Lean AI' 30+ agents, claimed 60% cumulative productivity since late 2022"
+    },
+    {
+      "edition": 5,
+      "id": "S03",
+      "date": "2026-07-16",
+      "theme": "plan",
+      "multi": false,
+      "title": "Dell CSCO in SCMR: simplify-standardize-automate; 'AI amplifies whatever system it inherits' — first operator-executive P4 voice"
+    },
+    {
+      "edition": 5,
+      "id": "S04",
+      "date": "2026-04-02",
+      "theme": "plan",
+      "multi": false,
+      "title": "Gartner Hype Cycle for Agentic AI (ctx): peak of inflated expectations; 17% deployed vs >60% intent within 2 yrs"
+    },
+    {
+      "edition": 5,
+      "id": "S05",
+      "date": "2026-07-29",
+      "theme": "source",
+      "multi": true,
+      "title": "Freehand (ex-Pando) $75M Series B: agents for supply chain spend + back office; Meta, Dunkin' cited; round-label discrepancy flagged"
+    },
+    {
+      "edition": 5,
+      "id": "S06",
+      "date": "2026-07-24",
+      "theme": "make",
+      "multi": true,
+      "title": "WAIC industrial-agent wave: Black Lake CAD-to-process/scheduling/quality agents (SAIL Top 30, UNIDO partner); Infrastructure AI Agentic Hub 1.0"
+    },
+    {
+      "edition": 5,
+      "id": "S07",
+      "date": "2026-07-24",
+      "theme": "deliver",
+      "multi": true,
+      "title": "P7 follow-through: spot ~+38% YoY holds; Q2 contracts ≤3 months 58% vs 22% YoY; early-peak warnings; AI-capex-correction downside war-gamed"
+    },
+    {
+      "edition": 5,
+      "id": "S08",
+      "date": "2026-07-21",
+      "theme": "sell",
+      "multi": true,
+      "title": "Agentic checkout stalls: Walmart in-chat conversion ~3x worse vs site (2x new-customer rate); OpenAI Instant Checkout → Apps; 'discover in AI, buy on site'"
+    },
+    {
+      "edition": 5,
+      "id": "S09",
+      "date": "2026-07-29",
+      "theme": "infra",
+      "multi": true,
+      "title": "Microsoft FY26 Q4: Azure >$100B FY, capex $41B/qtr, LinkedIn agentic >$450M run-rate, Copilot 50M users, 80% F500 active agents"
+    },
+    {
+      "edition": 5,
+      "id": "S10",
+      "date": "2026-07-24",
+      "theme": "infra",
+      "multi": false,
+      "title": "Power BI July update: org-app + paginated-report REST APIs, TMDL on web; Fabric data agent API public"
+    },
+    {
+      "edition": 5,
+      "id": "S11",
+      "date": "2026-07-14",
+      "theme": "sell",
+      "multi": true,
+      "title": "Cannabis lens (retail): BLAZE Growth POS-native suite on AI-first platform; AI projected to touch 40–60% of transactions by end-2026; compliance automation matures",
+      "cann": true
+    },
+    {
+      "edition": 5,
+      "id": "S12",
+      "date": "2026-07-28",
+      "theme": "infra",
+      "multi": true,
+      "title": "MCP 2026-07-28 FINAL ships matching RC: stateless core, MRTR, extensions, CIMD, 12-mo deprecation policy; 4 SDKs same-day; P5 confirmer fired"
+    },
+    {
+      "edition": 5,
+      "id": "S13",
+      "date": "2026-07-23",
+      "theme": "infra",
+      "multi": true,
+      "title": "P3 deep-dive delivers: SAP CEO — per-user pricing 'foolish'; Zendesk $1.50/resolution; Epicor outcome-priced ERP agent; Futurum <1-in-5 prefer per-seat"
     }
   ],
   "lessons": [
@@ -995,6 +1170,9 @@
     "E04 (Jul 23, unattended): role-play caught a WEEKDAY error repeated 6x in the marquee signal (called Jul 28 'Monday'; it is Tuesday) — verify the weekday of every dated claim against a calendar before shipping; date arithmetic ('five days out') can be right while the weekday is wrong.",
     "E04: compile-machinery narration ('this compile ran it', 'surfaced by this week's sweep', 'the card is conservatively single-source') in shared 'what' blocks reads as production mechanics to the exec register — keep provenance honesty, but phrase it in reader terms; detailed provenance lives in the Method box.",
     "E04: TAKES must be business-consequence framed in both registers — an IT-status takeaway ('validate servers against the spec') fails the exec CEO-retell test; the freight-cost story beat it for the third slot. Bare M-code chains (M11 → M3) don't belong in exec-visible surfaces.",
-    "E04: P7 added — first pattern-set change; procedure held (E03 candidate flag → multi-source corroboration → Method-box note). Two-cycle candidate rule feels right for pattern additions."
+    "E04: P7 added — first pattern-set change; procedure held (E03 candidate flag → multi-source corroboration → Method-box note). Two-cycle candidate rule feels right for pattern additions.",
+    "E05 (Jul 30, unattended): the two-quiet-cycles rule fired mid-build (P3) and the resulting deep-dive changed the edition (S13 added after first verification pass). Run the quiet-cycle count during step 0, before research ends — deep-dives belong in the research phase, not the fix loop.",
+    "E05: role-play caught a stat quoted with its source's own loose arithmetic ('doubling' for 22%→58%). Recompute every ratio in copy even when the source's framing is being quoted; state the numbers instead of the multiplier when in doubt.",
+    "E05: exec-register leakage recurred in shared 'what' blocks on the two most technical cards (S12/S10 first drafts read like release notes). For infrastructure signals, draft the shared 'what' in business language FIRST and push every mechanism to the tech line; the exec bar applies to shared blocks (E02 lesson) and infrastructure cards are where it breaks."
   ]
 }

@@ -8,6 +8,13 @@
   <atom:link href="https://mintroverse.github.io/frontier-watch/feed.xml" rel="self" type="application/rss+xml"/>
   <!-- EDITIONS:APPEND-BELOW — newest item first; the weekly run inserts the new edition directly below this marker -->
   <item>
+    <title>Edition 05 (Week 31, 2026) — The standard shipped; the operators posted the numbers</title>
+    <link>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e05.html</link>
+    <guid>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e05.html</guid>
+    <pubDate>Thu, 30 Jul 2026 06:00:00 +0000</pubDate>
+    <description>The MCP 2026-07-28 final ships as promised and P5's confirmer fires; UPS (68.5% automated volume, ~28% lower cost/piece) and C.H. Robinson publish automation unit economics; the P3 pricing deep-dive finds per-outcome price tags multiplying; agentic checkout stalls and regroups around discovery. 13 signals, 7 patterns, 6 advancing.</description>
+  </item>
+  <item>
     <title>Edition 04 (Week 30, 2026) — The agent layer becomes an industry</title>
     <link>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e04.html</link>
     <guid>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e04.html</guid>
