@@ -8,10 +8,10 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Frontier Watch">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" type="image/png" sizes="32x32" href="icons/icon-32.png">
-<link rel="apple-touch-icon" href="icons/icon-180.png">
-<link rel="alternate" type="application/rss+xml" title="Frontier Watch" href="feed.xml">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="../icons/icon-32.png">
+<link rel="apple-touch-icon" href="../icons/icon-180.png">
+<link rel="alternate" type="application/rss+xml" title="Frontier Watch" href="../feed.xml">
 <meta name="description" content="Frontier Watch Edition 07 (Week 38, 2026): agents ship with job titles and multi-week runtimes, AI freight gets a unit of measure (~100,000 truckloads per gigawatt), and the first measured study of industrial adoption names verification as the constraint. AI × supply chain, tracked weekly.">
 <meta property="og:title" content="Frontier Watch — Edition 07 · AI × Supply Chain">
 <meta property="og:description" content="Agents got job titles: seven named role-agents including one for supply chain, a 3PL committing to twenty, 800 running at a manufacturer — and the first measured study saying nobody can check the output. Edition 07 of the AI × supply chain briefing.">
@@ -591,7 +591,7 @@ footer a{color:var(--accent-2)!important}
 <footer>
   <div class="wrap">
     <span>Frontier Watch · Edition 07 · internal intelligence briefing — not investment or vendor-selection advice.</span>
-    <span>Cadence: weekly · next edition ~Sep 24, 2026 · <a href="archive.html">All editions →</a> · <a href="feed.xml">RSS</a><br><span style="opacity:.55">On iPhone: Share → Add to Home Screen for the app experience.</span></span>
+    <span>Cadence: weekly · next edition ~Sep 24, 2026 · <a href="../archive.html">All editions →</a> · <a href="../feed.xml">RSS</a><br><span style="opacity:.55">On iPhone: Share → Add to Home Screen for the app experience.</span></span>
   </div>
 </footer>
 
@@ -1563,7 +1563,7 @@ setTheme = function(key){
 };
 /* Service worker (app-like launch + offline re-read); http(s) only */
 if("serviceWorker" in navigator && location.protocol.indexOf("http")===0){
-  window.addEventListener("load", ()=> navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+  window.addEventListener("load", ()=> navigator.serviceWorker.register("../sw.js", {scope:"../"}).catch(()=>{}));
 }
 /* nav glass state: dark-transparent over hero, light glass after */
 const heroEl = document.querySelector(".masthead");
