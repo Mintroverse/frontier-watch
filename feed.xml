@@ -8,6 +8,13 @@
   <atom:link href="https://mintroverse.github.io/frontier-watch/feed.xml" rel="self" type="application/rss+xml"/>
   <!-- EDITIONS:APPEND-BELOW — newest item first; the weekly run inserts the new edition directly below this marker -->
   <item>
+    <title>Edition 08 (Week 39, 2026) — The gatekeepers arrived; verification goes on sale; the ERP release gets a date</title>
+    <link>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e08.html</link>
+    <guid>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e08.html</guid>
+    <pubDate>Thu, 24 Sep 2026 06:00:00 +0000</pubDate>
+    <description>Normal one-week window (Sep 17 – Sep 24). Amazon blocks Meta's Muse buying agent and opens its seller tools to Anthropic's assistant; HubSpot publishes the demand response to outcome pricing (agent actions 3.5x, metered spend more than doubled, seats kept underneath); five vendors launch kill switches, rollbacks and run-time guards for agents while Cohesity's survey finds 55% unprepared to contain them; Acumatica 2026 R2 gets its October 1 date with the AI Unit still unpriced; Salesforce's supply-chain agent turns out to be a process engine with a screen-learning connector; the connector standard ships in Safari 27 and under UN data; C.H. Robinson's first flatbed forecast names data-centre construction. 14 signals, 7 patterns, cannabis lens active with two AI announcements.</description>
+  </item>
+  <item>
     <title>Edition 07 (Week 38, 2026) — Agents got job titles; verifying their work became the constraint</title>
     <link>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e07.html</link>
     <guid>https://mintroverse.github.io/frontier-watch/editions/frontier-watch-e07.html</guid>
